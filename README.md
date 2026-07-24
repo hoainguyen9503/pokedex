@@ -18,5 +18,7 @@ triển khai website tại:
 
 https://hoainguyen9503.github.io/pokedex/
 
+Trạng thái: GitHub Pages đã được cấu hình với GitHub Actions.
+
 Pokémon và tên Pokémon là thương hiệu của Nintendo / Creatures Inc. /
 GAME FREAK inc.
