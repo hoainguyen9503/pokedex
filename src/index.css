@@ -215,6 +215,84 @@ footer p { margin: 0; color: #99958e; font-size: 10px; text-align: right; } foot
 .back-to-top { position: fixed; z-index: 12; right: 22px; bottom: 22px; width: 45px; height: 45px; border: 0; border-radius: 50%; background: var(--ink); color: white; cursor: pointer; box-shadow: 0 8px 25px #0003; font-size: 19px; }
 .toast { position: fixed; z-index: 50; left: 50%; bottom: 26px; transform: translateX(-50%); background: var(--ink); color: white; padding: 12px 18px; font-size: 11px; box-shadow: 0 8px 30px #0004; }
 
+/* Dark Pokédex theme */
+:root {
+  --ink: #f3efe7;
+  --paper: #101316;
+  --yellow: #d5aa2d;
+  --red: #f05a5a;
+  --line: #343a40;
+}
+body { background: #0c0f12; }
+.topbar { background: #101316; }
+.brandball i { background: #101316; }
+.topbar nav a, .topbar nav button { color: #989da2; }
+.source-link { border-color: #555c62; }
+.source-link:hover, .hero-actions button { background: var(--ink); color: #111417; }
+.hero { background: radial-gradient(circle at 75% 45%, #242019 0, #101316 45%, #101316 100%); }
+.intro, .detail-description { color: #a9a7a1; }
+.stats span, .result-count, .card-content small, .subname, .detail-info .modal-no,
+.measurements span, .evolution-note, .team-slot > span { color: #888e93; }
+.hero-number { color: #282d31; }
+.orbit { border-color: #40464b; }
+.hero-art::before { box-shadow: 0 30px 90px #d5aa2d24; }
+.hero-actions button + button { color: var(--ink); border-color: #596067; }
+
+.catalog, .evolution-section { background: #15191d; }
+.search, .sort, .quick-filters button { background: #1b2025; border-color: #3b4248; color: var(--ink); }
+.search input, .sort select, .quiz input { color: var(--ink); }
+.search input::placeholder, .quiz input::placeholder { color: #747a80; }
+.sort select { background: #1b2025; }
+kbd { background: #252b30; border-color: #444b51; color: #92989d; }
+.types button { background: #1b2025; border-color: #3b4248; color: #aeb2b5; }
+.types button:hover, .types button.selected { background: #ece7dd; color: #121518; border-color: #ece7dd; }
+.quick-filters button.active { background: #4c3d18; border-color: var(--yellow); color: #f3d36e; }
+
+.card, .card-main { background: #1b2025; }
+.card { border-color: #30363c; }
+.card:hover { box-shadow: 0 20px 55px #0006; border-color: #50575d; }
+.image-wrap { background: #171b1f; }
+.image-wrap::before { background: #ffffff0b; border: 1px solid #ffffff10; }
+.card-no { color: #8b9196; }
+.card-actions button { background: #15191ddd; border-color: #484f55; color: #b2b6b9; }
+.card-actions button:hover, .card-actions button.active { background: #ece7dd; color: #14171a; border-color: #ece7dd; }
+
+.tint-electric { background: #3d3519; }.tint-fire { background: #42241d; }.tint-water { background: #183448; }
+.tint-grass { background: #203a27; }.tint-poison { background: #36233d; }.tint-psychic, .tint-fairy { background: #442637; }
+.tint-ice, .tint-flying { background: #203a40; }.tint-ground, .tint-rock { background: #3d3222; }
+.tint-bug { background: #30371d; }.tint-ghost, .tint-dark { background: #282536; }.tint-dragon { background: #232b43; }
+.tint-fighting { background: #402724; }.tint-steel { background: #29353a; }
+
+.about { background: #c9a32e; color: #121518; }
+.about > p:last-child { color: #26210f; }
+footer { background: #080a0c; }
+footer .brandball i { background: #080a0c; }
+
+.detail-nav, .detail-hero { background: #101316; }
+.detail-nav button, .detail-pager button { color: var(--ink); }
+.detail-nav button { background: #1a1f23; border-color: #3b4248; }
+.detail-nav button.selected-action { background: var(--red); }
+.battle-section { background: #0d1114; }
+.stat-row > span, .section-note { color: #91969a; }
+.stat-row > div { background: #2a3035; }
+.evolution-step button { background: #1b2025; border-color: #383f45; color: var(--ink); }
+.evolution-step button:hover, .evolution-step button.current { border-color: #ded8ce; box-shadow: 0 18px 42px #0005; }
+.evolution-arrow, .evolution-arrow small { color: #8d9398; }
+
+.tool-backdrop { background: #050709e8; }
+.tool-panel { background: #12161a; }
+.tool-close { color: var(--ink); border-color: #555c62; }
+.compare-card, .team-analysis { background: #1b2025; border-color: #343b41; }
+.compare-card > button, .team-slot > button { background: #30363b; color: var(--ink); }
+.compact-stats p { border-color: #30363b; }
+.team-slot { border-color: #485057; background: #171b1f; }
+.team-analysis p, .tool-panel > p { color: #9a9ea2; }
+.clear-tool { color: #c9c5bd; }
+.quiz-image { border-radius: 50%; background: radial-gradient(circle, #5d646b 0, #2b3035 55%, transparent 72%); }
+.quiz input { background: #1b2025; border-color: #3e454b; }
+.back-to-top { background: var(--yellow); color: #111417; }
+.toast { background: #ece7dd; color: #121518; }
+
 @media (max-width: 1000px) {
   .grid { grid-template-columns: repeat(3, 1fr); }
   .hero { grid-template-columns: 1fr 1fr; padding-inline: 5vw; }
