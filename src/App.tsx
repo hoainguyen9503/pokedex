@@ -26,6 +26,7 @@ const TYPE_LABELS: Record<string, string> = {
 
 const TYPES = Object.keys(TYPE_LABELS);
 const SOURCE = "https://vn.portal-pokemon.com/play/resources/pokedex";
+const LIST_SCROLL_KEY = "pokedex:list-scroll-position";
 
 function numberOf(p: Pokemon) {
   return Number(p.zukan_id);
@@ -76,11 +77,25 @@ export default function Home() {
   useEffect(() => {
     const syncRoute = () => {
       setDetailId(readRoute());
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (readRoute() !== null) window.scrollTo({ top: 0, behavior: "smooth" });
     };
     window.addEventListener("hashchange", syncRoute);
     return () => window.removeEventListener("hashchange", syncRoute);
   }, []);
+
+  useEffect(() => {
+    if (detailId !== null || loading) return;
+    const savedPosition = sessionStorage.getItem(LIST_SCROLL_KEY);
+    if (savedPosition === null) return;
+
+    const y = Number(savedPosition);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: Number.isFinite(y) ? y : 0, behavior: "auto" });
+        sessionStorage.removeItem(LIST_SCROLL_KEY);
+      });
+    });
+  }, [detailId, loading]);
 
   const selected = useMemo(
     () => pokemons.find((p) => numberOf(p) === detailId && p.zukan_sub_id === 0)
@@ -144,6 +159,11 @@ export default function Home() {
 
   const openPokemon = (p: Pokemon) => {
     window.location.hash = `/pokemon/${String(numberOf(p)).padStart(4, "0")}`;
+  };
+
+  const openPokemonFromList = (p: Pokemon) => {
+    sessionStorage.setItem(LIST_SCROLL_KEY, String(window.scrollY));
+    openPokemon(p);
   };
 
   const reset = () => {
@@ -315,7 +335,7 @@ export default function Home() {
                   const typeIds = p.pokemon_type_id.split(",");
                   const typeNames = p.pokemon_type_name.split(",").map((x) => x.replace(/^hệ\s*/i, ""));
                   return (
-                    <button className="card" key={`${p.zukan_id}-${p.zukan_sub_id}-${index}`} onClick={() => openPokemon(p)} aria-label={`Xem ${p.pokemon_name}`}>
+                    <button className="card" key={`${p.zukan_id}-${p.zukan_sub_id}-${index}`} onClick={() => openPokemonFromList(p)} aria-label={`Xem ${p.pokemon_name}`}>
                       <span className="card-no">#{String(numberOf(p)).padStart(4, "0")}</span>
                       <span className={`image-wrap tint-${typeIds[0]}`}><img loading="lazy" src={pokemonImage(p)} alt={p.pokemon_name} /></span>
                       <span className="card-content">
