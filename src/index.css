@@ -128,6 +128,7 @@ kbd { border: 1px solid var(--line); padding: 4px 7px; color: #aaa59c; backgroun
 .empty strong { display: block; color: var(--ink); font: 600 26px var(--font-display); }
 .empty button { margin-top: 20px; border: 0; text-decoration: underline; background: none; cursor: pointer; }
 .pagination { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.pagination-top { margin: 0 0 28px; padding: 18px 0; border-bottom: 1px solid var(--line); }
 .pagination p { margin: 0; color: #8a867f; font-size: 11px; }
 .pagination p strong { color: var(--ink); }
 .pagination > div { display: flex; align-items: center; gap: 6px; }
