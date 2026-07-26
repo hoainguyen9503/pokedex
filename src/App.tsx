@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import ResilientImage from "./ResilientImage";
 
 type Pokemon = {
   zukan_id: string; zukan_sub_id: number; pokemon_name: string; pokemon_sub_name: string;
@@ -56,6 +57,14 @@ function readInitialTeam() {
 function numberOf(p: Pokemon) { return Number(p.zukan_id); }
 function idFromUrl(url: string) { return Number(url.match(/\/(\d+)\/?$/)?.[1] ?? 0); }
 function pokemonImage(p: Pokemon) { return `${SOURCE}${p.file_name}`; }
+function pokemonImages(p: Pokemon) {
+  const id = numberOf(p);
+  return [
+    pokemonImage(p),
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
+  ];
+}
 function normalize(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").toLowerCase().trim();
 }
@@ -273,7 +282,7 @@ export default function Home() {
               </div>
             </div>
             <section className="detail-hero">
-              <div className={`detail-art tint-${selected.pokemon_type_id.split(",")[0]}`}><span>{selected.zukan_id}</span><img src={pokemonImage(selected)} alt={selected.pokemon_name} /></div>
+              <div className={`detail-art tint-${selected.pokemon_type_id.split(",")[0]}`}><span>{selected.zukan_id}</span><ResilientImage sources={pokemonImages(selected)} alt={selected.pokemon_name} /></div>
               <div className="detail-info">
                 <p className="eyebrow"><span /> {generationOf(numberOf(selected))}</p>
                 <p className="modal-no">POKÉDEX #{selected.zukan_id}</p><h1>{selected.pokemon_name}</h1>
@@ -303,7 +312,7 @@ export default function Home() {
                   {evolutionPokemons.map(({ pokemon: p, condition }, index) => <div className="evolution-step" key={p.zukan_id}>
                     {index > 0 && <span className="evolution-arrow"><b>→</b><small>{condition}</small></span>}
                     <button className={numberOf(p) === numberOf(selected) ? "current" : ""} onClick={() => openPokemon(p)}>
-                      <span className={`evolution-image tint-${p.pokemon_type_id.split(",")[0]}`}><img src={pokemonImage(p)} alt="" /></span>
+                      <span className={`evolution-image tint-${p.pokemon_type_id.split(",")[0]}`}><ResilientImage sources={pokemonImages(p)} alt={p.pokemon_name} /></span>
                       <small>#{p.zukan_id}</small><strong>{p.pokemon_name}</strong>
                       <span className="mini-types">{p.pokemon_type_id.split(",").map((t) => <i className={t} key={t}>{TYPE_LABELS[t]}</i>)}</span>
                     </button>
@@ -340,7 +349,7 @@ export default function Home() {
               <div className="grid">{filtered.map((p, index) => {
                 const id = numberOf(p); const typeIds = p.pokemon_type_id.split(","); const typeNames = p.pokemon_type_name.split(",").map((x) => x.replace(/^hệ\s*/i, ""));
                 return <article className="card" key={`${p.zukan_id}-${p.zukan_sub_id}-${index}`}>
-                  <button className="card-main" onClick={() => openPokemonFromList(p)}><span className="card-no">#{String(id).padStart(4, "0")}</span><span className={`image-wrap tint-${typeIds[0]}`}><img loading="lazy" src={pokemonImage(p)} alt={p.pokemon_name} /></span><span className="card-content"><strong>{p.pokemon_name}</strong>{p.pokemon_sub_name && <small>{p.pokemon_sub_name}</small>}<span className="badges">{typeIds.map((t, i) => <i className={t} key={t}>{typeNames[i]}</i>)}</span></span></button>
+                  <button className="card-main" onClick={() => openPokemonFromList(p)}><span className="card-no">#{String(id).padStart(4, "0")}</span><span className={`image-wrap tint-${typeIds[0]}`}><ResilientImage loading="lazy" sources={pokemonImages(p)} alt={p.pokemon_name} /></span><span className="card-content"><strong>{p.pokemon_name}</strong>{p.pokemon_sub_name && <small>{p.pokemon_sub_name}</small>}<span className="badges">{typeIds.map((t, i) => <i className={t} key={t}>{typeNames[i]}</i>)}</span></span></button>
                   <div className="card-actions"><button className={favorites.includes(id) ? "active" : ""} onClick={() => toggle(favorites, setFavorites, id)} title="Yêu thích">♥</button><button className={compare.includes(id) ? "active" : ""} onClick={() => toggle(compare, setCompare, id, 3)} title="So sánh">⇄</button><button className={team.includes(id) ? "active" : ""} onClick={() => toggle(team, setTeam, id, 6)} title="Thêm vào đội">＋</button></div>
                 </article>;
               })}</div>
@@ -351,8 +360,8 @@ export default function Home() {
       )}
 
       {panel && <div className="tool-backdrop" onClick={() => setPanel(null)}><section className="tool-panel" onClick={(e) => e.stopPropagation()}><button className="tool-close" onClick={() => setPanel(null)}>×</button>
-        {panel === "compare" && <><p className="eyebrow"><span /> PHÒNG PHÂN TÍCH</p><h2>So sánh Pokémon</h2><p>Chọn tối đa 3 Pokémon bằng nút ⇄ trên mỗi thẻ.</p><div className="compare-grid">{compare.map((id) => { const p = byId(id); const data = apiDetails[id]; return p && <article className="compare-card" key={id}><button onClick={() => setCompare(compare.filter((x) => x !== id))}>×</button><img src={pokemonImage(p)} alt="" /><h3>{p.pokemon_name}</h3><div className="compact-stats">{data?.stats.map((s) => <p key={s.stat.name}><span>{STAT_LABELS[s.stat.name]}</span><b>{s.base_stat}</b></p>) ?? <p>Đang tải…</p>}</div></article>; })}</div>{compare.length === 0 && <div className="empty">Chưa chọn Pokémon để so sánh.</div>}</>}
-        {panel === "team" && <><p className="eyebrow"><span /> ĐỘI HÌNH CỦA BẠN</p><h2>{team.length}/6 thành viên</h2><div className="team-grid">{Array.from({ length: 6 }, (_, i) => { const p = byId(team[i]); return <article className="team-slot" key={i}>{p ? <><button onClick={() => setTeam(team.filter((id) => id !== numberOf(p)))}>×</button><img src={pokemonImage(p)} alt="" /><strong>{p.pokemon_name}</strong><span className="mini-types">{p.pokemon_type_id.split(",").map((t) => <i className={t} key={t}>{TYPE_LABELS[t]}</i>)}</span></> : <span>Vị trí {i + 1}<br /><small>Chưa chọn</small></span>}</article>; })}</div><TeamAnalysis team={team} byId={byId} /><div className="team-buttons"><button className="primary-button" onClick={shareTeam} disabled={!team.length}>↗ Chia sẻ đội hình</button><button className="clear-tool" onClick={() => setTeam([])}>Xóa đội hình</button></div></>}
+        {panel === "compare" && <><p className="eyebrow"><span /> PHÒNG PHÂN TÍCH</p><h2>So sánh Pokémon</h2><p>Chọn tối đa 3 Pokémon bằng nút ⇄ trên mỗi thẻ.</p><div className="compare-grid">{compare.map((id) => { const p = byId(id); const data = apiDetails[id]; return p && <article className="compare-card" key={id}><button onClick={() => setCompare(compare.filter((x) => x !== id))}>×</button><ResilientImage sources={pokemonImages(p)} alt={p.pokemon_name} /><h3>{p.pokemon_name}</h3><div className="compact-stats">{data?.stats.map((s) => <p key={s.stat.name}><span>{STAT_LABELS[s.stat.name]}</span><b>{s.base_stat}</b></p>) ?? <p>Đang tải…</p>}</div></article>; })}</div>{compare.length === 0 && <div className="empty">Chưa chọn Pokémon để so sánh.</div>}</>}
+        {panel === "team" && <><p className="eyebrow"><span /> ĐỘI HÌNH CỦA BẠN</p><h2>{team.length}/6 thành viên</h2><div className="team-grid">{Array.from({ length: 6 }, (_, i) => { const p = byId(team[i]); return <article className="team-slot" key={i}>{p ? <><button onClick={() => setTeam(team.filter((id) => id !== numberOf(p)))}>×</button><ResilientImage sources={pokemonImages(p)} alt={p.pokemon_name} /><strong>{p.pokemon_name}</strong><span className="mini-types">{p.pokemon_type_id.split(",").map((t) => <i className={t} key={t}>{TYPE_LABELS[t]}</i>)}</span></> : <span>Vị trí {i + 1}<br /><small>Chưa chọn</small></span>}</article>; })}</div><TeamAnalysis team={team} byId={byId} /><div className="team-buttons"><button className="primary-button" onClick={shareTeam} disabled={!team.length}>↗ Chia sẻ đội hình</button><button className="clear-tool" onClick={() => setTeam([])}>Xóa đội hình</button></div></>}
         {panel === "quiz" && <Quiz pokemon={byId(quizId)} guess={quizGuess} setGuess={setQuizGuess} revealed={quizRevealed} submit={submitQuiz} next={nextQuiz} score={quizScore} streak={quizStreak} />}
       </section></div>}
       {showTop && <button className="back-to-top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>↑</button>}
@@ -374,5 +383,5 @@ function Quiz({ pokemon, guess, setGuess, revealed, submit, next, score, streak 
   submit: () => void; next: () => void; score: number; streak: number;
 }) {
   if (!pokemon) return null;
-  return <div className="quiz"><p className="eyebrow"><span /> MINI GAME</p><h2>Đây là Pokémon nào?</h2><div className="quiz-score"><span>Điểm <b>{score}</b></span><span>Chuỗi đúng <b>{streak}</b></span></div><div className={`quiz-image ${revealed ? "revealed" : ""}`}><img src={pokemonImage(pokemon)} alt="" /></div>{revealed ? <><h3>{pokemon.pokemon_name}</h3><button className="primary-button" onClick={next}>Câu tiếp theo →</button></> : <form onSubmit={(e) => { e.preventDefault(); submit(); }}><input autoFocus value={guess} onChange={(e) => setGuess(e.target.value)} placeholder="Nhập tên Pokémon..." /><button className="primary-button">Trả lời</button></form>}</div>;
+  return <div className="quiz"><p className="eyebrow"><span /> MINI GAME</p><h2>Đây là Pokémon nào?</h2><div className="quiz-score"><span>Điểm <b>{score}</b></span><span>Chuỗi đúng <b>{streak}</b></span></div><div className={`quiz-image ${revealed ? "revealed" : ""}`}><ResilientImage sources={pokemonImages(pokemon)} alt={pokemon.pokemon_name} /></div>{revealed ? <><h3>{pokemon.pokemon_name}</h3><button className="primary-button" onClick={next}>Câu tiếp theo →</button></> : <form onSubmit={(e) => { e.preventDefault(); submit(); }}><input autoFocus value={guess} onChange={(e) => setGuess(e.target.value)} placeholder="Nhập tên Pokémon..." /><button className="primary-button">Trả lời</button></form>}</div>;
 }
