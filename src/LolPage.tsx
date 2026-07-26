@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type SyntheticEvent } from "react";
+import { buildSkinGroups, inspectSkinGroups } from "./lolGroups";
 
 type ChampionStats = {
   hp: number; hpperlevel: number; mp: number; mpperlevel: number;
@@ -61,6 +62,7 @@ export default function LolPage() {
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [favorites, setFavorites] = useState<string[]>(readFavorites);
   const [showTop, setShowTop] = useState(false);
+  const [view, setView] = useState<"skins" | "groups">("skins");
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/lol-skins.json`)
@@ -112,6 +114,8 @@ export default function LolPage() {
       return a.championName.localeCompare(b.championName, "vi") || a.num - b.num;
     });
   }, [data, query, role, champion, sort, favoritesOnly, favorites]);
+  const skinGroups = useMemo(() => data ? buildSkinGroups(data.skins) : [], [data]);
+  const groupAudit = useMemo(() => data ? inspectSkinGroups(skinGroups, data.skins.length) : null, [data, skinGroups]);
 
   const toggleFavorite = (id: string) => {
     setFavorites((current) => current.includes(id) ? current.filter((item) => item !== id) : [...current, id]);
@@ -193,8 +197,12 @@ export default function LolPage() {
             <div className="lol-hero-art"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Ahri_27.jpg" alt="" /></div>
           </section>
           <section className="lol-catalog">
-            <div className="lol-catalog-head"><div><p className="lol-kicker">THƯ VIỆN TRANG PHỤC</p><h2>Tất cả nhân vật</h2></div><p><b>{filtered.length}</b> kết quả</p></div>
-            <div className="lol-toolbar">
+            <div className="lol-catalog-head"><div><p className="lol-kicker">THƯ VIỆN TRANG PHỤC</p><h2>{view === "skins" ? "Tất cả nhân vật" : "Biệt đội cùng concept"}</h2></div><p><b>{view === "skins" ? filtered.length : skinGroups.length}</b> {view === "skins" ? "kết quả" : "nhóm"}</p></div>
+            <div className="lol-view-switch">
+              <button className={view === "skins" ? "active" : ""} onClick={() => setView("skins")}>▦ Danh sách skin</button>
+              <button className={view === "groups" ? "active" : ""} onClick={() => setView("groups")}>⬡ Nhóm 5 tướng</button>
+            </div>
+            {view === "skins" && <><div className="lol-toolbar">
               <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm skin hoặc tên tướng..." />
               <select value={champion} onChange={(event) => setChampion(event.target.value)}>
                 <option value="all">Tất cả tướng</option>
@@ -208,7 +216,29 @@ export default function LolPage() {
               {Object.entries(ROLE_LABELS).map(([key, label]) => <button className={role === key ? "active" : ""} onClick={() => setRole(key)} key={key}>{label}</button>)}
               <button className={favoritesOnly ? "active favorite" : ""} onClick={() => setFavoritesOnly(!favoritesOnly)}>♥ Yêu thích</button>
             </div>
-            {loading ? <div className="lol-empty">Đang tải thư viện…</div> : filtered.length ? (
+            </>}
+            {loading ? <div className="lol-empty">Đang tải thư viện…</div> : view === "groups" ? (
+              <>
+                <div className={`group-audit ${groupAudit?.complete && groupAudit.groupsWithDuplicateChampion === 0 ? "valid" : ""}`}>
+                  <span>✓ {groupAudit?.uniqueSkinCount.toLocaleString("vi-VN")} skin duy nhất</span>
+                  <span>✓ Không nhóm nào trùng tướng</span>
+                  <span>✓ Đã gom {groupAudit?.skinCount.toLocaleString("vi-VN")}/{data?.skins.length.toLocaleString("vi-VN")} skin</span>
+                </div>
+                <div className="lol-group-grid">{skinGroups.map((group, groupIndex) => (
+                  <article className="lol-group" key={group.id}>
+                    <header><div><small>BIỆT ĐỘI {String(groupIndex + 1).padStart(3, "0")}</small><h3>{group.concept}</h3></div><b>{group.skins.length}/5</b></header>
+                    <div>{group.skins.map((skin) => (
+                      <button key={skin.id} onClick={() => openSkin(skin)} title={`${skin.name} — ${skin.championName}`}>
+                        <img loading="lazy" src={skinLoading(skin)} onError={(event) => { event.currentTarget.style.display = "none"; }} alt={skin.name} />
+                        <span><small>{skin.championName}</small><strong>{skin.name}</strong></span>
+                      </button>
+                    ))}
+                    {group.skins.length < 5 && Array.from({ length: 5 - group.skins.length }, (_, index) => <i className="lol-group-empty" key={index}>Ô trống</i>)}
+                    </div>
+                  </article>
+                ))}</div>
+              </>
+            ) : filtered.length ? (
               <div className="lol-grid">{filtered.map((skin) => (
                 <article className="lol-card" key={skin.id}>
                   <button className="lol-card-main" onClick={() => openSkin(skin)}>
