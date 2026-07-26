@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import Pagination from "./Pagination";
 import ResilientImage from "./ResilientImage";
 
 type Pokemon = {
@@ -45,6 +46,8 @@ const LIST_SCROLL_KEY = "pokedex:list-scroll-position";
 const FILTER_KEY = "pokedex:filters";
 const FAVORITES_KEY = "pokedex:favorites";
 const TEAM_KEY = "pokedex:team";
+const PAGE_KEY = "pokedex:list-page";
+const PAGE_SIZE = 100;
 
 function readStored<T>(key: string, fallback: T): T {
   try { return JSON.parse(localStorage.getItem(key) || "") as T; } catch { return fallback; }
@@ -109,6 +112,7 @@ export default function Home() {
   const [quizRevealed, setQuizRevealed] = useState(false);
   const [quizScore, setQuizScore] = useState(0);
   const [quizStreak, setQuizStreak] = useState(0);
+  const [page, setPage] = useState(() => Math.max(1, Number(sessionStorage.getItem(PAGE_KEY)) || 1));
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/pokemon.json`).then((r) => r.json())
@@ -117,6 +121,7 @@ export default function Home() {
   useEffect(() => { localStorage.setItem(FILTER_KEY, JSON.stringify(filters)); }, [filters]);
   useEffect(() => { localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites)); }, [favorites]);
   useEffect(() => { localStorage.setItem(TEAM_KEY, JSON.stringify(team)); }, [team]);
+  useEffect(() => { sessionStorage.setItem(PAGE_KEY, String(page)); }, [page]);
   useEffect(() => {
     const onHash = () => {
       const id = readRoute(); setDetailId(id);
@@ -205,6 +210,15 @@ export default function Home() {
       return filters.sort === "desc" ? numberOf(b) - numberOf(a) : numberOf(a) - numberOf(b);
     });
   }, [pokemons, filters, favorites]);
+  const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const pagedPokemons = useMemo(
+    () => filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
+    [filtered, page],
+  );
+
+  useEffect(() => {
+    if (page > pageCount) setPage(pageCount);
+  }, [page, pageCount]);
 
   function evolutionsKnown(id: number) {
     const nonEvolving = new Set([83, 115, 127, 128, 131, 132, 142, 144, 145, 146, 150, 151, 201, 213, 214, 222, 225, 227, 235, 241, 243, 244, 245, 249, 250, 251, 302, 303, 324, 327, 335, 336, 337, 338, 351, 352, 357, 359, 369, 370, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386]);
@@ -249,7 +263,12 @@ export default function Home() {
     if (correct) { setQuizScore((s) => s + 1); setQuizStreak((s) => s + 1); }
     else setQuizStreak(0);
   };
-  const resetFilters = () => setFilters(DEFAULT_FILTERS);
+  const updateFilters = (next: Filters) => { setFilters(next); setPage(1); };
+  const resetFilters = () => updateFilters(DEFAULT_FILTERS);
+  const changePage = (nextPage: number) => {
+    setPage(nextPage);
+    document.getElementById("collection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   const evolutionPokemons = evolutions.map((e) => ({ ...e, pokemon: byId(e.id) })).filter((e) => e.pokemon) as Array<EvolutionItem & { pokemon: Pokemon }>;
   const previous = selected ? byId(numberOf(selected) - 1) : undefined;
   const next = selected ? byId(numberOf(selected) + 1) : undefined;
@@ -334,25 +353,25 @@ export default function Home() {
           <section className="catalog" id="collection">
             <div className="catalog-head"><div><p className="eyebrow"><span /> TỪ ĐIỂN QUỐC GIA</p><h2>Tất cả Pokémon</h2></div><p className="result-count"><strong>{filtered.length}</strong> kết quả</p></div>
             <div className="toolbar">
-              <label className="search"><span>⌕</span><input value={filters.query} onChange={(e) => setFilters({ ...filters, query: e.target.value })} placeholder="Tìm tên không dấu hoặc số..." /><kbd>⌘ K</kbd></label>
-              <label className="sort"><span>Sắp xếp</span><select value={filters.sort} onChange={(e) => setFilters({ ...filters, sort: e.target.value })}><option value="asc">Số thấp → cao</option><option value="desc">Số cao → thấp</option><option value="name">Tên A → Z</option><option value="weight">Nặng nhất</option><option value="height">Cao nhất</option></select></label>
-              <label className="sort"><span>Vùng</span><select value={filters.generation} onChange={(e) => setFilters({ ...filters, generation: e.target.value })}>{Object.keys(GENERATIONS).map((g) => <option value={g} key={g}>{g === "all" ? "Tất cả vùng" : g}</option>)}</select></label>
+              <label className="search"><span>⌕</span><input value={filters.query} onChange={(e) => updateFilters({ ...filters, query: e.target.value })} placeholder="Tìm tên không dấu hoặc số..." /><kbd>⌘ K</kbd></label>
+              <label className="sort"><span>Sắp xếp</span><select value={filters.sort} onChange={(e) => updateFilters({ ...filters, sort: e.target.value })}><option value="asc">Số thấp → cao</option><option value="desc">Số cao → thấp</option><option value="name">Tên A → Z</option><option value="weight">Nặng nhất</option><option value="height">Cao nhất</option></select></label>
+              <label className="sort"><span>Vùng</span><select value={filters.generation} onChange={(e) => updateFilters({ ...filters, generation: e.target.value })}>{Object.keys(GENERATIONS).map((g) => <option value={g} key={g}>{g === "all" ? "Tất cả vùng" : g}</option>)}</select></label>
             </div>
             <div className="quick-filters">
-              <button className={filters.favoritesOnly ? "active" : ""} onClick={() => setFilters({ ...filters, favoritesOnly: !filters.favoritesOnly })}>♥ Yêu thích</button>
-              <button className={filters.evolutionOnly ? "active" : ""} onClick={() => setFilters({ ...filters, evolutionOnly: !filters.evolutionOnly })}>Có tiến hóa</button>
-              <button className={filters.dualOnly ? "active" : ""} onClick={() => setFilters({ ...filters, dualOnly: !filters.dualOnly })}>Pokémon hai hệ</button>
+              <button className={filters.favoritesOnly ? "active" : ""} onClick={() => updateFilters({ ...filters, favoritesOnly: !filters.favoritesOnly })}>♥ Yêu thích</button>
+              <button className={filters.evolutionOnly ? "active" : ""} onClick={() => updateFilters({ ...filters, evolutionOnly: !filters.evolutionOnly })}>Có tiến hóa</button>
+              <button className={filters.dualOnly ? "active" : ""} onClick={() => updateFilters({ ...filters, dualOnly: !filters.dualOnly })}>Pokémon hai hệ</button>
               <button onClick={resetFilters}>Xóa bộ lọc</button>
             </div>
-            <div className="types">{TYPES.map((item) => <button key={item} className={`${item} ${filters.type === item ? "selected" : ""}`} onClick={() => setFilters({ ...filters, type: item })}>{TYPE_LABELS[item]}</button>)}</div>
+            <div className="types">{TYPES.map((item) => <button key={item} className={`${item} ${filters.type === item ? "selected" : ""}`} onClick={() => updateFilters({ ...filters, type: item })}>{TYPE_LABELS[item]}</button>)}</div>
             {loading ? <div className="empty">Đang mở Pokédex…</div> : filtered.length === 0 ? <div className="empty"><strong>Không tìm thấy Pokémon.</strong><button onClick={resetFilters}>Xóa bộ lọc</button></div> : (
-              <div className="grid">{filtered.map((p, index) => {
+              <><div className="grid">{pagedPokemons.map((p, index) => {
                 const id = numberOf(p); const typeIds = p.pokemon_type_id.split(","); const typeNames = p.pokemon_type_name.split(",").map((x) => x.replace(/^hệ\s*/i, ""));
                 return <article className="card" key={`${p.zukan_id}-${p.zukan_sub_id}-${index}`}>
                   <button className="card-main" onClick={() => openPokemonFromList(p)}><span className="card-no">#{String(id).padStart(4, "0")}</span><span className={`image-wrap tint-${typeIds[0]}`}><ResilientImage loading="lazy" sources={pokemonImages(p)} alt={p.pokemon_name} /></span><span className="card-content"><strong>{p.pokemon_name}</strong>{p.pokemon_sub_name && <small>{p.pokemon_sub_name}</small>}<span className="badges">{typeIds.map((t, i) => <i className={t} key={t}>{typeNames[i]}</i>)}</span></span></button>
                   <div className="card-actions"><button className={favorites.includes(id) ? "active" : ""} onClick={() => toggle(favorites, setFavorites, id)} title="Yêu thích">♥</button><button className={compare.includes(id) ? "active" : ""} onClick={() => toggle(compare, setCompare, id, 3)} title="So sánh">⇄</button><button className={team.includes(id) ? "active" : ""} onClick={() => toggle(team, setTeam, id, 6)} title="Thêm vào đội">＋</button></div>
                 </article>;
-              })}</div>
+              })}</div><Pagination page={page} pageSize={PAGE_SIZE} totalItems={filtered.length} onChange={changePage} /></>
             )}
           </section>
           <section className="about" id="about"><p className="eyebrow"><span /> CÔNG CỤ HUẤN LUYỆN VIÊN</p><h2>Hiểu rõ hơn.<br />Chọn tốt hơn.</h2><p>Lưu Pokémon yêu thích, so sánh chỉ số, phân tích điểm yếu và xây dựng đội hình sáu thành viên ngay trên trình duyệt.</p></section>

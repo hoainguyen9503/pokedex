@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { buildSkinGroups, inspectSkinGroups } from "./lolGroups";
+import Pagination from "./Pagination";
 import ResilientImage from "./ResilientImage";
 
 type ChampionStats = {
@@ -29,7 +30,10 @@ const ROLE_LABELS: Record<string, string> = {
 };
 const LOL_SCROLL_KEY = "lol:list-scroll-position";
 const LOL_FAVORITES_KEY = "lol:favorite-skins";
+const LOL_PAGE_KEY = "lol:list-page";
+const LOL_VIEW_KEY = "lol:list-view";
 const LOL_IMAGE_CDN = "https://ddragon.leagueoflegends.com/cdn/img/champion";
+const PAGE_SIZE = 100;
 
 function normalize(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").toLowerCase().trim();
@@ -72,7 +76,10 @@ export default function LolPage() {
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [favorites, setFavorites] = useState<string[]>(readFavorites);
   const [showTop, setShowTop] = useState(false);
-  const [view, setView] = useState<"skins" | "groups">("skins");
+  const [view, setView] = useState<"skins" | "groups">(
+    () => sessionStorage.getItem(LOL_VIEW_KEY) === "groups" ? "groups" : "skins",
+  );
+  const [page, setPage] = useState(() => Math.max(1, Number(sessionStorage.getItem(LOL_PAGE_KEY)) || 1));
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/lol-skins.json`)
@@ -81,6 +88,8 @@ export default function LolPage() {
       .finally(() => setLoading(false));
   }, []);
   useEffect(() => { localStorage.setItem(LOL_FAVORITES_KEY, JSON.stringify(favorites)); }, [favorites]);
+  useEffect(() => { sessionStorage.setItem(LOL_PAGE_KEY, String(page)); }, [page]);
+  useEffect(() => { sessionStorage.setItem(LOL_VIEW_KEY, view); }, [view]);
   useEffect(() => {
     const onHash = () => {
       const next = readSkinRoute();
@@ -127,6 +136,20 @@ export default function LolPage() {
   const skinGroups = useMemo(() => data ? buildSkinGroups(data.skins) : [], [data]);
   const groupAudit = useMemo(() => data ? inspectSkinGroups(skinGroups, data.skins.length) : null, [data, skinGroups]);
   const dataVersion = data?.version ?? "16.14.1";
+  const activeCount = view === "skins" ? filtered.length : skinGroups.length;
+  const pageCount = Math.max(1, Math.ceil(activeCount / PAGE_SIZE));
+  const pagedSkins = useMemo(
+    () => filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
+    [filtered, page],
+  );
+  const pagedGroups = useMemo(
+    () => skinGroups.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
+    [skinGroups, page],
+  );
+
+  useEffect(() => {
+    if (page > pageCount) setPage(pageCount);
+  }, [page, pageCount]);
 
   const toggleFavorite = (id: string) => {
     setFavorites((current) => current.includes(id) ? current.filter((item) => item !== id) : [...current, id]);
@@ -138,6 +161,21 @@ export default function LolPage() {
   const randomSkin = () => {
     if (!data?.skins.length) return;
     openSkin(data.skins[Math.floor(Math.random() * data.skins.length)]);
+  };
+  const changePage = (nextPage: number) => {
+    setPage(nextPage);
+    document.querySelector(".lol-catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+  const changeView = (nextView: "skins" | "groups") => {
+    setView(nextView);
+    setPage(1);
+  };
+  const resetSkinFilters = () => {
+    setQuery("");
+    setChampion("all");
+    setRole("all");
+    setFavoritesOnly(false);
+    setPage(1);
   };
 
   return (
@@ -214,22 +252,22 @@ export default function LolPage() {
           <section className="lol-catalog">
             <div className="lol-catalog-head"><div><p className="lol-kicker">THƯ VIỆN TRANG PHỤC</p><h2>{view === "skins" ? "Tất cả nhân vật" : "Biệt đội cùng concept"}</h2></div><p><b>{view === "skins" ? filtered.length : skinGroups.length}</b> {view === "skins" ? "kết quả" : "nhóm"}</p></div>
             <div className="lol-view-switch">
-              <button className={view === "skins" ? "active" : ""} onClick={() => setView("skins")}>▦ Danh sách skin</button>
-              <button className={view === "groups" ? "active" : ""} onClick={() => setView("groups")}>⬡ Nhóm 5 tướng</button>
+              <button className={view === "skins" ? "active" : ""} onClick={() => changeView("skins")}>▦ Danh sách skin</button>
+              <button className={view === "groups" ? "active" : ""} onClick={() => changeView("groups")}>⬡ Nhóm 5 tướng</button>
             </div>
             {view === "skins" && <><div className="lol-toolbar">
-              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm skin hoặc tên tướng..." />
-              <select value={champion} onChange={(event) => setChampion(event.target.value)}>
+              <input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder="Tìm skin hoặc tên tướng..." />
+              <select value={champion} onChange={(event) => { setChampion(event.target.value); setPage(1); }}>
                 <option value="all">Tất cả tướng</option>
                 {data?.champions.map((item) => <option value={item.id} key={item.id}>{item.name}</option>)}
               </select>
-              <select value={sort} onChange={(event) => setSort(event.target.value)}>
+              <select value={sort} onChange={(event) => { setSort(event.target.value); setPage(1); }}>
                 <option value="champion">Theo tên tướng</option><option value="skin">Theo tên skin</option><option value="newest">Skin ID mới nhất</option>
               </select>
             </div>
             <div className="lol-roles">
-              {Object.entries(ROLE_LABELS).map(([key, label]) => <button className={role === key ? "active" : ""} onClick={() => setRole(key)} key={key}>{label}</button>)}
-              <button className={favoritesOnly ? "active favorite" : ""} onClick={() => setFavoritesOnly(!favoritesOnly)}>♥ Yêu thích</button>
+              {Object.entries(ROLE_LABELS).map(([key, label]) => <button className={role === key ? "active" : ""} onClick={() => { setRole(key); setPage(1); }} key={key}>{label}</button>)}
+              <button className={favoritesOnly ? "active favorite" : ""} onClick={() => { setFavoritesOnly(!favoritesOnly); setPage(1); }}>♥ Yêu thích</button>
             </div>
             </>}
             {loading ? <div className="lol-empty">Đang tải thư viện…</div> : view === "groups" ? (
@@ -239,9 +277,9 @@ export default function LolPage() {
                   <span>✓ Không nhóm nào trùng tướng</span>
                   <span>✓ Đã gom {groupAudit?.skinCount.toLocaleString("vi-VN")}/{data?.skins.length.toLocaleString("vi-VN")} skin</span>
                 </div>
-                <div className="lol-group-grid">{skinGroups.map((group, groupIndex) => (
+                <div className="lol-group-grid">{pagedGroups.map((group, groupIndex) => (
                   <article className="lol-group" key={group.id}>
-                    <header><div><small>BIỆT ĐỘI {String(groupIndex + 1).padStart(3, "0")}</small><h3>{group.concept}</h3></div><b>{group.skins.length}/5</b></header>
+                    <header><div><small>BIỆT ĐỘI {String((page - 1) * PAGE_SIZE + groupIndex + 1).padStart(3, "0")}</small><h3>{group.concept}</h3></div><b>{group.skins.length}/5</b></header>
                     <div>{group.skins.map((skin) => (
                       <button key={skin.id} onClick={() => openSkin(skin)} title={`${skin.name} — ${skin.championName}`}>
                         <ResilientImage loading="lazy" sources={skinSources(skin, dataVersion, true)} alt={skin.name} />
@@ -252,9 +290,10 @@ export default function LolPage() {
                     </div>
                   </article>
                 ))}</div>
+                <Pagination page={page} pageSize={PAGE_SIZE} totalItems={skinGroups.length} onChange={changePage} />
               </>
             ) : filtered.length ? (
-              <div className="lol-grid">{filtered.map((skin) => (
+              <><div className="lol-grid">{pagedSkins.map((skin) => (
                 <article className="lol-card" key={skin.id}>
                   <button className="lol-card-main" onClick={() => openSkin(skin)}>
                     <ResilientImage loading="lazy" sources={skinSources(skin, dataVersion)} alt={skin.name} />
@@ -263,8 +302,8 @@ export default function LolPage() {
                   </button>
                   <button className={`lol-heart ${favorites.includes(skin.id) ? "active" : ""}`} onClick={() => toggleFavorite(skin.id)}>♥</button>
                 </article>
-              ))}</div>
-            ) : <div className="lol-empty"><strong>Không tìm thấy nhân vật.</strong><button onClick={() => { setQuery(""); setChampion("all"); setRole("all"); setFavoritesOnly(false); }}>Xóa bộ lọc</button></div>}
+              ))}</div><Pagination page={page} pageSize={PAGE_SIZE} totalItems={filtered.length} onChange={changePage} /></>
+            ) : <div className="lol-empty"><strong>Không tìm thấy nhân vật.</strong><button onClick={resetSkinFilters}>Xóa bộ lọc</button></div>}
           </section>
         </>
       )}

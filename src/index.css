@@ -127,6 +127,15 @@ kbd { border: 1px solid var(--line); padding: 4px 7px; color: #aaa59c; backgroun
 .empty { padding: 90px 0; text-align: center; color: #888; }
 .empty strong { display: block; color: var(--ink); font: 600 26px var(--font-display); }
 .empty button { margin-top: 20px; border: 0; text-decoration: underline; background: none; cursor: pointer; }
+.pagination { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.pagination p { margin: 0; color: #8a867f; font-size: 11px; }
+.pagination p strong { color: var(--ink); }
+.pagination > div { display: flex; align-items: center; gap: 6px; }
+.pagination > div > span { display: flex; align-items: center; gap: 6px; }
+.pagination i { color: #8a867f; font-style: normal; padding: 0 3px; }
+.pagination button { min-width: 38px; height: 38px; padding: 0 10px; border: 1px solid var(--line); background: #1b2025; color: #b8b5ae; cursor: pointer; font-size: 11px; font-weight: 700; }
+.pagination button:hover:not(:disabled), .pagination button.active { background: var(--yellow); border-color: var(--yellow); color: #111417; }
+.pagination button:disabled { opacity: .35; cursor: default; }
 
 .about { padding: 100px 8vw; min-height: 380px; background: var(--yellow); display: grid; grid-template-columns: .6fr 1fr .7fr; gap: 50px; align-items: center; }
 .about .eyebrow span { border-color: var(--ink); }
@@ -399,6 +408,11 @@ footer .brandball i { background: #080a0c; }
 .lol-related img { width: 100%; height: 100%; object-fit: cover; transition: .3s; }.lol-related button:hover img { transform: scale(1.04); }
 .lol-related strong { position: absolute; left: 0; right: 0; bottom: 0; padding: 45px 15px 14px; background: linear-gradient(0deg, #050a0ef2, transparent); font: 600 18px var(--font-display); text-align: left; }
 .lol-footer { border-top: 1px solid #1f3037; }
+.lol-page .pagination { border-color: #293b42; }
+.lol-page .pagination p { color: #75878d; }
+.lol-page .pagination p strong { color: #d5b765; }
+.lol-page .pagination button { border-color: #30434a; background: #101e24; color: #9ba9ae; }
+.lol-page .pagination button:hover:not(:disabled), .lol-page .pagination button.active { border-color: #b7954e; background: #2c2518; color: #e7d7ab; }
 
 @media (max-width: 1000px) {
   .grid { grid-template-columns: repeat(3, 1fr); }
@@ -474,4 +488,8 @@ footer .brandball i { background: #080a0c; }
   .group-audit { display: grid; }
   .lol-group > div { display: flex; overflow-x: auto; }
   .lol-group > div > button, .lol-group-empty { min-width: 125px; height: 240px; }
+  .pagination { flex-direction: column; align-items: stretch; }
+  .pagination p { text-align: center; }
+  .pagination > div { justify-content: center; flex-wrap: wrap; }
+  .pagination button { min-width: 35px; height: 35px; }
 }
