@@ -277,6 +277,7 @@ export default function LolPage() {
                   <span>✓ Không nhóm nào trùng tướng</span>
                   <span>✓ Đã gom {groupAudit?.skinCount.toLocaleString("vi-VN")}/{data?.skins.length.toLocaleString("vi-VN")} skin</span>
                 </div>
+                <Pagination position="top" page={page} pageSize={PAGE_SIZE} totalItems={skinGroups.length} onChange={changePage} />
                 <div className="lol-group-grid">{pagedGroups.map((group, groupIndex) => (
                   <article className="lol-group" key={group.id}>
                     <header><div><small>BIỆT ĐỘI {String((page - 1) * PAGE_SIZE + groupIndex + 1).padStart(3, "0")}</small><h3>{group.concept}</h3></div><b>{group.skins.length}/5</b></header>
@@ -293,7 +294,7 @@ export default function LolPage() {
                 <Pagination page={page} pageSize={PAGE_SIZE} totalItems={skinGroups.length} onChange={changePage} />
               </>
             ) : filtered.length ? (
-              <><div className="lol-grid">{pagedSkins.map((skin) => (
+              <><Pagination position="top" page={page} pageSize={PAGE_SIZE} totalItems={filtered.length} onChange={changePage} /><div className="lol-grid">{pagedSkins.map((skin) => (
                 <article className="lol-card" key={skin.id}>
                   <button className="lol-card-main" onClick={() => openSkin(skin)}>
                     <ResilientImage loading="lazy" sources={skinSources(skin, dataVersion)} alt={skin.name} />
