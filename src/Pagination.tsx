@@ -3,6 +3,7 @@ type PaginationProps = {
   pageSize: number;
   totalItems: number;
   onChange: (page: number) => void;
+  position?: "top" | "bottom";
 };
 
 function visiblePages(page: number, totalPages: number) {
@@ -13,7 +14,7 @@ function visiblePages(page: number, totalPages: number) {
   return [...pages].sort((a, b) => a - b);
 }
 
-export default function Pagination({ page, pageSize, totalItems, onChange }: PaginationProps) {
+export default function Pagination({ page, pageSize, totalItems, onChange, position = "bottom" }: PaginationProps) {
   const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
   if (totalPages <= 1) return null;
 
@@ -22,7 +23,7 @@ export default function Pagination({ page, pageSize, totalItems, onChange }: Pag
   const to = Math.min(page * pageSize, totalItems);
 
   return (
-    <nav className="pagination" aria-label="Phân trang">
+    <nav className={`pagination pagination-${position}`} aria-label={`Phân trang ${position === "top" ? "đầu danh sách" : "cuối danh sách"}`}>
       <p>Hiển thị <strong>{from.toLocaleString("vi-VN")}–{to.toLocaleString("vi-VN")}</strong> / {totalItems.toLocaleString("vi-VN")}</p>
       <div>
         <button onClick={() => onChange(1)} disabled={page === 1} aria-label="Trang đầu">«</button>
