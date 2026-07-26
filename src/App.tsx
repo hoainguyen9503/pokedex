@@ -365,7 +365,7 @@ export default function Home() {
             </div>
             <div className="types">{TYPES.map((item) => <button key={item} className={`${item} ${filters.type === item ? "selected" : ""}`} onClick={() => updateFilters({ ...filters, type: item })}>{TYPE_LABELS[item]}</button>)}</div>
             {loading ? <div className="empty">Đang mở Pokédex…</div> : filtered.length === 0 ? <div className="empty"><strong>Không tìm thấy Pokémon.</strong><button onClick={resetFilters}>Xóa bộ lọc</button></div> : (
-              <><div className="grid">{pagedPokemons.map((p, index) => {
+              <><Pagination position="top" page={page} pageSize={PAGE_SIZE} totalItems={filtered.length} onChange={changePage} /><div className="grid">{pagedPokemons.map((p, index) => {
                 const id = numberOf(p); const typeIds = p.pokemon_type_id.split(","); const typeNames = p.pokemon_type_name.split(",").map((x) => x.replace(/^hệ\s*/i, ""));
                 return <article className="card" key={`${p.zukan_id}-${p.zukan_sub_id}-${index}`}>
                   <button className="card-main" onClick={() => openPokemonFromList(p)}><span className="card-no">#{String(id).padStart(4, "0")}</span><span className={`image-wrap tint-${typeIds[0]}`}><ResilientImage loading="lazy" sources={pokemonImages(p)} alt={p.pokemon_name} /></span><span className="card-content"><strong>{p.pokemon_name}</strong>{p.pokemon_sub_name && <small>{p.pokemon_sub_name}</small>}<span className="badges">{typeIds.map((t, i) => <i className={t} key={t}>{typeNames[i]}</i>)}</span></span></button>
