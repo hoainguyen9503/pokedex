@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type SyntheticEvent } from "react";
 
 type ChampionStats = {
   hp: number; hpperlevel: number; mp: number; mpperlevel: number;
@@ -39,8 +39,15 @@ function readFavorites() {
 function readSkinRoute() {
   return window.location.hash.match(/^#\/lol\/skin\/([^/]+)/)?.[1] ?? null;
 }
-function skinSplash(skin: Pick<LolSkin, "championId" | "num">) {
-  return `${LOL_IMAGE_CDN}/splash/${skin.championId}_${skin.num}.jpg`;
+function skinCentered(skin: Pick<LolSkin, "championId" | "num">) {
+  return `${LOL_IMAGE_CDN}/centered/${skin.championId}_${skin.num}.jpg`;
+}
+function skinLoading(skin: Pick<LolSkin, "championId" | "num">) {
+  return `${LOL_IMAGE_CDN}/loading/${skin.championId}_${skin.num}.jpg`;
+}
+function fallbackToLoading(event: SyntheticEvent<HTMLImageElement>, skin: Pick<LolSkin, "championId" | "num">) {
+  event.currentTarget.onerror = null;
+  event.currentTarget.src = skinLoading(skin);
 }
 
 export default function LolPage() {
@@ -134,7 +141,7 @@ export default function LolPage() {
               <button className={favorites.includes(selected.id) ? "active" : ""} onClick={() => toggleFavorite(selected.id)}>♥ Yêu thích</button>
             </div>
             <section className="lol-splash">
-              <img src={skinSplash(selected)} alt={selected.name} />
+              <img src={skinCentered(selected)} onError={(event) => fallbackToLoading(event, selected)} alt={selected.name} />
               <div className="lol-splash-shade" />
               <div className="lol-splash-copy">
                 <p>{selected.championName} · {selected.championTitle}</p>
@@ -167,7 +174,7 @@ export default function LolPage() {
               <div>
                 {selectedChampion.skins.filter((skin) => skin.id !== selected.id).map((skin) => (
                   <button key={skin.id} onClick={() => { window.location.hash = `/lol/skin/${skin.id}`; }}>
-                    <img loading="lazy" src={skinSplash({ ...skin, championId: selectedChampion.id })} alt="" /><strong>{skin.name}</strong>
+                    <img loading="lazy" src={skinCentered({ ...skin, championId: selectedChampion.id })} onError={(event) => fallbackToLoading(event, { ...skin, championId: selectedChampion.id })} alt="" /><strong>{skin.name}</strong>
                   </button>
                 ))}
               </div>
@@ -183,7 +190,7 @@ export default function LolPage() {
               <p>Khám phá toàn bộ tướng và trang phục Liên Minh Huyền Thoại trong một thư viện hình ảnh duy nhất.</p>
               <div className="lol-hero-stats"><span><b>{data?.champions.length ?? "—"}</b>Tướng</span><span><b>{data?.skins.length ?? "—"}</b>Nhân vật</span><span><b>{favorites.length}</b>Yêu thích</span></div>
             </div>
-            <div className="lol-hero-art"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_27.jpg" alt="" /></div>
+            <div className="lol-hero-art"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Ahri_27.jpg" alt="" /></div>
           </section>
           <section className="lol-catalog">
             <div className="lol-catalog-head"><div><p className="lol-kicker">THƯ VIỆN TRANG PHỤC</p><h2>Tất cả nhân vật</h2></div><p><b>{filtered.length}</b> kết quả</p></div>
@@ -205,7 +212,7 @@ export default function LolPage() {
               <div className="lol-grid">{filtered.map((skin) => (
                 <article className="lol-card" key={skin.id}>
                   <button className="lol-card-main" onClick={() => openSkin(skin)}>
-                    <img loading="lazy" src={skinSplash(skin)} alt={skin.name} />
+                    <img loading="lazy" src={skinCentered(skin)} onError={(event) => fallbackToLoading(event, skin)} alt={skin.name} />
                     <span className="lol-card-shade" />
                     <span className="lol-card-copy"><small>{skin.championName}</small><strong>{skin.name}</strong><i>{skin.tags.map((tag) => ROLE_LABELS[tag]).join(" · ")}</i></span>
                   </button>
