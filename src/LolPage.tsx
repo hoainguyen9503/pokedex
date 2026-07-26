@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState, type SyntheticEvent } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { buildSkinGroups, inspectSkinGroups } from "./lolGroups";
+import ResilientImage from "./ResilientImage";
 
 type ChampionStats = {
   hp: number; hpperlevel: number; mp: number; mpperlevel: number;
@@ -46,9 +47,18 @@ function skinCentered(skin: Pick<LolSkin, "championId" | "num">) {
 function skinLoading(skin: Pick<LolSkin, "championId" | "num">) {
   return `${LOL_IMAGE_CDN}/loading/${skin.championId}_${skin.num}.jpg`;
 }
-function fallbackToLoading(event: SyntheticEvent<HTMLImageElement>, skin: Pick<LolSkin, "championId" | "num">) {
-  event.currentTarget.onerror = null;
-  event.currentTarget.src = skinLoading(skin);
+function skinCommunity(skin: Pick<LolSkin, "championId" | "num">) {
+  const champion = skin.championId.toLowerCase();
+  const skinFolder = String(skin.num).padStart(2, "0");
+  return `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/${champion}/skins/skin${skinFolder}/images/${champion}_splash_centered_${skin.num}.jpg`;
+}
+function championIcon(skin: Pick<LolSkin, "championId">, version: string) {
+  return `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${skin.championId}.png`;
+}
+function skinSources(skin: Pick<LolSkin, "championId" | "num">, version: string, portrait = false) {
+  return portrait
+    ? [skinLoading(skin), skinCentered(skin), skinCommunity(skin), championIcon(skin, version)]
+    : [skinCentered(skin), skinLoading(skin), skinCommunity(skin), championIcon(skin, version)];
 }
 
 export default function LolPage() {
@@ -116,6 +126,7 @@ export default function LolPage() {
   }, [data, query, role, champion, sort, favoritesOnly, favorites]);
   const skinGroups = useMemo(() => data ? buildSkinGroups(data.skins) : [], [data]);
   const groupAudit = useMemo(() => data ? inspectSkinGroups(skinGroups, data.skins.length) : null, [data, skinGroups]);
+  const dataVersion = data?.version ?? "16.14.1";
 
   const toggleFavorite = (id: string) => {
     setFavorites((current) => current.includes(id) ? current.filter((item) => item !== id) : [...current, id]);
@@ -145,7 +156,7 @@ export default function LolPage() {
               <button className={favorites.includes(selected.id) ? "active" : ""} onClick={() => toggleFavorite(selected.id)}>♥ Yêu thích</button>
             </div>
             <section className="lol-splash">
-              <img src={skinCentered(selected)} onError={(event) => fallbackToLoading(event, selected)} alt={selected.name} />
+              <ResilientImage sources={skinSources(selected, dataVersion)} alt={selected.name} />
               <div className="lol-splash-shade" />
               <div className="lol-splash-copy">
                 <p>{selected.championName} · {selected.championTitle}</p>
@@ -178,7 +189,7 @@ export default function LolPage() {
               <div>
                 {selectedChampion.skins.filter((skin) => skin.id !== selected.id).map((skin) => (
                   <button key={skin.id} onClick={() => { window.location.hash = `/lol/skin/${skin.id}`; }}>
-                    <img loading="lazy" src={skinCentered({ ...skin, championId: selectedChampion.id })} onError={(event) => fallbackToLoading(event, { ...skin, championId: selectedChampion.id })} alt="" /><strong>{skin.name}</strong>
+                    <ResilientImage loading="lazy" sources={skinSources({ ...skin, championId: selectedChampion.id }, dataVersion)} alt={skin.name} /><strong>{skin.name}</strong>
                   </button>
                 ))}
               </div>
@@ -194,7 +205,11 @@ export default function LolPage() {
               <p>Khám phá toàn bộ tướng và trang phục Liên Minh Huyền Thoại trong một thư viện hình ảnh duy nhất.</p>
               <div className="lol-hero-stats"><span><b>{data?.champions.length ?? "—"}</b>Tướng</span><span><b>{data?.skins.length ?? "—"}</b>Nhân vật</span><span><b>{favorites.length}</b>Yêu thích</span></div>
             </div>
-            <div className="lol-hero-art"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Ahri_27.jpg" alt="" /></div>
+            <div className="lol-hero-art"><ResilientImage sources={[
+              "https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Ahri_27.jpg",
+              "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ahri_27.jpg",
+              `https://ddragon.leagueoflegends.com/cdn/${data?.version ?? "16.14.1"}/img/champion/Ahri.png`,
+            ]} alt="Ahri" /></div>
           </section>
           <section className="lol-catalog">
             <div className="lol-catalog-head"><div><p className="lol-kicker">THƯ VIỆN TRANG PHỤC</p><h2>{view === "skins" ? "Tất cả nhân vật" : "Biệt đội cùng concept"}</h2></div><p><b>{view === "skins" ? filtered.length : skinGroups.length}</b> {view === "skins" ? "kết quả" : "nhóm"}</p></div>
@@ -229,7 +244,7 @@ export default function LolPage() {
                     <header><div><small>BIỆT ĐỘI {String(groupIndex + 1).padStart(3, "0")}</small><h3>{group.concept}</h3></div><b>{group.skins.length}/5</b></header>
                     <div>{group.skins.map((skin) => (
                       <button key={skin.id} onClick={() => openSkin(skin)} title={`${skin.name} — ${skin.championName}`}>
-                        <img loading="lazy" src={skinLoading(skin)} onError={(event) => { event.currentTarget.style.display = "none"; }} alt={skin.name} />
+                        <ResilientImage loading="lazy" sources={skinSources(skin, dataVersion, true)} alt={skin.name} />
                         <span><small>{skin.championName}</small><strong>{skin.name}</strong></span>
                       </button>
                     ))}
@@ -242,7 +257,7 @@ export default function LolPage() {
               <div className="lol-grid">{filtered.map((skin) => (
                 <article className="lol-card" key={skin.id}>
                   <button className="lol-card-main" onClick={() => openSkin(skin)}>
-                    <img loading="lazy" src={skinCentered(skin)} onError={(event) => fallbackToLoading(event, skin)} alt={skin.name} />
+                    <ResilientImage loading="lazy" sources={skinSources(skin, dataVersion)} alt={skin.name} />
                     <span className="lol-card-shade" />
                     <span className="lol-card-copy"><small>{skin.championName}</small><strong>{skin.name}</strong><i>{skin.tags.map((tag) => ROLE_LABELS[tag]).join(" · ")}</i></span>
                   </button>
