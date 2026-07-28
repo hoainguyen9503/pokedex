@@ -182,7 +182,7 @@ export default function LolPage() {
     <main className="lol-page">
       <header className="lol-topbar">
         <a className="lol-brand" href="#/lol"><span className="lol-mark">L</span><span>RIFT ARCHIVE</span></a>
-        <nav><a href="#">Pokédex</a><a className="active" href="#/lol">Trang phục LMHT</a></nav>
+        <nav><a href="#">Pokédex</a><a href="#/pokemon-groups">Group Pokémon</a><a className="active" href="#/lol">Trang phục LMHT</a></nav>
         <button onClick={randomSkin}>Trang phục ngẫu nhiên ✦</button>
       </header>
 
