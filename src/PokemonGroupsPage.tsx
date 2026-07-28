@@ -14,6 +14,16 @@ type Pokemon = {
 
 const SOURCE = "https://vn.portal-pokemon.com/play/resources/pokedex";
 const PAGE_SIZE = 100;
+const USED_GROUPS_KEY = "pokedex:used-pokemon-groups";
+
+function readUsedGroups() {
+  try {
+    const value = JSON.parse(localStorage.getItem(USED_GROUPS_KEY) || "[]");
+    return Array.isArray(value) ? value.filter((id): id is string => typeof id === "string") : [];
+  } catch {
+    return [];
+  }
+}
 
 function normalize(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").toLowerCase().trim();
@@ -36,6 +46,7 @@ export default function PokemonGroupsPage() {
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [toast, setToast] = useState("");
+  const [usedGroupIds, setUsedGroupIds] = useState<string[]>(readUsedGroups);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/pokemon.json`)
@@ -74,6 +85,9 @@ export default function PokemonGroupsPage() {
     const timer = window.setTimeout(() => setToast(""), 2200);
     return () => window.clearTimeout(timer);
   }, [toast]);
+  useEffect(() => {
+    localStorage.setItem(USED_GROUPS_KEY, JSON.stringify(usedGroupIds));
+  }, [usedGroupIds]);
 
   const openPokemon = (id: number, subId = 0) => {
     window.location.hash = `/pokemon/${String(id).padStart(4, "0")}${subId ? `_${subId}` : ""}`;
@@ -103,6 +117,13 @@ export default function PokemonGroupsPage() {
   const changePage = (nextPage: number) => {
     setPage(nextPage);
     document.getElementById("pokemon-groups")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+  const toggleGroupUsed = (groupId: string, title: string) => {
+    const isUsed = usedGroupIds.includes(groupId);
+    setUsedGroupIds((current) =>
+      isUsed ? current.filter((id) => id !== groupId) : [...current, groupId]
+    );
+    setToast(isUsed ? `Đã bỏ đánh dấu ${title}` : `Đã đánh dấu đã sử dụng ${title}`);
   };
 
   return (
@@ -134,7 +155,7 @@ export default function PokemonGroupsPage() {
       <section className="pokemon-group-catalog" id="pokemon-groups">
         <div className="pokemon-group-heading">
           <div><p className="eyebrow"><span /> HỒ SƠ BIỆT ĐỘI</p><h2>Group Pokémon</h2></div>
-          <p><strong>{groups.length}</strong> concept phù hợp</p>
+          <p><strong>{groups.length}</strong> concept phù hợp · <b>{usedGroupIds.length}</b> đã sử dụng</p>
         </div>
         <label className="pokemon-group-search">
           <span>⌕</span>
@@ -154,11 +175,25 @@ export default function PokemonGroupsPage() {
           <>
             <Pagination position="top" page={page} pageSize={PAGE_SIZE} totalItems={groups.length} onChange={changePage} />
             <div className="pokemon-group-grid">
-              {pagedGroups.map((group, groupIndex) => (
-                <article className="pokemon-concept-group" key={group.id} style={{ "--group-accent": group.accent } as CSSProperties}>
+              {pagedGroups.map((group, groupIndex) => {
+                const isUsed = usedGroupIds.includes(group.id);
+                return (
+                <article className={`pokemon-concept-group ${isUsed ? "is-used" : ""}`} key={group.id} style={{ "--group-accent": group.accent } as CSSProperties}>
                   <header>
                     <div><small>CONCEPT {String((page - 1) * PAGE_SIZE + groupIndex + 1).padStart(3, "0")}</small><h3>{group.title}</h3><p>{group.subtitle}</p></div>
-                    <b>05</b>
+                    <div className="pokemon-group-header-actions">
+                      <b>05</b>
+                      <button
+                        className="pokemon-group-used-toggle"
+                        type="button"
+                        aria-pressed={isUsed}
+                        aria-label={`${isUsed ? "Bỏ đánh dấu" : "Đánh dấu"} đã sử dụng group ${group.title}`}
+                        onClick={() => toggleGroupUsed(group.id, group.title)}
+                      >
+                        <span>{isUsed ? "✓" : "○"}</span>
+                        {isUsed ? "ĐÃ SỬ DỤNG" : "ĐÁNH DẤU ĐÃ DÙNG"}
+                      </button>
+                    </div>
                   </header>
                   <div>
                     {group.members.map((member) => {
@@ -181,7 +216,8 @@ export default function PokemonGroupsPage() {
                     })}
                   </div>
                 </article>
-              ))}
+                );
+              })}
             </div>
             <Pagination page={page} pageSize={PAGE_SIZE} totalItems={groups.length} onChange={changePage} />
           </>
