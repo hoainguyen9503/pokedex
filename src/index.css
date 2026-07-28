@@ -433,6 +433,7 @@ footer .brandball i { background: #080a0c; }
 .pokemon-group-heading h2 { margin: 10px 0 0; font: 600 clamp(45px, 5vw, 72px) var(--font-display); letter-spacing: -.04em; }
 .pokemon-group-heading > p { color: #818b90; font-size: 10px; }
 .pokemon-group-heading > p strong { color: #e1ba51; font: 600 25px var(--font-display); }
+.pokemon-group-heading > p b { color: #79bbaa; }
 .pokemon-group-search { height: 56px; margin-top: 35px; padding: 0 17px; display: flex; align-items: center; gap: 12px; border: 1px solid #354047; background: #151d21; }
 .pokemon-group-search > span { color: #e1ba51; font-size: 22px; }
 .pokemon-group-search input { flex: 1; border: 0; outline: 0; background: transparent; color: #eef0ef; font-size: 12px; }
@@ -441,12 +442,20 @@ footer .brandball i { background: #080a0c; }
 .pokemon-group-audit { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0 30px; }
 .pokemon-group-audit span { padding: 8px 11px; border: 1px solid #31504b; background: #10231f; color: #79bbaa; font-size: 9px; }
 .pokemon-group-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-.pokemon-concept-group { --group-accent: #e0b94f; overflow: hidden; border: 1px solid #303a40; background: #121a1e; }
+.pokemon-concept-group { --group-accent: #e0b94f; overflow: hidden; border: 1px solid #303a40; background: #121a1e; transition: border-color .2s, box-shadow .2s; }
+.pokemon-concept-group.is-used { border-color: #4b9f83; box-shadow: 0 0 0 1px #4b9f8345, 0 14px 45px #0005; }
+.pokemon-concept-group.is-used > header { background: linear-gradient(105deg, #16352d, color-mix(in srgb, var(--group-accent) 10%, #10171a) 62%); }
 .pokemon-concept-group > header { min-height: 112px; padding: 19px 21px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #303a40; background: linear-gradient(105deg, color-mix(in srgb, var(--group-accent) 16%, #172126), #10171a 60%); }
 .pokemon-concept-group > header small { color: var(--group-accent); font-size: 7px; font-weight: 800; letter-spacing: .18em; }
 .pokemon-concept-group > header h3 { margin: 5px 0 2px; color: #f0eee7; font: 600 25px var(--font-display); }
 .pokemon-concept-group > header p { margin: 0; color: #7f898e; font-size: 9px; }
-.pokemon-concept-group > header > b { width: 43px; height: 43px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid var(--group-accent); border-radius: 50%; color: var(--group-accent); font-size: 9px; }
+.pokemon-group-header-actions { flex: 0 0 auto; display: flex; align-items: center; gap: 10px; }
+.pokemon-group-header-actions > b { width: 43px; height: 43px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid var(--group-accent); border-radius: 50%; color: var(--group-accent); font-size: 9px; }
+.pokemon-group-used-toggle { min-height: 38px; padding: 0 12px; display: flex; align-items: center; gap: 7px; border: 1px solid #455158; background: #0c1215c9; color: #8d989d; cursor: pointer; font-size: 7px; font-weight: 800; letter-spacing: .09em; transition: .2s; }
+.pokemon-group-used-toggle span { color: #c8a746; font-size: 14px; line-height: 1; }
+.pokemon-group-used-toggle:hover { border-color: #b99a43; color: #e9e5d8; }
+.pokemon-group-used-toggle[aria-pressed="true"] { border-color: #4b9f83; background: #17352d; color: #91d1bc; }
+.pokemon-group-used-toggle[aria-pressed="true"] span { color: #91d1bc; }
 .pokemon-concept-group > div { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .pokemon-group-member { position: relative; min-width: 0; height: 255px; overflow: hidden; border-right: 1px solid #293238; background: #0c1215; }
 .pokemon-group-member:last-child { border-right: 0; }
@@ -529,6 +538,8 @@ footer .brandball i { background: #080a0c; }
   .pokemon-group-stats span:last-child { border-bottom: 0; }
   .pokemon-group-heading { align-items: flex-start; flex-direction: column; }
   .pokemon-concept-group > header { min-height: 100px; }
+  .pokemon-group-header-actions { align-items: flex-end; flex-direction: column; }
+  .pokemon-group-used-toggle { min-height: 34px; padding-inline: 9px; }
   .pokemon-concept-group > div { grid-template-columns: repeat(2, 1fr); }
   .pokemon-group-member { height: 230px; border-bottom: 1px solid #293238; }
   .pokemon-group-member:last-child { grid-column: 1 / -1; }
