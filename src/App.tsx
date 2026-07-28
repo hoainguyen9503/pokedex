@@ -74,8 +74,8 @@ function normalize(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").toLowerCase().trim();
 }
 function readRoute() {
-  const match = window.location.hash.match(/^#\/pokemon\/(\d{1,4})/);
-  return match ? Number(match[1]) : null;
+  const match = window.location.hash.match(/^#\/pokemon\/(\d{1,4})(?:_(\d+))?/);
+  return match ? { id: Number(match[1]), subId: Number(match[2] ?? 0) } : null;
 }
 function generationOf(id: number) {
   return Object.entries(GENERATIONS).find(([name, [from, to]]) => name !== "all" && id >= from && id <= to)?.[0] ?? "Paldea";
@@ -100,7 +100,7 @@ export default function Home() {
   const [favorites, setFavorites] = useState<number[]>(() => readStored(FAVORITES_KEY, []));
   const [team, setTeam] = useState<number[]>(readInitialTeam);
   const [compare, setCompare] = useState<number[]>([]);
-  const [detailId, setDetailId] = useState<number | null>(readRoute);
+  const [detailRoute, setDetailRoute] = useState<{ id: number; subId: number } | null>(readRoute);
   const [evolutions, setEvolutions] = useState<EvolutionItem[]>([]);
   const [evolutionLoading, setEvolutionLoading] = useState(false);
   const [apiDetails, setApiDetails] = useState<Record<number, ApiPokemon>>({});
@@ -126,22 +126,22 @@ export default function Home() {
   useEffect(() => { sessionStorage.setItem(PAGE_KEY, String(page)); }, [page]);
   useEffect(() => {
     const onHash = () => {
-      const id = readRoute(); setDetailId(id);
-      if (id !== null) window.scrollTo({ top: 0, behavior: "smooth" });
+      const route = readRoute(); setDetailRoute(route);
+      if (route !== null) window.scrollTo({ top: 0, behavior: "smooth" });
     };
     const onScroll = () => setShowTop(window.scrollY > 650);
     window.addEventListener("hashchange", onHash); window.addEventListener("scroll", onScroll);
     return () => { window.removeEventListener("hashchange", onHash); window.removeEventListener("scroll", onScroll); };
   }, []);
   useEffect(() => {
-    if (detailId !== null || loading) return;
+    if (detailRoute !== null || loading) return;
     const saved = sessionStorage.getItem(LIST_SCROLL_KEY);
     if (saved === null) return;
     requestAnimationFrame(() => requestAnimationFrame(() => {
       window.scrollTo({ top: Number(saved) || 0, behavior: "auto" });
       sessionStorage.removeItem(LIST_SCROLL_KEY);
     }));
-  }, [detailId, loading]);
+  }, [detailRoute, loading]);
   useEffect(() => {
     if (!toast) return;
     const timer = window.setTimeout(() => setToast(""), 2200);
@@ -150,7 +150,9 @@ export default function Home() {
 
   const primaryPokemons = useMemo(() => pokemons.filter((p) => p.zukan_sub_id === 0), [pokemons]);
   const byId = (id: number) => primaryPokemons.find((p) => numberOf(p) === id);
-  const selected = detailId ? byId(detailId) ?? null : null;
+  const selected = detailRoute
+    ? pokemons.find((pokemon) => numberOf(pokemon) === detailRoute.id && pokemon.zukan_sub_id === detailRoute.subId) ?? null
+    : null;
 
   const loadApiPokemon = async (id: number) => {
     if (apiDetails[id]) return apiDetails[id];
@@ -231,7 +233,7 @@ export default function Home() {
     else if (!max || list.length < max) setter([...list, id]);
     else setToast(`Chỉ được chọn tối đa ${max} Pokémon`);
   };
-  const openPokemon = (p: Pokemon) => { window.location.hash = `/pokemon/${String(numberOf(p)).padStart(4, "0")}`; };
+  const openPokemon = (p: Pokemon) => { window.location.hash = `/pokemon/${String(numberOf(p)).padStart(4, "0")}${p.zukan_sub_id ? `_${p.zukan_sub_id}` : ""}`; };
   const openPokemonFromList = (p: Pokemon) => {
     sessionStorage.setItem(LIST_SCROLL_KEY, String(window.scrollY)); openPokemon(p);
   };
@@ -313,7 +315,7 @@ export default function Home() {
         <button className="source-link random-link" onClick={randomPokemon}>Khám phá ngẫu nhiên ✦</button>
       </header>
 
-      {detailId !== null ? (
+      {detailRoute !== null ? (
         loading ? <div className="empty detail-empty">Đang mở hồ sơ Pokémon…</div> : selected ? (
           <article className="detail-page">
             <div className="detail-nav">
