@@ -448,15 +448,18 @@ footer .brandball i { background: #080a0c; }
 .pokemon-concept-group > header p { margin: 0; color: #7f898e; font-size: 9px; }
 .pokemon-concept-group > header > b { width: 43px; height: 43px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid var(--group-accent); border-radius: 50%; color: var(--group-accent); font-size: 9px; }
 .pokemon-concept-group > div { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
-.pokemon-concept-group > div > button { position: relative; min-width: 0; height: 255px; padding: 0; overflow: hidden; border: 0; border-right: 1px solid #293238; background: #0c1215; color: white; cursor: pointer; }
-.pokemon-concept-group > div > button:last-child { border-right: 0; }
+.pokemon-group-member { position: relative; min-width: 0; height: 255px; overflow: hidden; border-right: 1px solid #293238; background: #0c1215; }
+.pokemon-group-member:last-child { border-right: 0; }
+.pokemon-group-member-main { width: 100%; height: 100%; padding: 0; overflow: hidden; border: 0; background: transparent; color: white; cursor: pointer; }
 .pokemon-group-image { position: absolute; inset: 0; display: grid; place-items: center; background: radial-gradient(circle, color-mix(in srgb, var(--group-accent) 19%, #192126), #0d1316 69%); }
 .pokemon-group-image img { width: 100%; height: 80%; object-fit: contain; transition: transform .35s; }
-.pokemon-concept-group button:hover .pokemon-group-image img { transform: translateY(-7px) scale(1.08); }
+.pokemon-group-member-main:hover .pokemon-group-image img { transform: translateY(-7px) scale(1.08); }
 .pokemon-group-member-copy { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; min-height: 92px; padding: 35px 10px 10px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; background: linear-gradient(0deg, #050809fa 12%, transparent); text-align: left; pointer-events: none; }
 .pokemon-group-member-copy small { color: var(--group-accent); font-size: 6px; font-weight: 800; letter-spacing: .11em; }
 .pokemon-group-member-copy strong { max-width: 100%; margin-top: 4px; overflow: hidden; color: #f1efe9; font: 600 13px/1.05 var(--font-display); text-overflow: ellipsis; white-space: nowrap; }
 .pokemon-group-member-copy i { margin-top: 4px; color: #707b80; font-size: 7px; font-style: normal; }
+.pokemon-group-copy { position: absolute; z-index: 4; top: 9px; right: 9px; width: 31px; height: 31px; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--group-accent) 72%, white); border-radius: 50%; background: #090e11cf; color: var(--group-accent); cursor: pointer; backdrop-filter: blur(7px); font-weight: 800; }
+.pokemon-group-copy:hover { background: var(--group-accent); color: #101417; }
 .pokemon-group-page .pagination { border-color: #303a40; }
 .pokemon-group-page .pagination p { color: #7f898e; }
 .pokemon-group-page .pagination p strong { color: #e1ba51; }
@@ -527,8 +530,8 @@ footer .brandball i { background: #080a0c; }
   .pokemon-group-heading { align-items: flex-start; flex-direction: column; }
   .pokemon-concept-group > header { min-height: 100px; }
   .pokemon-concept-group > div { grid-template-columns: repeat(2, 1fr); }
-  .pokemon-concept-group > div > button { height: 230px; border-bottom: 1px solid #293238; }
-  .pokemon-concept-group > div > button:last-child { grid-column: 1 / -1; }
+  .pokemon-group-member { height: 230px; border-bottom: 1px solid #293238; }
+  .pokemon-group-member:last-child { grid-column: 1 / -1; }
   .lol-brand { font-size: 10px; }.lol-mark { width: 29px; height: 29px; }
   .lol-hero { display: flex; flex-direction: column; padding: 55px 18px 45px; }
   .lol-hero h1 { font-size: 59px; }
