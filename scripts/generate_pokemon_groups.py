@@ -43,10 +43,17 @@ TYPE_LABELS = {
     "rock": "Đá", "ghost": "Ma", "dragon": "Rồng", "dark": "Bóng Tối",
     "steel": "Thép", "fairy": "Tiên",
 }
+FORM_META = {
+    "mega": ("Mega Tiến Hóa", "nguồn năng lượng Mega giải phóng hình thái tối thượng", "#ef616f"),
+    "gigamax": ("Gigamax Khổng Lồ", "sức mạnh Dynamax đạt tới quy mô cực đại", "#d85ba8"),
+    "alola": ("Biến Thể Alola", "hình thái thích nghi với quần đảo nhiệt đới", "#48b7ae"),
+    "galar": ("Biến Thể Galar", "hình thái tiến hóa trong môi trường Galar", "#865ac7"),
+    "hisui": ("Biến Thể Hisui", "dáng hình cổ xưa từ vùng đất Hisui", "#c18857"),
+}
 
 
 def roman(number: int) -> str:
-    values = ((10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I"))
+    values = ((100, "C"), (90, "XC"), (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I"))
     result = ""
     for value, symbol in values:
         while number >= value:
@@ -55,10 +62,18 @@ def roman(number: int) -> str:
     return result
 
 
+def form_category(row: dict) -> str | None:
+    label = f'{row["pokemon_name"]} {row["pokemon_sub_name"]}'.lower()
+    for category in FORM_META:
+        if category in label:
+            return category
+    return None
+
+
 with POKEMON_FILE.open(encoding="utf-8") as handle:
     pokemon_rows = json.load(handle)["pokemons"]
-pokemon_by_id = {
-    int(row["zukan_id"]): row for row in pokemon_rows if row["zukan_sub_id"] == 0
+pokemon_by_key = {
+    (int(row["zukan_id"]), int(row["zukan_sub_id"])): row for row in pokemon_rows
 }
 
 parent = {}
@@ -82,51 +97,51 @@ if not list_match:
 
 existing_lines = [line for line in list_match.group(2).splitlines() if line.strip()]
 fixed_lines = existing_lines[:20]
-fixed_ids = {
-    int(value)
+fixed_keys = {
+    (int(pokemon_id), int(sub_id or 0))
     for line in fixed_lines
-    for value in re.findall(r"\{ id: (\d+), stage: [23] \}", line)
+    for pokemon_id, sub_id in re.findall(r"\{ id: (\d+)(?:, subId: (\d+))?, stage: [123] \}", line)
 }
 
-# These four are transitional second-stage forms and intentionally fail the
-# "stage II must look battle-ready" rule. Removing them makes 480 eligible
-# Pokémon, which can be partitioned into exact squads of five.
-excluded_by_rule = {113, 176, 233, 315}
-eligible_ids = {
-    pokemon_id for pokemon_id in parent
-    if evolution_stage(pokemon_id) >= 2
-} - excluded_by_rule
-remaining_ids = sorted(eligible_ids - fixed_ids)
+# Include every evolved base species and every alternate/special form.
+eligible_keys = {
+    key for key in pokemon_by_key
+    if key[1] > 0 or evolution_stage(key[0]) >= 2
+}
+remaining_keys = sorted(eligible_keys - fixed_keys)
 
-types = sorted({
-    pokemon_type
-    for pokemon_id in remaining_ids
-    for pokemon_type in pokemon_by_id[pokemon_id]["pokemon_type_id"].split(",")
-})
 options = []
 options_by_pokemon = defaultdict(list)
-for pokemon_id in remaining_ids:
-    for preference, pokemon_type in enumerate(pokemon_by_id[pokemon_id]["pokemon_type_id"].split(",")):
+for key in remaining_keys:
+    row = pokemon_by_key[key]
+    category = form_category(row) if key[1] > 0 else None
+    candidates = []
+    if category:
+        candidates.append((f"form:{category}", 0))
+    for preference, pokemon_type in enumerate(row["pokemon_type_id"].split(","), start=1):
+        candidates.append((f"type:{pokemon_type}", preference))
+    for bucket, preference in candidates:
         option_index = len(options)
-        options.append((pokemon_id, pokemon_type, preference))
-        options_by_pokemon[pokemon_id].append(option_index)
+        options.append((key, bucket, preference))
+        options_by_pokemon[key].append(option_index)
 
-variable_count = len(options) + len(types)
-constraint_count = len(remaining_ids) + len(types)
+buckets_available = sorted({bucket for _, bucket, _ in options})
+variable_count = len(options) + len(buckets_available)
+constraint_count = len(remaining_keys) + len(buckets_available)
 matrix = lil_matrix((constraint_count, variable_count))
 target = np.zeros(constraint_count)
 
-for row_index, pokemon_id in enumerate(remaining_ids):
-    for option_index in options_by_pokemon[pokemon_id]:
+for row_index, key in enumerate(remaining_keys):
+    for option_index in options_by_pokemon[key]:
         matrix[row_index, option_index] = 1
     target[row_index] = 1
 
-for type_index, pokemon_type in enumerate(types):
-    row_index = len(remaining_ids) + type_index
-    for option_index, (_, option_type, _) in enumerate(options):
-        if option_type == pokemon_type:
+for bucket_index, bucket in enumerate(buckets_available):
+    row_index = len(remaining_keys) + bucket_index
+    for option_index, (_, option_bucket, _) in enumerate(options):
+        if option_bucket == bucket:
             matrix[row_index, option_index] = 1
-    matrix[row_index, len(options) + type_index] = -5
+    matrix[row_index, len(options) + bucket_index] = -5
 
 objective = np.zeros(variable_count)
 for option_index, (_, _, preference) in enumerate(options):
@@ -134,7 +149,7 @@ for option_index, (_, _, preference) in enumerate(options):
 
 lower = np.zeros(variable_count)
 upper = np.ones(variable_count)
-upper[len(options):] = len(remaining_ids) / 5
+upper[len(options):] = len(remaining_keys) / 5
 result = milp(
     objective,
     integrality=np.ones(variable_count),
@@ -144,10 +159,10 @@ result = milp(
 if not result.success:
     raise RuntimeError(result.message)
 
-buckets = defaultdict(list)
-for option_index, (pokemon_id, pokemon_type, _) in enumerate(options):
+assigned = defaultdict(list)
+for option_index, (key, bucket, _) in enumerate(options):
     if result.x[option_index] > 0.5:
-        buckets[pokemon_type].append(pokemon_id)
+        assigned[bucket].append(key)
 
 
 def generation(pokemon_id: int) -> int:
@@ -155,49 +170,59 @@ def generation(pokemon_id: int) -> int:
     return next(index + 1 for index, limit in enumerate(limits) if pokemon_id <= limit)
 
 
-def make_type_groups(pokemon_type: str, pokemon_ids: list[int]) -> list[list[int]]:
-    remaining = set(pokemon_ids)
+def make_groups(bucket: str, keys: list[tuple[int, int]]) -> list[list[tuple[int, int]]]:
+    remaining = set(keys)
     groups = []
     while remaining:
         seed = min(remaining)
         remaining.remove(seed)
-        seed_types = set(pokemon_by_id[seed]["pokemon_type_id"].split(","))
+        seed_types = set(pokemon_by_key[seed]["pokemon_type_id"].split(","))
+        seed_category = form_category(pokemon_by_key[seed])
 
-        def score(candidate: int):
-            candidate_types = set(pokemon_by_id[candidate]["pokemon_type_id"].split(","))
-            shared_secondary = len((seed_types & candidate_types) - {pokemon_type})
-            same_generation = generation(seed) == generation(candidate)
-            return (-shared_secondary, -same_generation, abs(seed - candidate), candidate)
+        def score(candidate: tuple[int, int]):
+            row = pokemon_by_key[candidate]
+            candidate_types = set(row["pokemon_type_id"].split(","))
+            shared_types = len(seed_types & candidate_types)
+            same_form = seed_category and seed_category == form_category(row)
+            same_generation = generation(seed[0]) == generation(candidate[0])
+            return (-bool(same_form), -shared_types, -same_generation, abs(seed[0] - candidate[0]), candidate)
 
         companions = sorted(remaining, key=score)[:4]
-        for pokemon_id in companions:
-            remaining.remove(pokemon_id)
+        for key in companions:
+            remaining.remove(key)
         groups.append([seed, *companions])
     return groups
 
 
 generated_lines = []
-for pokemon_type in sorted(buckets):
-    type_groups = make_type_groups(pokemon_type, buckets[pokemon_type])
-    base_title, base_subtitle, accent = TYPE_META[pokemon_type]
-    for index, members in enumerate(type_groups, start=1):
-        secondary_counts = Counter(
-            candidate_type
-            for pokemon_id in members
-            for candidate_type in pokemon_by_id[pokemon_id]["pokemon_type_id"].split(",")
-            if candidate_type != pokemon_type
-        )
-        shared_secondary = secondary_counts.most_common(1)[0][0] if secondary_counts and secondary_counts.most_common(1)[0][1] >= 3 else None
-        subtitle = (
-            f"{base_subtitle}, cộng hưởng cùng hệ {TYPE_LABELS[shared_secondary]}"
-            if shared_secondary else base_subtitle
-        )
-        members_text = ", ".join(
-            f"{{ id: {pokemon_id}, stage: {evolution_stage(pokemon_id)} }}"
-            for pokemon_id in members
-        )
+for bucket in sorted(assigned):
+    bucket_groups = make_groups(bucket, assigned[bucket])
+    bucket_kind, bucket_name = bucket.split(":", 1)
+    if bucket_kind == "form":
+        base_title, base_subtitle, accent = FORM_META[bucket_name]
+    else:
+        base_title, base_subtitle, accent = TYPE_META[bucket_name]
+
+    for index, members in enumerate(bucket_groups, start=1):
+        subtitle = base_subtitle
+        if bucket_kind == "type":
+            secondary_counts = Counter(
+                pokemon_type
+                for key in members
+                for pokemon_type in pokemon_by_key[key]["pokemon_type_id"].split(",")
+                if pokemon_type != bucket_name
+            )
+            if secondary_counts and secondary_counts.most_common(1)[0][1] >= 3:
+                subtitle += f", cộng hưởng cùng hệ {TYPE_LABELS[secondary_counts.most_common(1)[0][0]]}"
+
+        member_parts = []
+        for pokemon_id, sub_id in members:
+            sub_text = f", subId: {sub_id}" if sub_id else ""
+            member_parts.append(f"{{ id: {pokemon_id}{sub_text}, stage: {evolution_stage(pokemon_id)} }}")
+        members_text = ", ".join(member_parts)
+        safe_bucket = bucket.replace(":", "-")
         generated_lines.append(
-            f'  {{ id: "{pokemon_type}-squad-{index}", title: "{base_title} {roman(index)}", '
+            f'  {{ id: "{safe_bucket}-squad-{index}", title: "{base_title} {roman(index)}", '
             f'subtitle: "{subtitle}", accent: "{accent}", members: [{members_text}] }},'
         )
 
@@ -205,20 +230,23 @@ all_lines = fixed_lines + generated_lines
 replacement = list_match.group(1) + "\n".join(all_lines) + list_match.group(3)
 GROUP_FILE.write_text(source[:list_match.start()] + replacement + source[list_match.end():], encoding="utf-8")
 
-all_ids = [
-    int(value)
-    for line in all_lines
-    for value in re.findall(r"\{ id: (\d+), stage: [23] \}", line)
-]
-assert len(all_lines) == 96
-assert len(all_ids) == 480
-assert len(set(all_ids)) == 480
-assert set(all_ids) == eligible_ids
+all_keys = []
+for line in all_lines:
+    all_keys.extend(
+        (int(pokemon_id), int(sub_id or 0))
+        for pokemon_id, sub_id in re.findall(r"\{ id: (\d+)(?:, subId: (\d+))?, stage: [123] \}", line)
+    )
+
+assert len(all_lines) == 142
+assert len(all_keys) == 710
+assert len(set(all_keys)) == 710
+assert set(all_keys) == eligible_keys
 assert all(len(re.findall(r"\{ id:", line)) == 6 for line in all_lines)
 
 print(json.dumps({
     "groups": len(all_lines),
-    "members": len(all_ids),
-    "unique": len(set(all_ids)),
-    "excluded_by_stage_two_style_rule": sorted(excluded_by_rule),
+    "members": len(all_keys),
+    "base_evolved": sum(1 for key in all_keys if key[1] == 0),
+    "special_forms": sum(1 for key in all_keys if key[1] > 0),
+    "unique": len(set(all_keys)),
 }, ensure_ascii=False))
