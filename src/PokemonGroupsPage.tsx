@@ -121,12 +121,13 @@ export default function PokemonGroupsPage() {
         <div>
           <p className="eyebrow"><span /> BIỆT ĐỘI THEO CONCEPT</p>
           <h1>Năm cá thể.<br /><em>Một khí chất.</em></h1>
-          <p>Toàn bộ Pokémon đã tiến hóa cùng các dạng Mega, Gigamax, vùng miền và hình thái đặc biệt được chia thành đội 5 thành viên theo concept tương đồng.</p>
+          <p>Toàn bộ Pokémon đã tiến hóa cùng các dạng Mega, Gigamax, vùng miền và hình thái đặc biệt được chia thành đội 5 thành viên. Pokémon đa hệ có thể góp mặt trong nhiều concept phù hợp.</p>
         </div>
         <div className="pokemon-group-stats">
           <span><b>{audit.groupCount}</b> concept</span>
-          <span><b>{audit.memberCount}</b> Pokémon</span>
-          <span><b>226</b> form đặc biệt</span>
+          <span><b>{audit.uniqueMemberCount}</b> Pokémon/form</span>
+          <span><b>{audit.memberCount}</b> lượt xếp nhóm</span>
+          <span><b>{audit.specialFormCount}</b> form đặc biệt</span>
         </div>
       </section>
 
@@ -142,9 +143,9 @@ export default function PokemonGroupsPage() {
         </label>
         <div className="pokemon-group-audit" aria-label="Kết quả kiểm tra dữ liệu">
           <span>✓ Mỗi group đủ 5 Pokémon</span>
-          <span>✓ Không trùng Pokémon/form</span>
-          <span>✓ Bao phủ đủ {audit.memberCount} Pokémon đạt tiêu chí</span>
-          <span>✓ Bao gồm đủ 226 form đặc biệt</span>
+          <span>✓ Pokémon đa hệ xuất hiện ở nhiều concept phù hợp</span>
+          <span>✓ Bao phủ đủ {audit.uniqueMemberCount} Pokémon/form đạt tiêu chí</span>
+          <span>✓ Bao gồm đủ {audit.specialFormCount} form đặc biệt</span>
         </div>
 
         {loading ? <div className="empty">Đang tập hợp các biệt đội…</div> : groups.length === 0 ? (
