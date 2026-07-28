@@ -113,6 +113,8 @@ kbd { border: 1px solid var(--line); padding: 4px 7px; color: #aaa59c; backgroun
 .card-actions { position: absolute; z-index: 4; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 5px; }
 .card-actions button { width: 31px; height: 31px; border: 1px solid #d7d1c7; border-radius: 50%; background: #fffc; color: #777168; cursor: pointer; backdrop-filter: blur(6px); font-weight: 800; }
 .card-actions button:hover, .card-actions button.active { background: var(--ink); color: white; border-color: var(--ink); }
+.card-actions button.copy-image-action { border-color: #cf9f19; color: #8d6b0f; }
+.card-actions button.copy-image-action:hover { background: var(--yellow); border-color: var(--yellow); color: #111417; }
 .grass { background: #62a84f !important; }.poison { background: #95519b !important; }.fire { background: #e65d36 !important; }
 .water { background: #438cc6 !important; }.electric { background: #d9ac20 !important; }.bug { background: #8e9d2e !important; }
 .flying { background: #8297ca !important; }.rock { background: #a28e55 !important; }.ground { background: #bc8148 !important; }
