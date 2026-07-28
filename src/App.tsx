@@ -62,8 +62,10 @@ function idFromUrl(url: string) { return Number(url.match(/\/(\d+)\/?$/)?.[1] ??
 function pokemonImage(p: Pokemon) { return `${SOURCE}${p.file_name}`; }
 function pokemonImages(p: Pokemon) {
   const id = numberOf(p);
+  const officialImage = pokemonImage(p);
+  if (p.zukan_sub_id !== 0) return [officialImage];
   return [
-    pokemonImage(p),
+    officialImage,
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
   ];
