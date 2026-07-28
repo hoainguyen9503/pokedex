@@ -244,6 +244,28 @@ export default function Home() {
       else { await navigator.clipboard.writeText(data.url); setToast("Đã sao chép đường dẫn"); }
     } catch { /* user cancelled */ }
   };
+  const copyPokemonImage = async (pokemon: Pokemon) => {
+    const sources = pokemonImages(pokemon);
+    if (navigator.clipboard?.write && typeof ClipboardItem !== "undefined") {
+      for (const source of sources) {
+        try {
+          const response = await fetch(source, { mode: "cors" });
+          if (!response.ok) continue;
+          const blob = await response.blob();
+          if (blob.type !== "image/png") continue;
+          await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+          setToast(`Đã sao chép ảnh ${pokemon.pokemon_name}`);
+          return;
+        } catch { /* try the next image source */ }
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(sources[0]);
+      setToast("Không thể sao chép file ảnh · Đã sao chép đường dẫn ảnh");
+    } catch {
+      setToast("Trình duyệt không cho phép truy cập clipboard");
+    }
+  };
   const shareTeam = async () => {
     const url = `${window.location.origin}${window.location.pathname}?team=${team.join(",")}#/`;
     try {
@@ -369,7 +391,7 @@ export default function Home() {
                 const id = numberOf(p); const typeIds = p.pokemon_type_id.split(","); const typeNames = p.pokemon_type_name.split(",").map((x) => x.replace(/^hệ\s*/i, ""));
                 return <article className="card" key={`${p.zukan_id}-${p.zukan_sub_id}-${index}`}>
                   <button className="card-main" onClick={() => openPokemonFromList(p)}><span className="card-no">#{String(id).padStart(4, "0")}</span><span className={`image-wrap tint-${typeIds[0]}`}><ResilientImage loading="lazy" sources={pokemonImages(p)} alt={p.pokemon_name} /></span><span className="card-content"><strong>{p.pokemon_name}</strong>{p.pokemon_sub_name && <small>{p.pokemon_sub_name}</small>}<span className="badges">{typeIds.map((t, i) => <i className={t} key={t}>{typeNames[i]}</i>)}</span></span></button>
-                  <div className="card-actions"><button className={favorites.includes(id) ? "active" : ""} onClick={() => toggle(favorites, setFavorites, id)} title="Yêu thích">♥</button><button className={compare.includes(id) ? "active" : ""} onClick={() => toggle(compare, setCompare, id, 3)} title="So sánh">⇄</button><button className={team.includes(id) ? "active" : ""} onClick={() => toggle(team, setTeam, id, 6)} title="Thêm vào đội">＋</button></div>
+                  <div className="card-actions"><button className="copy-image-action" onClick={() => copyPokemonImage(p)} title={`Sao chép ảnh ${p.pokemon_name}`} aria-label={`Sao chép ảnh ${p.pokemon_name}`}>⧉</button><button className={favorites.includes(id) ? "active" : ""} onClick={() => toggle(favorites, setFavorites, id)} title="Yêu thích">♥</button><button className={compare.includes(id) ? "active" : ""} onClick={() => toggle(compare, setCompare, id, 3)} title="So sánh">⇄</button><button className={team.includes(id) ? "active" : ""} onClick={() => toggle(team, setTeam, id, 6)} title="Thêm vào đội">＋</button></div>
                 </article>;
               })}</div><Pagination page={page} pageSize={PAGE_SIZE} totalItems={filtered.length} onChange={changePage} /></>
             )}
