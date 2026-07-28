@@ -21,8 +21,10 @@ function normalize(value: string) {
 
 function imageSources(pokemon: Pokemon) {
   const id = Number(pokemon.zukan_id);
+  const officialImage = `${SOURCE}${pokemon.file_name}`;
+  if (pokemon.zukan_sub_id !== 0) return [officialImage];
   return [
-    `${SOURCE}${pokemon.file_name}`,
+    officialImage,
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
   ];
@@ -38,12 +40,12 @@ export default function PokemonGroupsPage() {
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/pokemon.json`)
       .then((response) => response.json())
-      .then((data) => setPokemons(data.pokemons.filter((pokemon: Pokemon) => pokemon.zukan_sub_id === 0)))
+      .then((data) => setPokemons(data.pokemons))
       .finally(() => setLoading(false));
   }, []);
 
-  const pokemonById = useMemo(
-    () => new Map(pokemons.map((pokemon) => [Number(pokemon.zukan_id), pokemon])),
+  const pokemonByKey = useMemo(
+    () => new Map(pokemons.map((pokemon) => [`${Number(pokemon.zukan_id)}-${pokemon.zukan_sub_id}`, pokemon])),
     [pokemons],
   );
   const audit = useMemo(() => inspectPokemonGroups(POKEMON_GROUPS), []);
@@ -52,9 +54,12 @@ export default function PokemonGroupsPage() {
     if (!term) return POKEMON_GROUPS;
     return POKEMON_GROUPS.filter((group) =>
       normalize(`${group.title} ${group.subtitle}`).includes(term)
-      || group.members.some((member) => normalize(pokemonById.get(member.id)?.pokemon_name ?? "").includes(term))
+      || group.members.some((member) => {
+        const pokemon = pokemonByKey.get(`${member.id}-${member.subId ?? 0}`);
+        return normalize(`${pokemon?.pokemon_name ?? ""} ${pokemon?.pokemon_sub_name ?? ""}`).includes(term);
+      })
     );
-  }, [query, pokemonById]);
+  }, [query, pokemonByKey]);
   const pageCount = Math.max(1, Math.ceil(groups.length / PAGE_SIZE));
   const pagedGroups = groups.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
@@ -62,13 +67,16 @@ export default function PokemonGroupsPage() {
     setPage(1);
   }, [query]);
   useEffect(() => {
+    if (page > pageCount) setPage(pageCount);
+  }, [page, pageCount]);
+  useEffect(() => {
     if (!toast) return;
     const timer = window.setTimeout(() => setToast(""), 2200);
     return () => window.clearTimeout(timer);
   }, [toast]);
 
-  const openPokemon = (id: number) => {
-    window.location.hash = `/pokemon/${String(id).padStart(4, "0")}`;
+  const openPokemon = (id: number, subId = 0) => {
+    window.location.hash = `/pokemon/${String(id).padStart(4, "0")}${subId ? `_${subId}` : ""}`;
   };
   const copyPokemonImage = async (pokemon: Pokemon) => {
     const sources = imageSources(pokemon);
@@ -113,12 +121,12 @@ export default function PokemonGroupsPage() {
         <div>
           <p className="eyebrow"><span /> BIỆT ĐỘI THEO CONCEPT</p>
           <h1>Năm cá thể.<br /><em>Một khí chất.</em></h1>
-          <p>Toàn bộ Pokémon đạt tiêu chí được chia thành đội 5 thành viên theo nguyên tố và phong cách chiến đấu, ưu tiên dạng tiến hóa mạnh và có ngoại hình nổi bật.</p>
+          <p>Toàn bộ Pokémon đã tiến hóa cùng các dạng Mega, Gigamax, vùng miền và hình thái đặc biệt được chia thành đội 5 thành viên theo concept tương đồng.</p>
         </div>
         <div className="pokemon-group-stats">
           <span><b>{audit.groupCount}</b> concept</span>
           <span><b>{audit.memberCount}</b> Pokémon</span>
-          <span><b>II–III</b> bậc tiến hóa</span>
+          <span><b>226</b> form đặc biệt</span>
         </div>
       </section>
 
@@ -134,9 +142,9 @@ export default function PokemonGroupsPage() {
         </label>
         <div className="pokemon-group-audit" aria-label="Kết quả kiểm tra dữ liệu">
           <span>✓ Mỗi group đủ 5 Pokémon</span>
-          <span>✓ Không trùng Pokémon</span>
+          <span>✓ Không trùng Pokémon/form</span>
           <span>✓ Bao phủ đủ {audit.memberCount} Pokémon đạt tiêu chí</span>
-          <span>✓ Chỉ dùng tiến hóa II–III</span>
+          <span>✓ Bao gồm đủ 226 form đặc biệt</span>
         </div>
 
         {loading ? <div className="empty">Đang tập hợp các biệt đội…</div> : groups.length === 0 ? (
@@ -148,22 +156,22 @@ export default function PokemonGroupsPage() {
               {pagedGroups.map((group, groupIndex) => (
                 <article className="pokemon-concept-group" key={group.id} style={{ "--group-accent": group.accent } as CSSProperties}>
                   <header>
-                    <div><small>CONCEPT {String(groupIndex + 1).padStart(2, "0")}</small><h3>{group.title}</h3><p>{group.subtitle}</p></div>
+                    <div><small>CONCEPT {String((page - 1) * PAGE_SIZE + groupIndex + 1).padStart(3, "0")}</small><h3>{group.title}</h3><p>{group.subtitle}</p></div>
                     <b>05</b>
                   </header>
                   <div>
                     {group.members.map((member) => {
-                      const pokemon = pokemonById.get(member.id);
+                      const pokemon = pokemonByKey.get(`${member.id}-${member.subId ?? 0}`);
                       return pokemon ? (
-                        <article className="pokemon-group-member" key={member.id}>
-                          <button className="pokemon-group-member-main" onClick={() => openPokemon(member.id)} aria-label={`Xem ${pokemon.pokemon_name}`}>
+                        <article className="pokemon-group-member" key={`${member.id}-${member.subId ?? 0}`}>
+                          <button className="pokemon-group-member-main" onClick={() => openPokemon(member.id, member.subId)} aria-label={`Xem ${pokemon.pokemon_name}`}>
                             <span className={`pokemon-group-image tint-${pokemon.pokemon_type_id.split(",")[0]}`}>
                               <ResilientImage loading="lazy" sources={imageSources(pokemon)} alt={pokemon.pokemon_name} />
                             </span>
                             <span className="pokemon-group-member-copy">
-                              <small>TIẾN HÓA {member.stage === 3 ? "III" : "II"}</small>
+                              <small>{member.subId ? "FORM ĐẶC BIỆT" : `TIẾN HÓA ${member.stage === 3 ? "III" : "II"}`}</small>
                               <strong>{pokemon.pokemon_name}</strong>
-                              <i>#{pokemon.zukan_id}</i>
+                              <i>#{pokemon.zukan_id}{pokemon.pokemon_sub_name ? ` · ${pokemon.pokemon_sub_name}` : ""}</i>
                             </span>
                           </button>
                           <button className="pokemon-group-copy" onClick={() => copyPokemonImage(pokemon)} title={`Sao chép ảnh ${pokemon.pokemon_name}`} aria-label={`Sao chép ảnh ${pokemon.pokemon_name}`}>⧉</button>
