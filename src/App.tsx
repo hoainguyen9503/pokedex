@@ -304,6 +304,7 @@ export default function Home() {
         <a className="brand" href="#" aria-label="Trang đầu Pokédex"><span className="brandball"><i /></span><span>POKÉDEX<span className="branddot">.</span></span></a>
         <nav>
           <a className="active" href="#collection">Bộ sưu tập</a>
+          <a href="#/pokemon-groups">Group Pokémon</a>
           <a href="#/lol">LMHT</a>
           <button onClick={() => setPanel("compare")}>So sánh <b>{compare.length || ""}</b></button>
           <button onClick={() => setPanel("team")}>Đội hình <b>{team.length || ""}</b></button>
