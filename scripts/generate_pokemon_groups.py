@@ -7,10 +7,6 @@ from collections import Counter, defaultdict
 from functools import lru_cache
 from pathlib import Path
 
-import numpy as np
-from scipy.optimize import Bounds, LinearConstraint, milp
-from scipy.sparse import lil_matrix
-
 ROOT = Path(__file__).resolve().parents[1]
 SPECIES_CSV = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/pokemon_species.csv")
 GROUP_FILE = ROOT / "src/pokemonGroups.ts"
@@ -97,72 +93,23 @@ if not list_match:
 
 existing_lines = [line for line in list_match.group(2).splitlines() if line.strip()]
 fixed_lines = existing_lines[:20]
-fixed_keys = {
-    (int(pokemon_id), int(sub_id or 0))
-    for line in fixed_lines
-    for pokemon_id, sub_id in re.findall(r"\{ id: (\d+)(?:, subId: (\d+))?, stage: [123] \}", line)
-}
 
 # Include every evolved base species and every alternate/special form.
 eligible_keys = {
     key for key in pokemon_by_key
     if key[1] > 0 or evolution_stage(key[0]) >= 2
 }
-remaining_keys = sorted(eligible_keys - fixed_keys)
 
-options = []
-options_by_pokemon = defaultdict(list)
-for key in remaining_keys:
-    row = pokemon_by_key[key]
-    category = form_category(row) if key[1] > 0 else None
-    candidates = []
-    if category:
-        candidates.append((f"form:{category}", 0))
-    for preference, pokemon_type in enumerate(row["pokemon_type_id"].split(","), start=1):
-        candidates.append((f"type:{pokemon_type}", preference))
-    for bucket, preference in candidates:
-        option_index = len(options)
-        options.append((key, bucket, preference))
-        options_by_pokemon[key].append(option_index)
-
-buckets_available = sorted({bucket for _, bucket, _ in options})
-variable_count = len(options) + len(buckets_available)
-constraint_count = len(remaining_keys) + len(buckets_available)
-matrix = lil_matrix((constraint_count, variable_count))
-target = np.zeros(constraint_count)
-
-for row_index, key in enumerate(remaining_keys):
-    for option_index in options_by_pokemon[key]:
-        matrix[row_index, option_index] = 1
-    target[row_index] = 1
-
-for bucket_index, bucket in enumerate(buckets_available):
-    row_index = len(remaining_keys) + bucket_index
-    for option_index, (_, option_bucket, _) in enumerate(options):
-        if option_bucket == bucket:
-            matrix[row_index, option_index] = 1
-    matrix[row_index, len(options) + bucket_index] = -5
-
-objective = np.zeros(variable_count)
-for option_index, (_, _, preference) in enumerate(options):
-    objective[option_index] = preference * 0.01
-
-lower = np.zeros(variable_count)
-upper = np.ones(variable_count)
-upper[len(options):] = len(remaining_keys) / 5
-result = milp(
-    objective,
-    integrality=np.ones(variable_count),
-    bounds=Bounds(lower, upper),
-    constraints=LinearConstraint(matrix.tocsr(), target, target),
-)
-if not result.success:
-    raise RuntimeError(result.message)
-
+# A Pokémon belongs to every type concept it actually has. Special forms also
+# belong to their own form concept, so cross-group repetition is intentional.
 assigned = defaultdict(list)
-for option_index, (key, bucket, _) in enumerate(options):
-    if result.x[option_index] > 0.5:
-        assigned[bucket].append(key)
+for key in sorted(eligible_keys):
+    row = pokemon_by_key[key]
+    for pokemon_type in row["pokemon_type_id"].split(","):
+        assigned[f"type:{pokemon_type}"].append(key)
+    category = form_category(row)
+    if category:
+        assigned[f"form:{category}"].append(key)
 
 
 def generation(pokemon_id: int) -> int:
@@ -171,6 +118,7 @@ def generation(pokemon_id: int) -> int:
 
 
 def make_groups(bucket: str, keys: list[tuple[int, int]]) -> list[list[tuple[int, int]]]:
+    pool = sorted(set(keys))
     remaining = set(keys)
     groups = []
     while remaining:
@@ -190,7 +138,15 @@ def make_groups(bucket: str, keys: list[tuple[int, int]]) -> list[list[tuple[int
         companions = sorted(remaining, key=score)[:4]
         for key in companions:
             remaining.remove(key)
-        groups.append([seed, *companions])
+        group = [seed, *companions]
+
+        # Bucket sizes are not always divisible by five. Reuse the strongest
+        # matching members from an earlier group to complete the final squad.
+        # Repetition across groups is allowed, never inside one group.
+        if len(group) < 5:
+            padding = sorted((key for key in pool if key not in group), key=score)[:5 - len(group)]
+            group.extend(padding)
+        groups.append(group)
     return groups
 
 
@@ -237,16 +193,33 @@ for line in all_lines:
         for pokemon_id, sub_id in re.findall(r"\{ id: (\d+)(?:, subId: (\d+))?, stage: [123] \}", line)
     )
 
-assert len(all_lines) == 142
-assert len(all_keys) == 710
-assert len(set(all_keys)) == 710
+assert len(fixed_lines) == 20
 assert set(all_keys) == eligible_keys
 assert all(len(re.findall(r"\{ id:", line)) == 6 for line in all_lines)
+assert all(
+    len(keys) == len(set(keys))
+    for line in all_lines
+    for keys in [[
+        (int(pokemon_id), int(sub_id or 0))
+        for pokemon_id, sub_id in re.findall(r"\{ id: (\d+)(?:, subId: (\d+))?, stage: [123] \}", line)
+    ]]
+)
+
+for bucket, expected_keys in assigned.items():
+    bucket_prefix = bucket.replace(":", "-") + "-squad-"
+    bucket_lines = [line for line in generated_lines if f'id: "{bucket_prefix}' in line]
+    bucket_keys = {
+        (int(pokemon_id), int(sub_id or 0))
+        for line in bucket_lines
+        for pokemon_id, sub_id in re.findall(r"\{ id: (\d+)(?:, subId: (\d+))?, stage: [123] \}", line)
+    }
+    assert set(expected_keys) <= bucket_keys
 
 print(json.dumps({
     "groups": len(all_lines),
-    "members": len(all_keys),
-    "base_evolved": sum(1 for key in all_keys if key[1] == 0),
-    "special_forms": sum(1 for key in all_keys if key[1] > 0),
+    "placements": len(all_keys),
+    "base_evolved": sum(1 for key in set(all_keys) if key[1] == 0),
+    "special_forms": sum(1 for key in set(all_keys) if key[1] > 0),
     "unique": len(set(all_keys)),
+    "repeated_placements": len(all_keys) - len(set(all_keys)),
 }, ensure_ascii=False))
