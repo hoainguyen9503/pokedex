@@ -33,6 +33,7 @@ export default function PokemonGroupsPage() {
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
+  const [toast, setToast] = useState("");
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/pokemon.json`)
@@ -60,9 +61,36 @@ export default function PokemonGroupsPage() {
   useEffect(() => {
     setPage(1);
   }, [query]);
+  useEffect(() => {
+    if (!toast) return;
+    const timer = window.setTimeout(() => setToast(""), 2200);
+    return () => window.clearTimeout(timer);
+  }, [toast]);
 
   const openPokemon = (id: number) => {
     window.location.hash = `/pokemon/${String(id).padStart(4, "0")}`;
+  };
+  const copyPokemonImage = async (pokemon: Pokemon) => {
+    const sources = imageSources(pokemon);
+    if (navigator.clipboard?.write && typeof ClipboardItem !== "undefined") {
+      for (const source of sources) {
+        try {
+          const response = await fetch(source, { mode: "cors" });
+          if (!response.ok) continue;
+          const blob = await response.blob();
+          if (blob.type !== "image/png") continue;
+          await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+          setToast(`Đã sao chép ảnh ${pokemon.pokemon_name}`);
+          return;
+        } catch { /* try the next source */ }
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(sources[0]);
+      setToast(`Đã sao chép đường dẫn ảnh ${pokemon.pokemon_name}`);
+    } catch {
+      setToast("Trình duyệt không cho phép truy cập clipboard");
+    }
   };
   const changePage = (nextPage: number) => {
     setPage(nextPage);
@@ -85,7 +113,7 @@ export default function PokemonGroupsPage() {
         <div>
           <p className="eyebrow"><span /> BIỆT ĐỘI THEO CONCEPT</p>
           <h1>Năm cá thể.<br /><em>Một khí chất.</em></h1>
-          <p>Mỗi đội gồm đúng 5 Pokémon đã tiến hóa, được tuyển chọn theo ngoại hình, nguyên tố và phong cách chiến đấu tương đồng.</p>
+          <p>Toàn bộ Pokémon đạt tiêu chí được chia thành đội 5 thành viên theo nguyên tố và phong cách chiến đấu, ưu tiên dạng tiến hóa mạnh và có ngoại hình nổi bật.</p>
         </div>
         <div className="pokemon-group-stats">
           <span><b>{audit.groupCount}</b> concept</span>
@@ -107,6 +135,7 @@ export default function PokemonGroupsPage() {
         <div className="pokemon-group-audit" aria-label="Kết quả kiểm tra dữ liệu">
           <span>✓ Mỗi group đủ 5 Pokémon</span>
           <span>✓ Không trùng Pokémon</span>
+          <span>✓ Bao phủ đủ {audit.memberCount} Pokémon đạt tiêu chí</span>
           <span>✓ Chỉ dùng tiến hóa II–III</span>
         </div>
 
@@ -126,16 +155,19 @@ export default function PokemonGroupsPage() {
                     {group.members.map((member) => {
                       const pokemon = pokemonById.get(member.id);
                       return pokemon ? (
-                        <button key={member.id} onClick={() => openPokemon(member.id)} aria-label={`Xem ${pokemon.pokemon_name}`}>
-                          <span className={`pokemon-group-image tint-${pokemon.pokemon_type_id.split(",")[0]}`}>
-                            <ResilientImage loading="lazy" sources={imageSources(pokemon)} alt={pokemon.pokemon_name} />
-                          </span>
-                          <span className="pokemon-group-member-copy">
-                            <small>TIẾN HÓA {member.stage === 3 ? "III" : "II"}</small>
-                            <strong>{pokemon.pokemon_name}</strong>
-                            <i>#{pokemon.zukan_id}</i>
-                          </span>
-                        </button>
+                        <article className="pokemon-group-member" key={member.id}>
+                          <button className="pokemon-group-member-main" onClick={() => openPokemon(member.id)} aria-label={`Xem ${pokemon.pokemon_name}`}>
+                            <span className={`pokemon-group-image tint-${pokemon.pokemon_type_id.split(",")[0]}`}>
+                              <ResilientImage loading="lazy" sources={imageSources(pokemon)} alt={pokemon.pokemon_name} />
+                            </span>
+                            <span className="pokemon-group-member-copy">
+                              <small>TIẾN HÓA {member.stage === 3 ? "III" : "II"}</small>
+                              <strong>{pokemon.pokemon_name}</strong>
+                              <i>#{pokemon.zukan_id}</i>
+                            </span>
+                          </button>
+                          <button className="pokemon-group-copy" onClick={() => copyPokemonImage(pokemon)} title={`Sao chép ảnh ${pokemon.pokemon_name}`} aria-label={`Sao chép ảnh ${pokemon.pokemon_name}`}>⧉</button>
+                        </article>
                       ) : null;
                     })}
                   </div>
@@ -148,6 +180,7 @@ export default function PokemonGroupsPage() {
       </section>
 
       <footer><div className="brand"><span className="brandball"><i /></span><span>POKÉDEX<span className="branddot">.</span></span></div><p>Biệt đội Pokémon theo concept dành cho người hâm mộ.</p><p>Pokémon và tên Pokémon là thương hiệu của Nintendo / Creatures Inc. / GAME FREAK inc.</p></footer>
+      {toast && <div className="toast">{toast}</div>}
     </main>
   );
 }
