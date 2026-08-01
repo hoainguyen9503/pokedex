@@ -1,0 +1,3234 @@
+{
+  "generatedAt": "2026-08-01T13:19:27.357Z",
+  "methodology": {
+    "threshold": "Hình dạng chính thức khoảng 10 mét trở lên, hoặc thực thể hành tinh/vũ trụ có kích thước biến đổi.",
+    "measurements": "Chính thức/canon được ưu tiên; ước tính và kích thước không cố định được ghi nhãn riêng.",
+    "scope": "Danh mục nghiên cứu tuyển chọn, không tuyên bố bao phủ mọi tác phẩm từng được xuất bản."
+  },
+  "giants": [
+    {
+      "id": "godzilla-1954",
+      "name": "Godzilla (1954)",
+      "franchise": "Godzilla",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Toho Showa",
+      "kind": "Kaiju",
+      "scale": "Colossal",
+      "heightMeters": 50,
+      "sizeLabel": "50 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Godzilla (1954 film)",
+      "sourceUrl": "https://godzilla.com/blogs/monsterpedia/godzilla",
+      "description": "Bản Godzilla nguyên thủy trỗi dậy từ nỗi ám ảnh hạt nhân của Nhật Bản.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla_(1954_film)"
+    },
+    {
+      "id": "godzilla-heisei",
+      "name": "Godzilla Heisei",
+      "franchise": "Godzilla",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Toho Heisei",
+      "kind": "Kaiju",
+      "scale": "Colossal",
+      "heightMeters": 100,
+      "sizeLabel": "100 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Godzilla vs. Destoroyah",
+      "sourceUrl": "https://godzilla.com/blogs/monsterpedia/godzilla",
+      "description": "Hình thái Godzilla thời Heisei đạt mốc một trăm mét ở giai đoạn cuối.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla_vs._Destoroyah"
+    },
+    {
+      "id": "godzilla-final-wars",
+      "name": "Godzilla Final Wars",
+      "franchise": "Godzilla",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Toho Millennium",
+      "kind": "Kaiju",
+      "scale": "Colossal",
+      "heightMeters": 100,
+      "sizeLabel": "100 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Godzilla: Final Wars",
+      "sourceUrl": "https://godzilla.com/blogs/monsterpedia/godzilla",
+      "description": "Godzilla chiến đấu liên tục với dàn kaiju trên toàn cầu.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla%3A_Final_Wars"
+    },
+    {
+      "id": "godzilla-monsterverse",
+      "name": "Godzilla MonsterVerse",
+      "franchise": "MonsterVerse",
+      "media": [
+        "Phim"
+      ],
+      "universe": "MonsterVerse",
+      "kind": "Titan",
+      "scale": "Titanic",
+      "heightMeters": 120,
+      "sizeLabel": "120 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Godzilla (Monsterverse)",
+      "sourceUrl": "https://www.legendary.com/film/godzilla-vs-kong/",
+      "description": "Alpha Titan hấp thụ bức xạ và duy trì trật tự của các Titan cổ đại.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla_(Monsterverse)"
+    },
+    {
+      "id": "godzilla-evolved",
+      "name": "Godzilla Evolved",
+      "franchise": "MonsterVerse",
+      "media": [
+        "Phim"
+      ],
+      "universe": "MonsterVerse",
+      "kind": "Titan",
+      "scale": "Titanic",
+      "heightMeters": 120,
+      "sizeLabel": "Khoảng 120 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Godzilla x Kong: The New Empire",
+      "sourceUrl": "https://www.legendary.com/film/godzilla-x-kong-the-new-empire/",
+      "description": "Hình thái tiến hóa giàu năng lượng với gai lưng màu hồng đặc trưng.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla_x_Kong%3A_The_New_Empire"
+    },
+    {
+      "id": "shin-godzilla",
+      "name": "Shin Godzilla Form IV",
+      "franchise": "Godzilla",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Shin Godzilla",
+      "kind": "Kaiju",
+      "scale": "Titanic",
+      "heightMeters": 118.5,
+      "sizeLabel": "118,5 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Shin Godzilla",
+      "sourceUrl": "https://godzilla.com/blogs/monsterpedia/godzilla",
+      "description": "Sinh vật đột biến thích nghi liên tục với môi trường và vũ khí hiện đại.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Shin_Godzilla"
+    },
+    {
+      "id": "godzilla-earth",
+      "name": "Godzilla Earth",
+      "franchise": "Godzilla",
+      "media": [
+        "Anime",
+        "Phim"
+      ],
+      "universe": "Godzilla Anime Trilogy",
+      "kind": "Kaiju",
+      "scale": "Supermassive",
+      "heightMeters": 300,
+      "sizeLabel": "300 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Godzilla: Planet of the Monsters",
+      "sourceUrl": "https://godzilla.com/blogs/monsterpedia/godzilla-earth",
+      "description": "Godzilla tiến hóa suốt hai mươi nghìn năm và thống trị Trái Đất.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla%3A_Planet_of_the_Monsters"
+    },
+    {
+      "id": "king-ghidorah-showa",
+      "name": "King Ghidorah Showa",
+      "franchise": "Godzilla",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Toho Showa",
+      "kind": "Rồng ngoài hành tinh",
+      "scale": "Titanic",
+      "heightMeters": 100,
+      "sizeLabel": "100 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "King Ghidorah",
+      "sourceUrl": "https://godzilla.com/blogs/monsterpedia/king-ghidorah",
+      "description": "Rồng ba đầu ngoài hành tinh và đối thủ kinh điển của Godzilla.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/d/d1/GT3HM_-_King_Ghidorah_on_the_rampage_%28cropped%29.jpg",
+        "http://godzilla.com/cdn/shop/articles/King-Ghidorah_thumbnail_large_296798c2-011f-4572-a706-9bab6e24de3d.jpg?v=1750189091",
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/King_Ghidorah"
+    },
+    {
+      "id": "king-ghidorah-monsterverse",
+      "name": "King Ghidorah MonsterVerse",
+      "franchise": "MonsterVerse",
+      "media": [
+        "Phim"
+      ],
+      "universe": "MonsterVerse",
+      "kind": "Titan ngoài hành tinh",
+      "scale": "Titanic",
+      "heightMeters": 158.8,
+      "sizeLabel": "158,8 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "King Ghidorah (Monsterverse)",
+      "sourceUrl": "https://www.legendary.com/film/godzilla-king-of-the-monsters/",
+      "description": "Titan ba đầu có thể tạo bão toàn cầu và điều khiển các Titan khác.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/King_Ghidorah_(Monsterverse)"
+    },
+    {
+      "id": "mechagodzilla-monsterverse",
+      "name": "Mechagodzilla MonsterVerse",
+      "franchise": "MonsterVerse",
+      "media": [
+        "Phim"
+      ],
+      "universe": "MonsterVerse",
+      "kind": "Mecha",
+      "scale": "Titanic",
+      "heightMeters": 122,
+      "sizeLabel": "Khoảng 122 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Mechagodzilla",
+      "sourceUrl": "https://www.legendary.com/film/godzilla-vs-kong/",
+      "description": "Vũ khí chống Titan cơ giới được vận hành bởi mạng thần kinh của Ghidorah.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Mechagodzilla"
+    },
+    {
+      "id": "spacegodzilla",
+      "name": "SpaceGodzilla",
+      "franchise": "Godzilla",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Toho Heisei",
+      "kind": "Kaiju vũ trụ",
+      "scale": "Titanic",
+      "heightMeters": 120,
+      "sizeLabel": "120 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Godzilla vs. SpaceGodzilla",
+      "sourceUrl": "https://godzilla.com/blogs/monsterpedia/spacegodzilla",
+      "description": "Bản thể vũ trụ điều khiển tinh thể và năng lượng hấp dẫn.",
+      "images": [
+        "http://godzilla.com/cdn/shop/articles/SpaceGodzilla_thumbnail_37b4e80d-55b0-4395-8423-7f1d05d3dda7.jpg?v=1748990486",
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla_vs._SpaceGodzilla"
+    },
+    {
+      "id": "destoroyah",
+      "name": "Destoroyah Perfect Form",
+      "franchise": "Godzilla",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Toho Heisei",
+      "kind": "Kaiju",
+      "scale": "Titanic",
+      "heightMeters": 120,
+      "sizeLabel": "120 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Godzilla vs. Destoroyah",
+      "sourceUrl": "https://godzilla.com/blogs/monsterpedia/destoroyah",
+      "description": "Sinh vật hợp thể tiến hóa từ vi sinh vật bị Oxygen Destroyer biến đổi.",
+      "images": [
+        "http://godzilla.com/cdn/shop/articles/Destoroyah_Thunmbnail_596d97d6-cf61-4b56-9ead-48d8b26e7802.jpg?v=1748989703",
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla_vs._Destoroyah"
+    },
+    {
+      "id": "biollante",
+      "name": "Biollante",
+      "franchise": "Godzilla",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Toho Heisei",
+      "kind": "Kaiju thực vật",
+      "scale": "Titanic",
+      "heightMeters": 120,
+      "sizeLabel": "120 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Godzilla vs. Biollante",
+      "sourceUrl": "https://godzilla.com/blogs/monsterpedia/biollante",
+      "description": "Hỗn hợp tế bào người, hoa hồng và Godzilla tạo thành thực vật khổng lồ.",
+      "images": [
+        "http://godzilla.com/cdn/shop/articles/Biollante_thumbnail_0ef29b6b-3198-4032-932e-19f2629ea57b.jpg?v=1748990526",
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla_vs._Biollante"
+    },
+    {
+      "id": "gigan-final-wars",
+      "name": "Gigan Final Wars",
+      "franchise": "Godzilla",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Toho Millennium",
+      "kind": "Cyborg kaiju",
+      "scale": "Titanic",
+      "heightMeters": 120,
+      "sizeLabel": "120 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Gigan",
+      "sourceUrl": "https://godzilla.com/blogs/monsterpedia/gigan",
+      "description": "Cyborg ngoài hành tinh được trang bị lưỡi cưa và móc chiến đấu.",
+      "images": [
+        "http://godzilla.com/cdn/shop/articles/Gigan_thumbnail_9d7f1517-eedf-4cd2-98de-70b7d173a280.jpg?v=1748990516",
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Gigan"
+    },
+    {
+      "id": "mothra-imago",
+      "name": "Mothra Imago",
+      "franchise": "Godzilla",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Toho",
+      "kind": "Thần thú",
+      "scale": "Colossal",
+      "heightMeters": 52,
+      "sizeLabel": "52 m · sải cánh 244 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Mothra",
+      "sourceUrl": "https://godzilla.com/blogs/monsterpedia/mothra",
+      "description": "Thần thú bảo hộ với sải cánh lớn và khả năng tái sinh theo vòng đời.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/9/9c/Mosura_trailer_-_Mothra_flying_%28cropped%29.png",
+        "http://godzilla.com/cdn/shop/articles/mothra_thumbnail_smalll_0cc54474-9167-49a7-b346-eaa1b402b716.jpg?v=1751417905",
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Mothra"
+    },
+    {
+      "id": "rodan-monsterverse",
+      "name": "Rodan MonsterVerse",
+      "franchise": "MonsterVerse",
+      "media": [
+        "Phim"
+      ],
+      "universe": "MonsterVerse",
+      "kind": "Titan bay",
+      "scale": "Colossal",
+      "heightMeters": 46.9,
+      "sizeLabel": "46,9 m · sải cánh 265 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Rodan (Monsterverse)",
+      "sourceUrl": "https://www.legendary.com/film/godzilla-king-of-the-monsters/",
+      "description": "Titan núi lửa bay ở tốc độ siêu thanh và tạo sóng xung kích.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Rodan_(Monsterverse)"
+    },
+    {
+      "id": "kong-monsterverse",
+      "name": "Kong MonsterVerse",
+      "franchise": "MonsterVerse",
+      "media": [
+        "Phim"
+      ],
+      "universe": "MonsterVerse",
+      "kind": "Titan linh trưởng",
+      "scale": "Titanic",
+      "heightMeters": 102.7,
+      "sizeLabel": "102,7 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "King Kong (Monsterverse)",
+      "sourceUrl": "https://www.legendary.com/film/godzilla-vs-kong/",
+      "description": "Người bảo hộ Skull Island và chiến binh Titan sử dụng vũ khí.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/King_Kong_(Monsterverse)"
+    },
+    {
+      "id": "shimo",
+      "name": "Shimo",
+      "franchise": "MonsterVerse",
+      "media": [
+        "Phim"
+      ],
+      "universe": "MonsterVerse",
+      "kind": "Titan băng",
+      "scale": "Titanic",
+      "heightMeters": 114,
+      "sizeLabel": "Khoảng 114 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Godzilla x Kong: The New Empire",
+      "sourceUrl": "https://www.legendary.com/film/godzilla-x-kong-the-new-empire/",
+      "description": "Titan nguyên thủy có hơi thở băng giá đủ sức tác động khí hậu toàn cầu.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla_x_Kong%3A_The_New_Empire"
+    },
+    {
+      "id": "skar-king",
+      "name": "Skar King",
+      "franchise": "MonsterVerse",
+      "media": [
+        "Phim"
+      ],
+      "universe": "MonsterVerse",
+      "kind": "Titan linh trưởng",
+      "scale": "Titanic",
+      "heightMeters": 97,
+      "sizeLabel": "Khoảng 97 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Godzilla x Kong: The New Empire",
+      "sourceUrl": "https://www.legendary.com/film/godzilla-x-kong-the-new-empire/",
+      "description": "Bạo chúa linh trưởng cai trị bộ tộc Titan trong Hollow Earth.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla_x_Kong%3A_The_New_Empire"
+    },
+    {
+      "id": "female-muto",
+      "name": "Female MUTO",
+      "franchise": "MonsterVerse",
+      "media": [
+        "Phim"
+      ],
+      "universe": "MonsterVerse",
+      "kind": "Titan ký sinh",
+      "scale": "Colossal",
+      "heightMeters": 91.4,
+      "sizeLabel": "91,4 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Godzilla (2014 film)",
+      "sourceUrl": "https://www.legendary.com/film/godzilla/",
+      "description": "Titan ký sinh có xung điện từ mạnh và thân hình đồ sộ.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla_(2014_film)"
+    },
+    {
+      "id": "muto-prime",
+      "name": "MUTO Prime",
+      "franchise": "MonsterVerse",
+      "media": [
+        "Comics"
+      ],
+      "universe": "MonsterVerse",
+      "kind": "Titan ký sinh",
+      "scale": "Colossal",
+      "heightMeters": 95,
+      "sizeLabel": "Khoảng 95 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Godzilla: Aftershock",
+      "sourceUrl": "https://www.legendary.com/comics/godzilla-aftershock/",
+      "description": "Cá thể đầu đàn săn Godzilla và sinh sản trong vật chủ Titan.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Godzilla%3A_Aftershock"
+    },
+    {
+      "id": "gamera-heisei",
+      "name": "Gamera Heisei",
+      "franchise": "Gamera",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Gamera Heisei",
+      "kind": "Kaiju hộ vệ",
+      "scale": "Colossal",
+      "heightMeters": 80,
+      "sizeLabel": "80 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Gamera: Guardian of the Universe",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gamera:_Guardian_of_the_Universe",
+      "description": "Rùa kaiju do nền văn minh cổ tạo ra để bảo vệ Trái Đất.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/en/2/29/Gamera_Theatrical_Poster.jpg",
+        "https://upload.wikimedia.org/wikipedia/en/2/29/Gamera_Theatrical_Poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Gamera%3A_Guardian_of_the_Universe"
+    },
+    {
+      "id": "iris-gamera",
+      "name": "Iris",
+      "franchise": "Gamera",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Gamera Heisei",
+      "kind": "Kaiju tiến hóa",
+      "scale": "Colossal",
+      "heightMeters": 99,
+      "sizeLabel": "99 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Gamera 3: Revenge of Iris",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gamera_3:_Revenge_of_Iris",
+      "description": "Sinh vật cộng sinh có khả năng hấp thụ năng lượng và ký ức.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/en/a/ac/Gamera-3-poster.jpg",
+        "https://upload.wikimedia.org/wikipedia/en/2/29/Gamera_Theatrical_Poster.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Gamera_3%3A_Revenge_of_Iris"
+    },
+    {
+      "id": "cloverfield-monster",
+      "name": "Cloverfield Monster",
+      "franchise": "Cloverfield",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Cloverfield",
+      "kind": "Sinh vật ngoài hành tinh",
+      "scale": "Colossal",
+      "heightMeters": 73,
+      "sizeLabel": "Khoảng 73 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Cloverfield",
+      "sourceUrl": "https://www.paramountpictures.com/movies/cloverfield",
+      "description": "Sinh vật non gây thảm họa tại Manhattan trong góc nhìn found footage.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Cloverfield"
+    },
+    {
+      "id": "dune-sandworm",
+      "name": "Shai-Hulud",
+      "franchise": "Dune",
+      "media": [
+        "Phim",
+        "Tiểu thuyết"
+      ],
+      "universe": "Dune",
+      "kind": "Sinh vật sa mạc",
+      "scale": "Supermassive",
+      "heightMeters": 400,
+      "sizeLabel": "Dài khoảng 400 m",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Sandworm (Dune)",
+      "sourceUrl": "https://www.dunemovie.com/",
+      "description": "Sâu cát khổng lồ của Arrakis, trung tâm sinh thái và tín ngưỡng Fremen.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Sandworm_(Dune)"
+    },
+    {
+      "id": "exogorth",
+      "name": "Exogorth",
+      "franchise": "Star Wars",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Star Wars",
+      "kind": "Sinh vật không gian",
+      "scale": "Supermassive",
+      "heightMeters": 900,
+      "sizeLabel": "Dài khoảng 900 m",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Exogorth",
+      "sourceUrl": "https://www.starwars.com/databank/exogorth",
+      "description": "Sên không gian cư trú trong tiểu hành tinh và nuốt cả tàu vũ trụ.",
+      "images": [
+        "https://lumiere-a.akamaihd.net/v1/images/krayt-dragon-main_80edeb91.jpeg?region=163%2C0%2C955%2C537"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Exogorth"
+    },
+    {
+      "id": "krayt-dragon",
+      "name": "Greater Krayt Dragon",
+      "franchise": "Star Wars",
+      "media": [
+        "Phim",
+        "Truyền hình"
+      ],
+      "universe": "Star Wars",
+      "kind": "Rồng sa mạc",
+      "scale": "Titanic",
+      "heightMeters": 100,
+      "sizeLabel": "Dài trên 100 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Krayt dragon",
+      "sourceUrl": "https://www.starwars.com/databank/krayt-dragon",
+      "description": "Kẻ săn mồi đỉnh cao dưới biển cát Tatooine.",
+      "images": [
+        "https://lumiere-a.akamaihd.net/v1/images/krayt-dragon-main_80edeb91.jpeg?region=163%2C0%2C955%2C537",
+        "https://lumiere-a.akamaihd.net/v1/images/krayt-dragon-main_80edeb91.jpeg?region=163%2C0%2C955%2C537"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Krayt_dragon"
+    },
+    {
+      "id": "smaug",
+      "name": "Smaug",
+      "franchise": "Middle-earth",
+      "media": [
+        "Phim",
+        "Tiểu thuyết"
+      ],
+      "universe": "Middle-earth",
+      "kind": "Rồng",
+      "scale": "Titanic",
+      "heightMeters": 130,
+      "sizeLabel": "Dài khoảng 130 m",
+      "measurement": "Ước tính điện ảnh",
+      "wikiTitle": "Smaug",
+      "sourceUrl": "https://www.warnerbros.com/movies/hobbit-desolation-smaug",
+      "description": "Rồng lửa chiếm giữ kho báu Erebor và hủy diệt Lake-town.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Smaug"
+    },
+    {
+      "id": "stay-puft",
+      "name": "Stay Puft Marshmallow Man",
+      "franchise": "Ghostbusters",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Ghostbusters",
+      "kind": "Thực thể siêu nhiên",
+      "scale": "Colossal",
+      "heightMeters": 34.3,
+      "sizeLabel": "Khoảng 34 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Stay Puft Marshmallow Man",
+      "sourceUrl": "https://www.sonypictures.com/movies/ghostbusters",
+      "description": "Hình dạng hủy diệt được Gozer chọn từ ký ức vô hại của con người.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Stay_Puft_Marshmallow_Man"
+    },
+    {
+      "id": "gipsy-danger",
+      "name": "Gipsy Danger",
+      "franchise": "Pacific Rim",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Pacific Rim",
+      "kind": "Jaeger",
+      "scale": "Colossal",
+      "heightMeters": 79.25,
+      "sizeLabel": "79,25 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Gipsy Danger",
+      "sourceUrl": "https://www.legendary.com/film/pacific-rim/",
+      "description": "Jaeger Mark-3 vận hành bởi hai phi công kết nối thần kinh.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Gipsy_Danger"
+    },
+    {
+      "id": "striker-eureka",
+      "name": "Striker Eureka",
+      "franchise": "Pacific Rim",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Pacific Rim",
+      "kind": "Jaeger",
+      "scale": "Colossal",
+      "heightMeters": 76.2,
+      "sizeLabel": "76,2 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Striker Eureka",
+      "sourceUrl": "https://www.legendary.com/film/pacific-rim/",
+      "description": "Jaeger Mark-5 nhanh và mạnh, được trang bị tên lửa Sting-Blade.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Striker_Eureka"
+    },
+    {
+      "id": "chernobyl-alpha",
+      "name": "Cherno Alpha",
+      "franchise": "Pacific Rim",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Pacific Rim",
+      "kind": "Jaeger",
+      "scale": "Colossal",
+      "heightMeters": 85.3,
+      "sizeLabel": "85,3 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Cherno Alpha",
+      "sourceUrl": "https://www.legendary.com/film/pacific-rim/",
+      "description": "Jaeger Nga hạng nặng với thiết kế lò phản ứng kiên cố.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Cherno_Alpha"
+    },
+    {
+      "id": "crimson-typhoon",
+      "name": "Crimson Typhoon",
+      "franchise": "Pacific Rim",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Pacific Rim",
+      "kind": "Jaeger",
+      "scale": "Colossal",
+      "heightMeters": 76.2,
+      "sizeLabel": "76,2 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Crimson Typhoon",
+      "sourceUrl": "https://www.legendary.com/film/pacific-rim/",
+      "description": "Jaeger ba tay được điều khiển bởi ba anh em nhà Wei.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Crimson_Typhoon"
+    },
+    {
+      "id": "slattern",
+      "name": "Slattern",
+      "franchise": "Pacific Rim",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Pacific Rim",
+      "kind": "Kaiju",
+      "scale": "Titanic",
+      "heightMeters": 181.7,
+      "sizeLabel": "181,7 m",
+      "measurement": "Ước tính chính thức",
+      "wikiTitle": "Slattern",
+      "sourceUrl": "https://www.legendary.com/film/pacific-rim/",
+      "description": "Kaiju Category V đầu tiên, bảo vệ Breach dưới đáy Thái Bình Dương.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Slattern"
+    },
+    {
+      "id": "mega-kaiju",
+      "name": "Mega-Kaiju",
+      "franchise": "Pacific Rim",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Pacific Rim",
+      "kind": "Kaiju hợp thể",
+      "scale": "Titanic",
+      "heightMeters": 128,
+      "sizeLabel": "Khoảng 128 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Pacific Rim Uprising",
+      "sourceUrl": "https://www.legendary.com/film/pacific-rim-uprising/",
+      "description": "Ba kaiju hợp nhất bằng công nghệ Ripper để tấn công Núi Phú Sĩ.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Pacific_Rim_Uprising"
+    },
+    {
+      "id": "knifehead",
+      "name": "Knifehead",
+      "franchise": "Pacific Rim",
+      "media": [
+        "Phim"
+      ],
+      "universe": "Pacific Rim",
+      "kind": "Kaiju",
+      "scale": "Colossal",
+      "heightMeters": 96,
+      "sizeLabel": "Khoảng 96 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Pacific Rim (film)",
+      "sourceUrl": "https://www.legendary.com/film/pacific-rim/",
+      "description": "Kaiju Category III với phần đầu như lưỡi dao khổng lồ.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Pacific_Rim_(film)"
+    },
+    {
+      "id": "colossal-titan",
+      "name": "Colossal Titan",
+      "franchise": "Attack on Titan",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Attack on Titan",
+      "kind": "Titan",
+      "scale": "Colossal",
+      "heightMeters": 60,
+      "sizeLabel": "60 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Colossal Titan",
+      "sourceUrl": "https://attackontitan.jp/",
+      "description": "Titan có thể biến đổi như vụ nổ và giải phóng hơi nóng.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/75/Reiner_Braun._Nein_zu_Kriegen_2023_02.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Colossal_Titan"
+    },
+    {
+      "id": "founding-titan-eren",
+      "name": "Eren Founding Titan",
+      "franchise": "Attack on Titan",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Attack on Titan",
+      "kind": "Titan thủy tổ",
+      "scale": "Supermassive",
+      "heightMeters": 350,
+      "sizeLabel": "Dài hàng trăm mét",
+      "measurement": "Ước tính từ hình ảnh",
+      "wikiTitle": "Eren Yeager",
+      "sourceUrl": "https://attackontitan.jp/",
+      "description": "Hình thái Thủy Tổ kéo dài như một bộ xương khổng lồ dẫn đầu Rumbling.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/75/Reiner_Braun._Nein_zu_Kriegen_2023_02.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Eren_Yeager"
+    },
+    {
+      "id": "rod-reiss-titan",
+      "name": "Rod Reiss Titan",
+      "franchise": "Attack on Titan",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Attack on Titan",
+      "kind": "Titan bất thường",
+      "scale": "Titanic",
+      "heightMeters": 120,
+      "sizeLabel": "120 m khi bò",
+      "measurement": "Chính thức",
+      "wikiTitle": "List of Attack on Titan characters",
+      "sourceUrl": "https://attackontitan.jp/",
+      "description": "Titan bất thường quá lớn để đứng thẳng và tỏa nhiệt dữ dội.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/75/Reiner_Braun._Nein_zu_Kriegen_2023_02.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters"
+    },
+    {
+      "id": "wall-titan",
+      "name": "Wall Titan",
+      "franchise": "Attack on Titan",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Attack on Titan",
+      "kind": "Titan",
+      "scale": "Colossal",
+      "heightMeters": 50,
+      "sizeLabel": "Khoảng 50 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "List of Attack on Titan characters",
+      "sourceUrl": "https://attackontitan.jp/",
+      "description": "Hàng nghìn Titan được phong ấn trong các bức tường và giải phóng khi Rumbling bắt đầu.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/75/Reiner_Braun._Nein_zu_Kriegen_2023_02.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters"
+    },
+    {
+      "id": "beast-titan",
+      "name": "Beast Titan Zeke",
+      "franchise": "Attack on Titan",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Attack on Titan",
+      "kind": "Titan",
+      "scale": "Giant",
+      "heightMeters": 17,
+      "sizeLabel": "17 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Zeke Yeager",
+      "sourceUrl": "https://attackontitan.jp/",
+      "description": "Titan hình linh trưởng với khả năng ném vật thể ở độ chính xác hủy diệt.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/75/Reiner_Braun._Nein_zu_Kriegen_2023_02.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Zeke_Yeager"
+    },
+    {
+      "id": "attack-titan",
+      "name": "Attack Titan Eren",
+      "franchise": "Attack on Titan",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Attack on Titan",
+      "kind": "Titan",
+      "scale": "Giant",
+      "heightMeters": 15,
+      "sizeLabel": "15 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Eren Yeager",
+      "sourceUrl": "https://attackontitan.jp/",
+      "description": "Titan chiến đấu cơ động mang ý chí truy cầu tự do qua các thế hệ.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/75/Reiner_Braun._Nein_zu_Kriegen_2023_02.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Eren_Yeager"
+    },
+    {
+      "id": "armored-titan",
+      "name": "Armored Titan",
+      "franchise": "Attack on Titan",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Attack on Titan",
+      "kind": "Titan",
+      "scale": "Giant",
+      "heightMeters": 15,
+      "sizeLabel": "15 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Reiner Braun",
+      "sourceUrl": "https://attackontitan.jp/",
+      "description": "Titan được bao phủ bởi lớp giáp cứng dùng để phá vỡ phòng tuyến.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/75/Reiner_Braun._Nein_zu_Kriegen_2023_02.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/7/75/Reiner_Braun._Nein_zu_Kriegen_2023_02.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Reiner_Braun"
+    },
+    {
+      "id": "female-titan",
+      "name": "Female Titan",
+      "franchise": "Attack on Titan",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Attack on Titan",
+      "kind": "Titan",
+      "scale": "Giant",
+      "heightMeters": 14,
+      "sizeLabel": "14 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Annie Leonhart",
+      "sourceUrl": "https://attackontitan.jp/",
+      "description": "Titan linh hoạt có khả năng hóa cứng và thu hút Pure Titan bằng tiếng hét.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/75/Reiner_Braun._Nein_zu_Kriegen_2023_02.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Annie_Leonhart"
+    },
+    {
+      "id": "war-hammer-titan",
+      "name": "War Hammer Titan",
+      "franchise": "Attack on Titan",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Attack on Titan",
+      "kind": "Titan",
+      "scale": "Giant",
+      "heightMeters": 15,
+      "sizeLabel": "15 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "War Hammer Titan",
+      "sourceUrl": "https://attackontitan.jp/",
+      "description": "Titan tạo vũ khí và công trình từ vật chất hóa cứng.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/75/Reiner_Braun._Nein_zu_Kriegen_2023_02.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/War_Hammer_Titan"
+    },
+    {
+      "id": "zunesha",
+      "name": "Zunesha",
+      "franchise": "One Piece",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "One Piece",
+      "kind": "Voi cổ đại",
+      "scale": "Supermassive",
+      "heightMeters": 35000,
+      "sizeLabel": "Khoảng 35 km",
+      "measurement": "Canon được công bố",
+      "wikiTitle": "Zunesha",
+      "sourceUrl": "https://one-piece.com/",
+      "description": "Voi cổ đại mang cả quốc gia Zou trên lưng và bước đi dưới đáy biển.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/b/b0/Genkai_Sea_from_Futamigaura_Beach.JPG"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Zunesha"
+    },
+    {
+      "id": "sanjuan-wolf",
+      "name": "Sanjuan Wolf",
+      "franchise": "One Piece",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "One Piece",
+      "kind": "Người khổng lồ",
+      "scale": "Titanic",
+      "heightMeters": 180,
+      "sizeLabel": "Ít nhất 180 m",
+      "measurement": "Canon",
+      "wikiTitle": "Sanjuan Wolf",
+      "sourceUrl": "https://one-piece.com/",
+      "description": "Thành viên khổng lồ của băng Râu Đen có thể tăng kích thước nhờ Trái Ác Quỷ.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/b/b0/Genkai_Sea_from_Futamigaura_Beach.JPG"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Sanjuan_Wolf"
+    },
+    {
+      "id": "oars",
+      "name": "Oars",
+      "franchise": "One Piece",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "One Piece",
+      "kind": "Ancient Giant",
+      "scale": "Colossal",
+      "heightMeters": 67,
+      "sizeLabel": "Khoảng 67 m",
+      "measurement": "Canon",
+      "wikiTitle": "Oars (One Piece)",
+      "sourceUrl": "https://one-piece.com/",
+      "description": "Ancient Giant được Gecko Moria hồi sinh để làm vũ khí tại Thriller Bark.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/b/b0/Genkai_Sea_from_Futamigaura_Beach.JPG"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Oars_(One_Piece)"
+    },
+    {
+      "id": "little-oars-jr",
+      "name": "Little Oars Jr.",
+      "franchise": "One Piece",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "One Piece",
+      "kind": "Ancient Giant",
+      "scale": "Colossal",
+      "heightMeters": 60,
+      "sizeLabel": "Khoảng 60 m",
+      "measurement": "Canon",
+      "wikiTitle": "Little Oars Jr.",
+      "sourceUrl": "https://one-piece.com/",
+      "description": "Hậu duệ của Oars và đồng minh trung thành của Ace.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/b/b0/Genkai_Sea_from_Futamigaura_Beach.JPG"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Little_Oars_Jr."
+    },
+    {
+      "id": "wadatsumi",
+      "name": "Wadatsumi",
+      "franchise": "One Piece",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "One Piece",
+      "kind": "Người cá khổng lồ",
+      "scale": "Colossal",
+      "heightMeters": 80,
+      "sizeLabel": "Khoảng 80 m",
+      "measurement": "Canon",
+      "wikiTitle": "Wadatsumi",
+      "sourceUrl": "https://one-piece.com/",
+      "description": "Người cá cá nóc khổng lồ có thể phồng cơ thể lớn hơn nữa.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/b/b0/Genkai_Sea_from_Futamigaura_Beach.JPG",
+        "https://upload.wikimedia.org/wikipedia/commons/b/b0/Genkai_Sea_from_Futamigaura_Beach.JPG"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Wadatsumi"
+    },
+    {
+      "id": "pica-stone",
+      "name": "Pica Stone Assimilation",
+      "franchise": "One Piece",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "One Piece",
+      "kind": "Người đá",
+      "scale": "Supermassive",
+      "heightMeters": 1000,
+      "sizeLabel": "Cao hàng trăm mét",
+      "measurement": "Ước tính",
+      "wikiTitle": "Pica (One Piece)",
+      "sourceUrl": "https://one-piece.com/",
+      "description": "Pica đồng hóa với khối đá Dressrosa để tạo cơ thể khổng lồ.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/b/b0/Genkai_Sea_from_Futamigaura_Beach.JPG"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Pica_(One_Piece)"
+    },
+    {
+      "id": "kurama",
+      "name": "Kurama",
+      "franchise": "Naruto",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Naruto",
+      "kind": "Vĩ thú",
+      "scale": "Titanic",
+      "heightMeters": 100,
+      "sizeLabel": "Khoảng 100 m",
+      "measurement": "Ước tính hình ảnh",
+      "wikiTitle": "Kurama (Naruto)",
+      "sourceUrl": "https://naruto-official.com/",
+      "description": "Cửu Vĩ sở hữu lượng chakra khổng lồ và liên kết với Naruto.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Kurama_(Naruto)"
+    },
+    {
+      "id": "ten-tails",
+      "name": "Ten-Tails",
+      "franchise": "Naruto",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Naruto",
+      "kind": "Thần thú",
+      "scale": "Supermassive",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi, hàng trăm mét",
+      "measurement": "Không có số canon",
+      "wikiTitle": "Ten-Tails",
+      "sourceUrl": "https://naruto-official.com/",
+      "description": "Thể nguyên thủy của chakra và nguồn gốc của chín Vĩ thú.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Ten-Tails"
+    },
+    {
+      "id": "gedo-statue",
+      "name": "Demonic Statue of the Outer Path",
+      "franchise": "Naruto",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Naruto",
+      "kind": "Tượng thần",
+      "scale": "Titanic",
+      "heightMeters": 100,
+      "sizeLabel": "Khoảng 100 m",
+      "measurement": "Ước tính hình ảnh",
+      "wikiTitle": "Demonic Statue of the Outer Path",
+      "sourceUrl": "https://naruto-official.com/",
+      "description": "Vỏ rỗng của Thập Vĩ được dùng để phong ấn các Vĩ thú.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Demonic_Statue_of_the_Outer_Path"
+    },
+    {
+      "id": "perfect-susanoo",
+      "name": "Perfect Susanoo",
+      "franchise": "Naruto",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Naruto",
+      "kind": "Avatar chakra",
+      "scale": "Titanic",
+      "heightMeters": 100,
+      "sizeLabel": "Khoảng 100 m",
+      "measurement": "Không có số canon",
+      "wikiTitle": "Susanoo (Naruto)",
+      "sourceUrl": "https://naruto-official.com/",
+      "description": "Chiến thần chakra hoàn chỉnh có thể chém núi và bao bọc người sử dụng.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Susanoo_(Naruto)"
+    },
+    {
+      "id": "gamabunta",
+      "name": "Gamabunta",
+      "franchise": "Naruto",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Naruto",
+      "kind": "Linh thú triệu hồi",
+      "scale": "Giant",
+      "heightMeters": 17,
+      "sizeLabel": "Khoảng 17 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Gamabunta",
+      "sourceUrl": "https://naruto-official.com/",
+      "description": "Thủ lĩnh cóc Núi Myōboku chiến đấu bằng kiếm và nhẫn thuật dầu.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Gamabunta"
+    },
+    {
+      "id": "great-ape-vegeta",
+      "name": "Great Ape Vegeta",
+      "franchise": "Dragon Ball",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Dragon Ball",
+      "kind": "Saiyan khổng lồ",
+      "scale": "Giant",
+      "heightMeters": 20,
+      "sizeLabel": "Khoảng 20 m",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Great Ape",
+      "sourceUrl": "https://en.dragon-ball-official.com/",
+      "description": "Hình thái Ōzaru nhân sức mạnh Saiyan lên gấp mười lần.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/8/84/Distribution_of_the_Great_Apes.png",
+        "https://upload.wikimedia.org/wikipedia/commons/8/84/Distribution_of_the_Great_Apes.png"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Great_Ape"
+    },
+    {
+      "id": "cell-max",
+      "name": "Cell Max",
+      "franchise": "Dragon Ball Super",
+      "media": [
+        "Anime",
+        "Phim",
+        "Manga"
+      ],
+      "universe": "Dragon Ball",
+      "kind": "Sinh vật nhân tạo",
+      "scale": "Titanic",
+      "heightMeters": 100,
+      "sizeLabel": "Khoảng 100 m",
+      "measurement": "Không có số canon",
+      "wikiTitle": "Cell Max",
+      "sourceUrl": "https://en.dragon-ball-official.com/",
+      "description": "Vũ khí sinh học khổng lồ chưa hoàn thiện của Red Ribbon Army.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Cell_Max"
+    },
+    {
+      "id": "hirudegarn",
+      "name": "Hirudegarn",
+      "franchise": "Dragon Ball",
+      "media": [
+        "Anime",
+        "Phim"
+      ],
+      "universe": "Dragon Ball",
+      "kind": "Quái vật",
+      "scale": "Colossal",
+      "heightMeters": 80,
+      "sizeLabel": "Khoảng 80 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Dragon Ball Z: Wrath of the Dragon",
+      "sourceUrl": "https://en.dragon-ball-official.com/",
+      "description": "Quái vật ma quỷ có thể tách thân và chuyển sang trạng thái vô hình.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/8/84/Distribution_of_the_Great_Apes.png"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z%3A_Wrath_of_the_Dragon"
+    },
+    {
+      "id": "anilaza",
+      "name": "Anilaza",
+      "franchise": "Dragon Ball Super",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Dragon Ball",
+      "kind": "Chiến binh hợp thể",
+      "scale": "Colossal",
+      "heightMeters": 80,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Không có số canon",
+      "wikiTitle": "Tournament of Power",
+      "sourceUrl": "https://en.dragon-ball-official.com/",
+      "description": "Hợp thể khổng lồ của bốn chiến binh Vũ trụ 3 trong Tournament of Power.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Tournament_of_Power"
+    },
+    {
+      "id": "super-shenron",
+      "name": "Super Shenron",
+      "franchise": "Dragon Ball Super",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Dragon Ball Multiverse",
+      "kind": "Thần long",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Lớn hơn thiên hà",
+      "measurement": "Mô tả canon",
+      "wikiTitle": "Super Dragon Ball",
+      "sourceUrl": "https://en.dragon-ball-official.com/",
+      "description": "Thần long vàng bao trùm các thiên hà khi được triệu hồi bằng Super Dragon Balls.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Super_Dragon_Ball"
+    },
+    {
+      "id": "eva-unit-01",
+      "name": "Evangelion Unit-01",
+      "franchise": "Neon Genesis Evangelion",
+      "media": [
+        "Anime",
+        "Manga",
+        "Phim"
+      ],
+      "universe": "Evangelion",
+      "kind": "Bio-mecha",
+      "scale": "Colossal",
+      "heightMeters": 80,
+      "sizeLabel": "Khoảng 40–200 m tùy cảnh",
+      "measurement": "Quy mô không nhất quán",
+      "wikiTitle": "Evangelion Unit-01",
+      "sourceUrl": "https://www.evangelion.jp/",
+      "description": "Đơn vị thử nghiệm chứa linh hồn và có khả năng thức tỉnh vượt giới hạn.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Evangelion_Unit-01"
+    },
+    {
+      "id": "eva-unit-02",
+      "name": "Evangelion Unit-02",
+      "franchise": "Neon Genesis Evangelion",
+      "media": [
+        "Anime",
+        "Manga",
+        "Phim"
+      ],
+      "universe": "Evangelion",
+      "kind": "Bio-mecha",
+      "scale": "Colossal",
+      "heightMeters": 80,
+      "sizeLabel": "Khoảng 40–200 m tùy cảnh",
+      "measurement": "Quy mô không nhất quán",
+      "wikiTitle": "Evangelion Unit-02",
+      "sourceUrl": "https://www.evangelion.jp/",
+      "description": "Evangelion sản xuất hoàn chỉnh đầu tiên với màu đỏ đặc trưng.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Evangelion_Unit-02"
+    },
+    {
+      "id": "ramiel",
+      "name": "Ramiel",
+      "franchise": "Neon Genesis Evangelion",
+      "media": [
+        "Anime",
+        "Manga",
+        "Phim"
+      ],
+      "universe": "Evangelion",
+      "kind": "Angel",
+      "scale": "Colossal",
+      "heightMeters": 80,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Không có số cố định",
+      "wikiTitle": "Ramiel",
+      "sourceUrl": "https://www.evangelion.jp/",
+      "description": "Angel hình bát diện sử dụng pháo năng lượng và tái cấu trúc hình học.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Ramiel"
+    },
+    {
+      "id": "sahaquiel",
+      "name": "Sahaquiel",
+      "franchise": "Neon Genesis Evangelion",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Evangelion",
+      "kind": "Angel",
+      "scale": "Supermassive",
+      "heightMeters": null,
+      "sizeLabel": "Đường kính hàng kilomet",
+      "measurement": "Ước tính hình ảnh",
+      "wikiTitle": "Sahaquiel",
+      "sourceUrl": "https://www.evangelion.jp/",
+      "description": "Angel tấn công từ quỹ đạo bằng chính khối lượng cơ thể.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Sahaquiel"
+    },
+    {
+      "id": "gurren-lagann-tt",
+      "name": "Tengen Toppa Gurren Lagann",
+      "franchise": "Gurren Lagann",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Gurren Lagann Multiverse",
+      "kind": "Mecha ý chí",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Quy mô thiên hà",
+      "measurement": "Biểu tượng siêu không gian",
+      "wikiTitle": "Tengen Toppa Gurren Lagann",
+      "sourceUrl": "https://www.gurren-lagann.net/",
+      "description": "Mecha sinh từ Spiral Power chiến đấu trên thang đo thiên hà.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Tengen_Toppa_Gurren_Lagann"
+    },
+    {
+      "id": "super-ttgl",
+      "name": "Super Tengen Toppa Gurren Lagann",
+      "franchise": "Gurren Lagann",
+      "media": [
+        "Anime",
+        "Phim"
+      ],
+      "universe": "Gurren Lagann Multiverse",
+      "kind": "Mecha ý chí",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Vượt quy mô vũ trụ quan sát được",
+      "measurement": "Biểu tượng siêu không gian",
+      "wikiTitle": "Gurren Lagann the Movie: The Lights in the Sky are Stars",
+      "sourceUrl": "https://www.gurren-lagann.net/",
+      "description": "Hình thái tối thượng được cấu thành hoàn toàn từ Spiral Power.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Gurren_Lagann_the_Movie%3A_The_Lights_in_the_Sky_are_Stars"
+    },
+    {
+      "id": "gigantomachia",
+      "name": "Gigantomachia",
+      "franchise": "My Hero Academia",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "My Hero Academia",
+      "kind": "Người khổng lồ",
+      "scale": "Giant",
+      "heightMeters": 25,
+      "sizeLabel": "Khoảng 25 m",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Gigantomachia",
+      "sourceUrl": "https://heroaca.com/",
+      "description": "Cận vệ khổng lồ của All For One có sức bền và nhiều Quirk.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/e/e1/Poseidon_Polybotes_Cdm_Paris_573.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/e/e1/Poseidon_Polybotes_Cdm_Paris_573.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Gigantomachia"
+    },
+    {
+      "id": "mt-lady",
+      "name": "Mt. Lady",
+      "franchise": "My Hero Academia",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "My Hero Academia",
+      "kind": "Anh hùng biến hình",
+      "scale": "Giant",
+      "heightMeters": 20.62,
+      "sizeLabel": "20,62 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Mt. Lady",
+      "sourceUrl": "https://heroaca.com/",
+      "description": "Pro Hero có Quirk Gigantification cho phép đạt kích thước cố định.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/e/e1/Poseidon_Polybotes_Cdm_Paris_573.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Mt._Lady"
+    },
+    {
+      "id": "gerard-valkyrie",
+      "name": "Gerard Valkyrie Giant Form",
+      "franchise": "Bleach",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Bleach",
+      "kind": "Quincy thần thánh",
+      "scale": "Titanic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước tăng liên tục",
+      "measurement": "Không có số canon",
+      "wikiTitle": "Gerard Valkyrie",
+      "sourceUrl": "https://bleach-anime.com/",
+      "description": "The Miracle biến thương tổn thành sức mạnh và kích thước ngày càng lớn.",
+      "images": [
+        "https://bleach-anime.com/ogp5.png",
+        "https://bleach-anime.com/ogp5.png"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Gerard_Valkyrie"
+    },
+    {
+      "id": "kokujo-tengen",
+      "name": "Kokujō Tengen Myō'ō",
+      "franchise": "Bleach",
+      "media": [
+        "Anime",
+        "Manga"
+      ],
+      "universe": "Bleach",
+      "kind": "Bankai khổng lồ",
+      "scale": "Colossal",
+      "heightMeters": 100,
+      "sizeLabel": "Khoảng 100 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Sajin Komamura",
+      "sourceUrl": "https://bleach-anime.com/",
+      "description": "Chiến binh giáp khổng lồ phản chiếu chuyển động của Komamura.",
+      "images": [
+        "https://bleach-anime.com/ogp5.png",
+        "https://bleach-anime.com/ogp5.png"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Sajin_Komamura"
+    },
+    {
+      "id": "eternamax-eternatus",
+      "name": "Eternamax Eternatus",
+      "franchise": "Pokémon",
+      "media": [
+        "Anime",
+        "Game"
+      ],
+      "universe": "Pokémon",
+      "kind": "Pokémon ngoài hành tinh",
+      "scale": "Titanic",
+      "heightMeters": 100,
+      "sizeLabel": "100 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Eternatus",
+      "sourceUrl": "https://www.pokemon.com/us/pokedex/eternatus",
+      "description": "Hình thái Eternamax hấp thụ năng lượng Galar và gây ra Darkest Day.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Eternatus"
+    },
+    {
+      "id": "night-walker",
+      "name": "Night-Walker",
+      "franchise": "Princess Mononoke",
+      "media": [
+        "Anime",
+        "Phim"
+      ],
+      "universe": "Studio Ghibli",
+      "kind": "Thần rừng",
+      "scale": "Titanic",
+      "heightMeters": null,
+      "sizeLabel": "Cao vượt tán rừng",
+      "measurement": "Không có số canon",
+      "wikiTitle": "Forest Spirit (Princess Mononoke)",
+      "sourceUrl": "https://www.ghibli.jp/works/mononoke/",
+      "description": "Hình thái ban đêm khổng lồ của Thần Rừng kết nối sự sống và cái chết.",
+      "images": [
+        "https://www.ghibli.jp/images/mononoke.jpg",
+        "https://www.ghibli.jp/images/mononoke.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Forest_Spirit_(Princess_Mononoke)"
+    },
+    {
+      "id": "god-warrior",
+      "name": "God Warrior",
+      "franchise": "Nausicaä",
+      "media": [
+        "Anime",
+        "Manga",
+        "Phim"
+      ],
+      "universe": "Nausicaä",
+      "kind": "Vũ khí sinh học",
+      "scale": "Titanic",
+      "heightMeters": null,
+      "sizeLabel": "Cao hàng trăm mét",
+      "measurement": "Không có số canon",
+      "wikiTitle": "Giant God Warrior Appears in Tokyo",
+      "sourceUrl": "https://www.ghibli.jp/works/nausicaa/",
+      "description": "Vũ khí sinh học cổ đại từng thiêu rụi nền văn minh trong Seven Days of Fire.",
+      "images": [
+        "https://www.ghibli.jp/images/nausicaa.jpg",
+        "https://www.ghibli.jp/images/nausicaa.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Giant_God_Warrior_Appears_in_Tokyo"
+    },
+    {
+      "id": "iron-giant",
+      "name": "The Iron Giant",
+      "franchise": "The Iron Giant",
+      "media": [
+        "Hoạt hình",
+        "Phim"
+      ],
+      "universe": "Warner Animation",
+      "kind": "Robot ngoài hành tinh",
+      "scale": "Giant",
+      "heightMeters": 15.24,
+      "sizeLabel": "15,24 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "The Iron Giant (character)",
+      "sourceUrl": "https://www.warnerbros.com/movies/iron-giant",
+      "description": "Robot chiến tranh ngoài hành tinh lựa chọn trở thành người hùng thay vì vũ khí.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/The_Iron_Giant_(character)"
+    },
+    {
+      "id": "way-big",
+      "name": "Way Big",
+      "franchise": "Ben 10",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Ben 10",
+      "kind": "To'kustar",
+      "scale": "Giant",
+      "heightMeters": 30,
+      "sizeLabel": "Gần 30 m",
+      "measurement": "Chính thức theo bible",
+      "wikiTitle": "Way Big",
+      "sourceUrl": "https://www.cartoonnetwork.com/",
+      "description": "Biến hình To'kustar sở hữu sức mạnh và tia cosmic ray.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Way_Big"
+    },
+    {
+      "id": "ultimate-way-big",
+      "name": "Ultimate Way Big",
+      "franchise": "Ben 10",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Ben 10",
+      "kind": "To'kustar tiến hóa",
+      "scale": "Colossal",
+      "heightMeters": 90,
+      "sizeLabel": "Khoảng 90 m",
+      "measurement": "Ước tính hình ảnh",
+      "wikiTitle": "Way Big",
+      "sourceUrl": "https://www.cartoonnetwork.com/",
+      "description": "Phiên bản tiến hóa có kích thước lớn hơn và giáp năng lượng.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Way_Big"
+    },
+    {
+      "id": "white-diamond",
+      "name": "White Diamond",
+      "franchise": "Steven Universe",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Steven Universe",
+      "kind": "Gem Diamond",
+      "scale": "Colossal",
+      "heightMeters": 82,
+      "sizeLabel": "Khoảng 82 m",
+      "measurement": "Ước tính từ model sheet",
+      "wikiTitle": "White Diamond",
+      "sourceUrl": "https://www.cartoonnetwork.com/",
+      "description": "Diamond tối cao với khả năng điều khiển tâm trí các Gem khác.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/White_Diamond"
+    },
+    {
+      "id": "yellow-diamond",
+      "name": "Yellow Diamond",
+      "franchise": "Steven Universe",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Steven Universe",
+      "kind": "Gem Diamond",
+      "scale": "Giant",
+      "heightMeters": 25,
+      "sizeLabel": "Khoảng 25 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Yellow Diamond",
+      "sourceUrl": "https://www.cartoonnetwork.com/",
+      "description": "Diamond chỉ huy quân sự sử dụng năng lượng làm mất ổn định hình thể Gem.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Yellow_Diamond"
+    },
+    {
+      "id": "blue-diamond",
+      "name": "Blue Diamond",
+      "franchise": "Steven Universe",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Steven Universe",
+      "kind": "Gem Diamond",
+      "scale": "Giant",
+      "heightMeters": 25,
+      "sizeLabel": "Khoảng 25 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Blue Diamond",
+      "sourceUrl": "https://www.cartoonnetwork.com/",
+      "description": "Diamond có trường cảm xúc khiến sinh vật xung quanh chìm trong đau buồn.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Blue_Diamond"
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "franchise": "Steven Universe",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Steven Universe",
+      "kind": "Gem Fusion",
+      "scale": "Giant",
+      "heightMeters": 16,
+      "sizeLabel": "Khoảng 16 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Obsidian (Steven Universe)",
+      "sourceUrl": "https://www.cartoonnetwork.com/",
+      "description": "Fusion khổng lồ của Crystal Gems với thanh kiếm dung nham.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Obsidian_(Steven_Universe)"
+    },
+    {
+      "id": "cluster",
+      "name": "The Cluster",
+      "franchise": "Steven Universe",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Steven Universe",
+      "kind": "Gem Fusion",
+      "scale": "Planetary",
+      "heightMeters": null,
+      "sizeLabel": "Lõi hành tinh",
+      "measurement": "Canon",
+      "wikiTitle": "The Cluster (Steven Universe)",
+      "sourceUrl": "https://www.cartoonnetwork.com/",
+      "description": "Hàng triệu mảnh Gem cưỡng ép hợp thể bên trong Trái Đất.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/The_Cluster_(Steven_Universe)"
+    },
+    {
+      "id": "golb",
+      "name": "GOLB",
+      "franchise": "Adventure Time",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Adventure Time",
+      "kind": "Thực thể hỗn mang",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Không gian ngoài vũ trụ",
+      "wikiTitle": "GOLB",
+      "sourceUrl": "https://www.cartoonnetwork.com/",
+      "description": "Hiện thân của hỗn loạn có thể làm biến dạng vật chất và sinh vật.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/GOLB"
+    },
+    {
+      "id": "orgalorg",
+      "name": "Orgalorg",
+      "franchise": "Adventure Time",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Adventure Time",
+      "kind": "Quái vật vũ trụ",
+      "scale": "Planetary",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước hành tinh",
+      "measurement": "Canon hình thái gốc",
+      "wikiTitle": "Orgalorg",
+      "sourceUrl": "https://www.cartoonnetwork.com/",
+      "description": "Hình thái thật của Gunter, kẻ thống trị hệ Mặt Trời cổ xưa.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Orgalorg"
+    },
+    {
+      "id": "bill-cipher-giant",
+      "name": "Bill Cipher Giant Form",
+      "franchise": "Gravity Falls",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Gravity Falls Multiverse",
+      "kind": "Dream demon",
+      "scale": "Titanic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Không có số cố định",
+      "wikiTitle": "Bill Cipher",
+      "sourceUrl": "https://www.disneyplus.com/series/gravity-falls/HZxayxzMJqed",
+      "description": "Ác quỷ giấc mơ thay đổi kích thước và vật lý trong Weirdmageddon.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Bill_Cipher"
+    },
+    {
+      "id": "time-baby",
+      "name": "Time Baby",
+      "franchise": "Gravity Falls",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Gravity Falls Multiverse",
+      "kind": "Thực thể thời gian",
+      "scale": "Titanic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Không có số cố định",
+      "wikiTitle": "Time Baby",
+      "sourceUrl": "https://www.disneyplus.com/series/gravity-falls/HZxayxzMJqed",
+      "description": "Thực thể tương lai cai quản thời gian và đối đầu Bill Cipher.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Time_Baby"
+    },
+    {
+      "id": "cromulon",
+      "name": "Cromulon",
+      "franchise": "Rick and Morty",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Rick and Morty Multiverse",
+      "kind": "Đầu khổng lồ ngoài hành tinh",
+      "scale": "Planetary",
+      "heightMeters": null,
+      "sizeLabel": "Cỡ hành tinh",
+      "measurement": "Mô tả trong phim",
+      "wikiTitle": "Get Schwifty",
+      "sourceUrl": "https://www.adultswim.com/videos/rick-and-morty",
+      "description": "Những chiếc đầu ngoài hành tinh tổ chức cuộc thi âm nhạc liên hành tinh.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Get_Schwifty"
+    },
+    {
+      "id": "aku-giant",
+      "name": "Aku Giant Form",
+      "franchise": "Samurai Jack",
+      "media": [
+        "Hoạt hình"
+      ],
+      "universe": "Samurai Jack",
+      "kind": "Ác quỷ biến hình",
+      "scale": "Titanic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Không có số cố định",
+      "wikiTitle": "Aku",
+      "sourceUrl": "https://www.adultswim.com/videos/samurai-jack",
+      "description": "Ác quỷ bóng tối nguyên thủy có thể biến thành vô số hình dạng khổng lồ.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Aku"
+    },
+    {
+      "id": "chernabog",
+      "name": "Chernabog",
+      "franchise": "Fantasia",
+      "media": [
+        "Hoạt hình",
+        "Phim"
+      ],
+      "universe": "Disney",
+      "kind": "Ác thần",
+      "scale": "Titanic",
+      "heightMeters": null,
+      "sizeLabel": "Lớn như ngọn núi",
+      "measurement": "Mô tả hình ảnh",
+      "wikiTitle": "Chernabog",
+      "sourceUrl": "https://www.disneyplus.com/movies/fantasia/3S4TSrQyOr1V",
+      "description": "Ác thần trên Bald Mountain triệu hồi linh hồn trong đêm Walpurgis.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Chernabog"
+    },
+    {
+      "id": "te-ka",
+      "name": "Te Kā",
+      "franchise": "Moana",
+      "media": [
+        "Hoạt hình",
+        "Phim"
+      ],
+      "universe": "Disney",
+      "kind": "Nữ thần dung nham",
+      "scale": "Colossal",
+      "heightMeters": 90,
+      "sizeLabel": "Khoảng 90 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Te Fiti",
+      "sourceUrl": "https://www.disneyplus.com/movies/moana/70GoJHflgHH9",
+      "description": "Hình thái giận dữ bằng dung nham của Te Fiti khi mất trái tim.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Te_Fiti"
+    },
+    {
+      "id": "lava-titan",
+      "name": "Lava Titan",
+      "franchise": "Hercules",
+      "media": [
+        "Hoạt hình",
+        "Phim"
+      ],
+      "universe": "Disney",
+      "kind": "Titan nguyên tố",
+      "scale": "Titanic",
+      "heightMeters": null,
+      "sizeLabel": "Cao hàng trăm mét",
+      "measurement": "Không có số canon",
+      "wikiTitle": "Hercules (1997 film)",
+      "sourceUrl": "https://www.disneyplus.com/movies/hercules/2e02rZ2TfE0f",
+      "description": "Một trong bốn Titan nguyên tố được Hades giải phóng khỏi Tartarus.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Hercules_(1997_film)"
+    },
+    {
+      "id": "unicron",
+      "name": "Unicron",
+      "franchise": "Transformers",
+      "media": [
+        "Hoạt hình",
+        "Phim",
+        "Comics"
+      ],
+      "universe": "Transformers Multiverse",
+      "kind": "Transformer hành tinh",
+      "scale": "Planetary",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước hành tinh",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Unicron",
+      "sourceUrl": "https://transformers.hasbro.com/",
+      "description": "Thần hỗn mang biến đổi thành hành tinh và nuốt các thế giới.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Unicron"
+    },
+    {
+      "id": "primus",
+      "name": "Primus",
+      "franchise": "Transformers",
+      "media": [
+        "Hoạt hình",
+        "Comics"
+      ],
+      "universe": "Transformers Multiverse",
+      "kind": "Transformer hành tinh",
+      "scale": "Planetary",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước hành tinh",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Primus (Transformers)",
+      "sourceUrl": "https://transformers.hasbro.com/",
+      "description": "Thần sáng tạo của Cybertron và đối cực của Unicron.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Primus_(Transformers)"
+    },
+    {
+      "id": "metroplex",
+      "name": "Metroplex",
+      "franchise": "Transformers",
+      "media": [
+        "Hoạt hình",
+        "Game",
+        "Comics"
+      ],
+      "universe": "Transformers",
+      "kind": "Titan Transformer",
+      "scale": "Supermassive",
+      "heightMeters": 240,
+      "sizeLabel": "Khoảng 240 m",
+      "measurement": "Tùy continuity",
+      "wikiTitle": "Metroplex (Transformers)",
+      "sourceUrl": "https://transformers.hasbro.com/",
+      "description": "Autobot City có thể chuyển đổi thành chiến binh Titan.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Metroplex_(Transformers)"
+    },
+    {
+      "id": "trypticon",
+      "name": "Trypticon",
+      "franchise": "Transformers",
+      "media": [
+        "Hoạt hình",
+        "Game",
+        "Comics"
+      ],
+      "universe": "Transformers",
+      "kind": "Titan Transformer",
+      "scale": "Supermassive",
+      "heightMeters": 200,
+      "sizeLabel": "Khoảng 200 m",
+      "measurement": "Tùy continuity",
+      "wikiTitle": "Trypticon",
+      "sourceUrl": "https://transformers.hasbro.com/",
+      "description": "Pháo đài Decepticon biến thành khủng long cơ giới khổng lồ.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Trypticon"
+    },
+    {
+      "id": "omega-supreme",
+      "name": "Omega Supreme",
+      "franchise": "Transformers",
+      "media": [
+        "Hoạt hình",
+        "Game",
+        "Comics"
+      ],
+      "universe": "Transformers",
+      "kind": "Transformer",
+      "scale": "Colossal",
+      "heightMeters": 90,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Tùy continuity",
+      "wikiTitle": "Omega Supreme",
+      "sourceUrl": "https://transformers.hasbro.com/",
+      "description": "Autobot Guardian biến thành căn cứ tên lửa và đường ray.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Omega_Supreme"
+    },
+    {
+      "id": "devastator",
+      "name": "Devastator",
+      "franchise": "Transformers",
+      "media": [
+        "Hoạt hình",
+        "Phim",
+        "Comics"
+      ],
+      "universe": "Transformers",
+      "kind": "Combiner",
+      "scale": "Colossal",
+      "heightMeters": 46,
+      "sizeLabel": "Khoảng 30–46 m",
+      "measurement": "Tùy continuity",
+      "wikiTitle": "Devastator (Transformers)",
+      "sourceUrl": "https://transformers.hasbro.com/",
+      "description": "Sáu Constructicon hợp thể thành chiến binh phá hủy.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Devastator_(Transformers)"
+    },
+    {
+      "id": "valus",
+      "name": "Valus",
+      "franchise": "Shadow of the Colossus",
+      "media": [
+        "Game"
+      ],
+      "universe": "Forbidden Lands",
+      "kind": "Colossus",
+      "scale": "Giant",
+      "heightMeters": 21,
+      "sizeLabel": "Khoảng 21 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Shadow of the Colossus",
+      "sourceUrl": "https://www.playstation.com/games/shadow-of-the-colossus/",
+      "description": "Colossus hình người đầu tiên, mang chùy đá và lông để Wander leo bám.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Shadow_of_the_Colossus"
+    },
+    {
+      "id": "quadratus",
+      "name": "Quadratus",
+      "franchise": "Shadow of the Colossus",
+      "media": [
+        "Game"
+      ],
+      "universe": "Forbidden Lands",
+      "kind": "Colossus",
+      "scale": "Giant",
+      "heightMeters": 30,
+      "sizeLabel": "Khoảng 30 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Shadow of the Colossus",
+      "sourceUrl": "https://www.playstation.com/games/shadow-of-the-colossus/",
+      "description": "Colossus bò bốn chân sống trong thung lũng dưới cây cầu lớn.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Shadow_of_the_Colossus"
+    },
+    {
+      "id": "gaius",
+      "name": "Gaius",
+      "franchise": "Shadow of the Colossus",
+      "media": [
+        "Game"
+      ],
+      "universe": "Forbidden Lands",
+      "kind": "Colossus",
+      "scale": "Colossal",
+      "heightMeters": 54,
+      "sizeLabel": "Khoảng 54 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Shadow of the Colossus",
+      "sourceUrl": "https://www.playstation.com/games/shadow-of-the-colossus/",
+      "description": "Hiệp sĩ đá khổng lồ sử dụng thanh kiếm như cột trụ.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Shadow_of_the_Colossus"
+    },
+    {
+      "id": "phaedra",
+      "name": "Phaedra",
+      "franchise": "Shadow of the Colossus",
+      "media": [
+        "Game"
+      ],
+      "universe": "Forbidden Lands",
+      "kind": "Colossus",
+      "scale": "Giant",
+      "heightMeters": 26,
+      "sizeLabel": "Khoảng 26 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Shadow of the Colossus",
+      "sourceUrl": "https://www.playstation.com/games/shadow-of-the-colossus/",
+      "description": "Colossus bốn chân có cấu trúc như ngựa và sống trong nghĩa địa.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Shadow_of_the_Colossus"
+    },
+    {
+      "id": "avion",
+      "name": "Avion",
+      "franchise": "Shadow of the Colossus",
+      "media": [
+        "Game"
+      ],
+      "universe": "Forbidden Lands",
+      "kind": "Colossus bay",
+      "scale": "Colossal",
+      "heightMeters": 30,
+      "sizeLabel": "Thân 30 m · sải cánh lớn",
+      "measurement": "Ước tính",
+      "wikiTitle": "Shadow of the Colossus",
+      "sourceUrl": "https://www.playstation.com/games/shadow-of-the-colossus/",
+      "description": "Chim Colossus chiến đấu trên mặt hồ giữa các tàn tích.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Shadow_of_the_Colossus"
+    },
+    {
+      "id": "hydrus",
+      "name": "Hydrus",
+      "franchise": "Shadow of the Colossus",
+      "media": [
+        "Game"
+      ],
+      "universe": "Forbidden Lands",
+      "kind": "Colossus thủy sinh",
+      "scale": "Colossal",
+      "heightMeters": 60,
+      "sizeLabel": "Dài khoảng 60 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Shadow of the Colossus",
+      "sourceUrl": "https://www.playstation.com/games/shadow-of-the-colossus/",
+      "description": "Colossus dạng lươn điện sống dưới hồ sâu.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Shadow_of_the_Colossus"
+    },
+    {
+      "id": "dirge",
+      "name": "Dirge",
+      "franchise": "Shadow of the Colossus",
+      "media": [
+        "Game"
+      ],
+      "universe": "Forbidden Lands",
+      "kind": "Colossus sa mạc",
+      "scale": "Colossal",
+      "heightMeters": 45,
+      "sizeLabel": "Dài khoảng 45 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Shadow of the Colossus",
+      "sourceUrl": "https://www.playstation.com/games/shadow-of-the-colossus/",
+      "description": "Colossus rắn cát truy đuổi Wander dưới sa mạc.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Shadow_of_the_Colossus"
+    },
+    {
+      "id": "phaslanx",
+      "name": "Phalanx",
+      "franchise": "Shadow of the Colossus",
+      "media": [
+        "Game"
+      ],
+      "universe": "Forbidden Lands",
+      "kind": "Colossus bay",
+      "scale": "Supermassive",
+      "heightMeters": 170,
+      "sizeLabel": "Dài khoảng 170 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Shadow of the Colossus",
+      "sourceUrl": "https://www.playstation.com/games/shadow-of-the-colossus/",
+      "description": "Colossus dài nhất bay lượn bằng các túi khí trên sa mạc.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Shadow_of_the_Colossus"
+    },
+    {
+      "id": "malus",
+      "name": "Malus",
+      "franchise": "Shadow of the Colossus",
+      "media": [
+        "Game"
+      ],
+      "universe": "Forbidden Lands",
+      "kind": "Colossus",
+      "scale": "Colossal",
+      "heightMeters": 60,
+      "sizeLabel": "Khoảng 60 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Shadow of the Colossus",
+      "sourceUrl": "https://www.playstation.com/games/shadow-of-the-colossus/",
+      "description": "Colossus cuối cùng đứng giữa cơn bão và phóng năng lượng từ xa.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Shadow_of_the_Colossus"
+    },
+    {
+      "id": "zorah-magdaros",
+      "name": "Zorah Magdaros",
+      "franchise": "Monster Hunter",
+      "media": [
+        "Game"
+      ],
+      "universe": "Monster Hunter",
+      "kind": "Elder Dragon",
+      "scale": "Supermassive",
+      "heightMeters": 257.6,
+      "sizeLabel": "Dài 257,6 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Zorah Magdaros",
+      "sourceUrl": "https://www.monsterhunter.com/world/",
+      "description": "Elder Dragon núi lửa di cư đến New World để kết thúc vòng đời.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Zorah_Magdaros"
+    },
+    {
+      "id": "dalamadur",
+      "name": "Dalamadur",
+      "franchise": "Monster Hunter",
+      "media": [
+        "Game"
+      ],
+      "universe": "Monster Hunter",
+      "kind": "Elder Dragon",
+      "scale": "Supermassive",
+      "heightMeters": 440.4,
+      "sizeLabel": "Dài 440,4 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Dalamadur",
+      "sourceUrl": "https://www.monsterhunter.com/",
+      "description": "Rắn Elder Dragon quấn quanh núi và gọi thiên thạch.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Dalamadur"
+    },
+    {
+      "id": "raviente",
+      "name": "Raviente",
+      "franchise": "Monster Hunter Frontier",
+      "media": [
+        "Game"
+      ],
+      "universe": "Monster Hunter",
+      "kind": "Elder Dragon",
+      "scale": "Supermassive",
+      "heightMeters": 450,
+      "sizeLabel": "Dài khoảng 450 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Monster Hunter Frontier G",
+      "sourceUrl": "https://www.monsterhunter.com/",
+      "description": "Rắn Elder Dragon siêu lớn cần nhiều tổ đội thợ săn phối hợp.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Monster_Hunter_Frontier_G"
+    },
+    {
+      "id": "lao-shan-lung",
+      "name": "Lao-Shan Lung",
+      "franchise": "Monster Hunter",
+      "media": [
+        "Game"
+      ],
+      "universe": "Monster Hunter",
+      "kind": "Elder Dragon",
+      "scale": "Colossal",
+      "heightMeters": 69.6,
+      "sizeLabel": "Dài 69,6 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Lao-Shan Lung",
+      "sourceUrl": "https://www.monsterhunter.com/",
+      "description": "Elder Dragon cổ đại đi xuyên pháo đài trong hành trình di cư.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Lao-Shan_Lung"
+    },
+    {
+      "id": "jhen-mohran",
+      "name": "Jhen Mohran",
+      "franchise": "Monster Hunter",
+      "media": [
+        "Game"
+      ],
+      "universe": "Monster Hunter",
+      "kind": "Elder Dragon",
+      "scale": "Titanic",
+      "heightMeters": 111.6,
+      "sizeLabel": "Dài 111,6 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Jhen Mohran",
+      "sourceUrl": "https://www.monsterhunter.com/",
+      "description": "Cá voi cát khổng lồ bơi qua Great Desert.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Jhen_Mohran"
+    },
+    {
+      "id": "safi-jiiva",
+      "name": "Safi'jiiva",
+      "franchise": "Monster Hunter",
+      "media": [
+        "Game"
+      ],
+      "universe": "Monster Hunter",
+      "kind": "Elder Dragon",
+      "scale": "Colossal",
+      "heightMeters": 47.9,
+      "sizeLabel": "Dài 47,9 m",
+      "measurement": "Chính thức",
+      "wikiTitle": "Safi'jiiva",
+      "sourceUrl": "https://www.monsterhunter.com/world-iceborne/",
+      "description": "Red Dragon hấp thụ sinh năng của môi trường để tái tạo cơ thể.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Safi'jiiva"
+    },
+    {
+      "id": "fire-giant",
+      "name": "Fire Giant",
+      "franchise": "Elden Ring",
+      "media": [
+        "Game"
+      ],
+      "universe": "Lands Between",
+      "kind": "Người khổng lồ",
+      "scale": "Giant",
+      "heightMeters": 24,
+      "sizeLabel": "Khoảng 24 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Fire Giant",
+      "sourceUrl": "https://en.bandainamcoent.eu/elden-ring/elden-ring",
+      "description": "Người khổng lồ cuối cùng canh giữ Flame of Ruin trên Mountaintops.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c7/Kulturen_-_Riesin_Holdrykka.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/c/c7/Kulturen_-_Riesin_Holdrykka.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Fire_Giant"
+    },
+    {
+      "id": "greyoll",
+      "name": "Elder Dragon Greyoll",
+      "franchise": "Elden Ring",
+      "media": [
+        "Game"
+      ],
+      "universe": "Lands Between",
+      "kind": "Rồng cổ đại",
+      "scale": "Titanic",
+      "heightMeters": 182,
+      "sizeLabel": "Dài khoảng 182 m",
+      "measurement": "Ước tính mô hình",
+      "wikiTitle": "Elden Ring",
+      "sourceUrl": "https://en.bandainamcoent.eu/elden-ring/elden-ring",
+      "description": "Mẹ của loài rồng, nằm bất động giữa đàn con ở Dragonbarrow.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c7/Kulturen_-_Riesin_Holdrykka.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Elden_Ring"
+    },
+    {
+      "id": "elden-beast",
+      "name": "Elden Beast",
+      "franchise": "Elden Ring",
+      "media": [
+        "Game"
+      ],
+      "universe": "Lands Between",
+      "kind": "Thực thể thần thánh",
+      "scale": "Colossal",
+      "heightMeters": 60,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Ước tính mô hình",
+      "wikiTitle": "Elden Beast",
+      "sourceUrl": "https://en.bandainamcoent.eu/elden-ring/elden-ring",
+      "description": "Sứ giả vũ trụ và hiện thân sống của Elden Ring.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c7/Kulturen_-_Riesin_Holdrykka.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Elden_Beast"
+    },
+    {
+      "id": "astel",
+      "name": "Astel Naturalborn of the Void",
+      "franchise": "Elden Ring",
+      "media": [
+        "Game"
+      ],
+      "universe": "Lands Between",
+      "kind": "Sinh vật vũ trụ",
+      "scale": "Colossal",
+      "heightMeters": 40,
+      "sizeLabel": "Dài hàng chục mét",
+      "measurement": "Ước tính mô hình",
+      "wikiTitle": "Elden Ring",
+      "sourceUrl": "https://en.bandainamcoent.eu/elden-ring/elden-ring",
+      "description": "Sinh vật dị dạng sinh ra trong Void điều khiển trọng lực và thiên thạch.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c7/Kulturen_-_Riesin_Holdrykka.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Elden_Ring"
+    },
+    {
+      "id": "dragon-god",
+      "name": "Dragon God",
+      "franchise": "Demon's Souls",
+      "media": [
+        "Game"
+      ],
+      "universe": "Boletaria",
+      "kind": "Rồng quỷ",
+      "scale": "Colossal",
+      "heightMeters": 70,
+      "sizeLabel": "Khoảng 70 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Demon's Souls",
+      "sourceUrl": "https://www.playstation.com/games/demons-souls/",
+      "description": "Archdemon bị giam trong đền cổ và bị hạ bằng ballista khổng lồ.",
+      "images": [
+        "https://image.api.playstation.com/vulcan/img/rnd/202011/1717/GemRaOZaCMhGxQ9dRhnQQyT5.png",
+        "https://image.api.playstation.com/vulcan/img/rnd/202011/1717/GemRaOZaCMhGxQ9dRhnQQyT5.png"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Demon's_Souls"
+    },
+    {
+      "id": "yhorm",
+      "name": "Yhorm the Giant",
+      "franchise": "Dark Souls III",
+      "media": [
+        "Game"
+      ],
+      "universe": "Lothric",
+      "kind": "Người khổng lồ",
+      "scale": "Giant",
+      "heightMeters": 14,
+      "sizeLabel": "Khoảng 14 m",
+      "measurement": "Ước tính mô hình",
+      "wikiTitle": "Yhorm the Giant",
+      "sourceUrl": "https://en.bandainamcoent.eu/dark-souls/dark-souls-iii",
+      "description": "Lord of Cinder khổng lồ sử dụng đại đao để bảo vệ dân tộc.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Yhorm_the_Giant"
+    },
+    {
+      "id": "high-lord-wolnir",
+      "name": "High Lord Wolnir",
+      "franchise": "Dark Souls III",
+      "media": [
+        "Game"
+      ],
+      "universe": "Lothric",
+      "kind": "Bộ xương khổng lồ",
+      "scale": "Colossal",
+      "heightMeters": 30,
+      "sizeLabel": "Khoảng 30 m",
+      "measurement": "Ước tính mô hình",
+      "wikiTitle": "High Lord Wolnir",
+      "sourceUrl": "https://en.bandainamcoent.eu/dark-souls/dark-souls-iii",
+      "description": "Chúa tể xương bị Abyss nuốt chửng, bám vào các vòng tay thánh.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/High_Lord_Wolnir"
+    },
+    {
+      "id": "cronos-gow",
+      "name": "Cronos",
+      "franchise": "God of War",
+      "media": [
+        "Game"
+      ],
+      "universe": "God of War Greek",
+      "kind": "Titan",
+      "scale": "Supermassive",
+      "heightMeters": 488,
+      "sizeLabel": "Khoảng 488 m",
+      "measurement": "Ước tính mô hình",
+      "wikiTitle": "Cronos (God of War)",
+      "sourceUrl": "https://www.playstation.com/games/god-of-war-iii/",
+      "description": "Titan bị Zeus trừng phạt, mang cả Đền Pandora trên lưng.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c1/Ragnarok_-_Louis_Moe_%2817006%29_-_cropped_%28cropped%29.png"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Cronos_(God_of_War)"
+    },
+    {
+      "id": "atlas-gow",
+      "name": "Atlas",
+      "franchise": "God of War",
+      "media": [
+        "Game"
+      ],
+      "universe": "God of War Greek",
+      "kind": "Titan",
+      "scale": "Supermassive",
+      "heightMeters": 1600,
+      "sizeLabel": "Khoảng 1,6 km",
+      "measurement": "Ước tính mô hình",
+      "wikiTitle": "Atlas (God of War)",
+      "sourceUrl": "https://www.playstation.com/games/god-of-war-ii/",
+      "description": "Titan bốn tay bị buộc phải nâng thế giới trên vai.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c1/Ragnarok_-_Louis_Moe_%2817006%29_-_cropped_%28cropped%29.png"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Atlas_(God_of_War)"
+    },
+    {
+      "id": "jormungandr",
+      "name": "Jörmungandr",
+      "franchise": "God of War",
+      "media": [
+        "Game"
+      ],
+      "universe": "God of War Norse",
+      "kind": "World serpent",
+      "scale": "Planetary",
+      "heightMeters": null,
+      "sizeLabel": "Bao quanh Midgard",
+      "measurement": "Mô tả canon",
+      "wikiTitle": "Jörmungandr",
+      "sourceUrl": "https://www.playstation.com/games/god-of-war-ragnarok/",
+      "description": "World Serpent lớn đến mức cơ thể quấn quanh Midgard.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c1/Ragnarok_-_Louis_Moe_%2817006%29_-_cropped_%28cropped%29.png",
+        "https://image.api.playstation.com/vulcan/ap/rnd/202503/2016/b69c06fb108299866057126b0d3a0530bdf96a39d2ce1cb9.png",
+        "https://upload.wikimedia.org/wikipedia/commons/c/c1/Ragnarok_-_Louis_Moe_%2817006%29_-_cropped_%28cropped%29.png"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/J%C3%B6rmungandr"
+    },
+    {
+      "id": "surtr-gow",
+      "name": "Surtr Ragnarök Form",
+      "franchise": "God of War",
+      "media": [
+        "Game"
+      ],
+      "universe": "God of War Norse",
+      "kind": "Fire giant",
+      "scale": "Supermassive",
+      "heightMeters": 1000,
+      "sizeLabel": "Cao khoảng 1 km",
+      "measurement": "Ước tính hình ảnh",
+      "wikiTitle": "Surtr",
+      "sourceUrl": "https://www.playstation.com/games/god-of-war-ragnarok/",
+      "description": "Surtr hợp nhất với Sinmara để trở thành Ragnarök hủy diệt Asgard.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/7d/The_giant_with_the_flaming_sword_by_Dollman.jpg",
+        "https://image.api.playstation.com/vulcan/ap/rnd/202503/2016/b69c06fb108299866057126b0d3a0530bdf96a39d2ce1cb9.png",
+        "https://upload.wikimedia.org/wikipedia/commons/c/c1/Ragnarok_-_Louis_Moe_%2817006%29_-_cropped_%28cropped%29.png"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Surtr"
+    },
+    {
+      "id": "sin-ffx",
+      "name": "Sin",
+      "franchise": "Final Fantasy X",
+      "media": [
+        "Game"
+      ],
+      "universe": "Spira",
+      "kind": "Sinh vật thảm họa",
+      "scale": "Supermassive",
+      "heightMeters": 1000,
+      "sizeLabel": "Dài khoảng 1 km",
+      "measurement": "Ước tính",
+      "wikiTitle": "Sin (Final Fantasy X)",
+      "sourceUrl": "https://finalfantasyxhd.square-enix-games.com/",
+      "description": "Vỏ giáp khổng lồ của Final Aeon liên tục tàn phá nền văn minh Spira.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Sin_(Final_Fantasy_X)"
+    },
+    {
+      "id": "adamantoise-ffxv",
+      "name": "Adamantoise",
+      "franchise": "Final Fantasy XV",
+      "media": [
+        "Game"
+      ],
+      "universe": "Eos",
+      "kind": "Quái thú núi",
+      "scale": "Titanic",
+      "heightMeters": 100,
+      "sizeLabel": "Khoảng 100 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Final Fantasy XV",
+      "sourceUrl": "https://finalfantasyxv.square-enix-games.com/",
+      "description": "Rùa khổng lồ ngụy trang như một ngọn núi và là superboss lâu dài.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Final_Fantasy_XV"
+    },
+    {
+      "id": "alexander-ff",
+      "name": "Alexander",
+      "franchise": "Final Fantasy",
+      "media": [
+        "Game"
+      ],
+      "universe": "Final Fantasy Multiverse",
+      "kind": "Pháo đài triệu hồi",
+      "scale": "Supermassive",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước pháo đài",
+      "measurement": "Tùy phiên bản",
+      "wikiTitle": "Alexander (Final Fantasy)",
+      "sourceUrl": "https://www.square-enix-games.com/",
+      "description": "Summon dạng thành trì cơ giới sử dụng thánh quang và pháo năng lượng.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Alexander_(Final_Fantasy)"
+    },
+    {
+      "id": "leviathan-ffxv",
+      "name": "Leviathan",
+      "franchise": "Final Fantasy XV",
+      "media": [
+        "Game"
+      ],
+      "universe": "Eos",
+      "kind": "Astral thủy long",
+      "scale": "Supermassive",
+      "heightMeters": 500,
+      "sizeLabel": "Dài hàng trăm mét",
+      "measurement": "Ước tính",
+      "wikiTitle": "Final Fantasy XV",
+      "sourceUrl": "https://finalfantasyxv.square-enix-games.com/",
+      "description": "Astral thủy long tạo sóng thần khi thức tỉnh tại Altissia.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Final_Fantasy_XV"
+    },
+    {
+      "id": "sovereign",
+      "name": "Sovereign",
+      "franchise": "Mass Effect",
+      "media": [
+        "Game"
+      ],
+      "universe": "Mass Effect",
+      "kind": "Reaper",
+      "scale": "Supermassive",
+      "heightMeters": 2000,
+      "sizeLabel": "Dài khoảng 2 km",
+      "measurement": "Canon",
+      "wikiTitle": "Sovereign (Mass Effect)",
+      "sourceUrl": "https://www.ea.com/games/mass-effect",
+      "description": "Reaper tiên phong thao túng Saren để mở Citadel Relay.",
+      "images": [
+        "https://drop-assets.ea.com/images/1n6xY9BuJIpMv6bJ1Og996/2246894c738245dc3a5fe5609b38752b/mass-effect-footer-logo.png",
+        "https://drop-assets.ea.com/images/1n6xY9BuJIpMv6bJ1Og996/2246894c738245dc3a5fe5609b38752b/mass-effect-footer-logo.png"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Sovereign_(Mass_Effect)"
+    },
+    {
+      "id": "harbinger",
+      "name": "Harbinger",
+      "franchise": "Mass Effect",
+      "media": [
+        "Game"
+      ],
+      "universe": "Mass Effect",
+      "kind": "Reaper",
+      "scale": "Supermassive",
+      "heightMeters": 2000,
+      "sizeLabel": "Dài khoảng 2 km",
+      "measurement": "Canon",
+      "wikiTitle": "Harbinger (Mass Effect)",
+      "sourceUrl": "https://www.ea.com/games/mass-effect",
+      "description": "Reaper đầu tiên và lãnh đạo chu kỳ thu hoạch thiên hà.",
+      "images": [
+        "https://drop-assets.ea.com/images/1n6xY9BuJIpMv6bJ1Og996/2246894c738245dc3a5fe5609b38752b/mass-effect-footer-logo.png",
+        "https://drop-assets.ea.com/images/1n6xY9BuJIpMv6bJ1Og996/2246894c738245dc3a5fe5609b38752b/mass-effect-footer-logo.png"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Harbinger_(Mass_Effect)"
+    },
+    {
+      "id": "deathwing",
+      "name": "Deathwing",
+      "franchise": "Warcraft",
+      "media": [
+        "Game",
+        "Tiểu thuyết"
+      ],
+      "universe": "Warcraft",
+      "kind": "Dragon Aspect",
+      "scale": "Supermassive",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Không có số cố định",
+      "wikiTitle": "Deathwing",
+      "sourceUrl": "https://worldofwarcraft.blizzard.com/",
+      "description": "Dragon Aspect sa ngã làm vỡ Azeroth khi trỗi dậy từ Deepholm.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Deathwing"
+    },
+    {
+      "id": "galakrond",
+      "name": "Galakrond",
+      "franchise": "Warcraft",
+      "media": [
+        "Game",
+        "Tiểu thuyết"
+      ],
+      "universe": "Warcraft",
+      "kind": "Proto-dragon",
+      "scale": "Supermassive",
+      "heightMeters": null,
+      "sizeLabel": "Lớn hơn nhiều lần Dragon Aspect",
+      "measurement": "Không có số cố định",
+      "wikiTitle": "Galakrond",
+      "sourceUrl": "https://worldofwarcraft.blizzard.com/",
+      "description": "Tổ tiên quái dị của loài rồng, xác trải dài tại Dragonblight.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Galakrond"
+    },
+    {
+      "id": "sargeras",
+      "name": "Sargeras",
+      "franchise": "Warcraft",
+      "media": [
+        "Game",
+        "Tiểu thuyết"
+      ],
+      "universe": "Warcraft Cosmos",
+      "kind": "Titan",
+      "scale": "Planetary",
+      "heightMeters": null,
+      "sizeLabel": "Lớn hơn hành tinh",
+      "measurement": "Mô tả canon",
+      "wikiTitle": "Sargeras",
+      "sourceUrl": "https://worldofwarcraft.blizzard.com/",
+      "description": "Dark Titan lãnh đạo Burning Legion và có thể đâm kiếm xuyên Azeroth.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Sargeras"
+    },
+    {
+      "id": "oryx-raid",
+      "name": "Oryx Raid Form",
+      "franchise": "Destiny",
+      "media": [
+        "Game"
+      ],
+      "universe": "Destiny",
+      "kind": "Hive god",
+      "scale": "Colossal",
+      "heightMeters": 50,
+      "sizeLabel": "Khoảng 50 m",
+      "measurement": "Ước tính mô hình",
+      "wikiTitle": "Oryx, the Taken King",
+      "sourceUrl": "https://www.bungie.net/7/en/Destiny",
+      "description": "Taken King xuất hiện ở kích thước khổng lồ trong King's Fall.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Oryx%2C_the_Taken_King"
+    },
+    {
+      "id": "riven",
+      "name": "Riven of a Thousand Voices",
+      "franchise": "Destiny",
+      "media": [
+        "Game"
+      ],
+      "universe": "Destiny",
+      "kind": "Ahamkara",
+      "scale": "Titanic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Không có số cố định",
+      "wikiTitle": "Riven",
+      "sourceUrl": "https://www.bungie.net/7/en/Destiny",
+      "description": "Ahamkara bị Taken hóa, thao túng điều ước trong Dreaming City.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Riven"
+    },
+    {
+      "id": "fury-bowser",
+      "name": "Fury Bowser",
+      "franchise": "Super Mario",
+      "media": [
+        "Game"
+      ],
+      "universe": "Mushroom Kingdom",
+      "kind": "Koopa khổng lồ",
+      "scale": "Titanic",
+      "heightMeters": 100,
+      "sizeLabel": "Khoảng 100 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Bowser's Fury",
+      "sourceUrl": "https://www.nintendo.com/us/store/products/super-mario-3d-world-plus-bowsers-fury-switch/",
+      "description": "Bowser bị black paint biến thành hình thái kaiju phun lửa.",
+      "images": [
+        "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000034439/ccb69a8bf2746b2dc0a9b11a9e48c9893baa1631486326f0d681b7a36385221f",
+        "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000034439/ccb69a8bf2746b2dc0a9b11a9e48c9893baa1631486326f0d681b7a36385221f"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Bowser's_Fury"
+    },
+    {
+      "id": "dark-beast-ganon",
+      "name": "Dark Beast Ganon",
+      "franchise": "The Legend of Zelda",
+      "media": [
+        "Game"
+      ],
+      "universe": "Hyrule",
+      "kind": "Ma thú",
+      "scale": "Colossal",
+      "heightMeters": 40,
+      "sizeLabel": "Khoảng 40 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Ganon",
+      "sourceUrl": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-breath-of-the-wild-switch/",
+      "description": "Hình thái ma thú cuối cùng của Calamity Ganon trên cánh đồng Hyrule.",
+      "images": [
+        "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000000025/7137262b5a64d921e193653f8aa0b722925abc5680380ca0e18a5cfd91697f58",
+        "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000000025/7137262b5a64d921e193653f8aa0b722925abc5680380ca0e18a5cfd91697f58"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Ganon"
+    },
+    {
+      "id": "colgera",
+      "name": "Colgera",
+      "franchise": "The Legend of Zelda",
+      "media": [
+        "Game"
+      ],
+      "universe": "Hyrule",
+      "kind": "Quái vật băng",
+      "scale": "Colossal",
+      "heightMeters": 60,
+      "sizeLabel": "Dài khoảng 60 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "The Legend of Zelda: Tears of the Kingdom",
+      "sourceUrl": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-tears-of-the-kingdom-switch/",
+      "description": "Quái vật băng bay trong bão tuyết phía trên Wind Temple.",
+      "images": [
+        "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000063714/fb30eab428df3fc993b41c76e20f72e4d76d49734d17d31996b5ab61c414b117",
+        "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000000025/7137262b5a64d921e193653f8aa0b722925abc5680380ca0e18a5cfd91697f58"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda%3A_Tears_of_the_Kingdom"
+    },
+    {
+      "id": "perfect-chaos",
+      "name": "Perfect Chaos",
+      "franchise": "Sonic the Hedgehog",
+      "media": [
+        "Game"
+      ],
+      "universe": "Sonic",
+      "kind": "Thủy quái",
+      "scale": "Colossal",
+      "heightMeters": 50,
+      "sizeLabel": "Khoảng 50 m",
+      "measurement": "Ước tính",
+      "wikiTitle": "Chaos (Sonic the Hedgehog)",
+      "sourceUrl": "https://www.sonicthehedgehog.com/",
+      "description": "Chaos hấp thụ bảy Chaos Emerald và biến Station Square thành đại dương.",
+      "images": [],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Chaos_(Sonic_the_Hedgehog)"
+    },
+    {
+      "id": "void-termina",
+      "name": "Void Termina",
+      "franchise": "Kirby",
+      "media": [
+        "Game"
+      ],
+      "universe": "Kirby",
+      "kind": "Thần hủy diệt",
+      "scale": "Titanic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Không có số cố định",
+      "wikiTitle": "Kirby Star Allies",
+      "sourceUrl": "https://www.nintendo.com/us/store/products/kirby-star-allies-switch/",
+      "description": "Destroyer of Worlds được triệu hồi từ Jamba Heart.",
+      "images": [
+        "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000002365/56eb33b93862176250495b53d3ad8fee4f84a73a5d99da99585260b403a6ec69",
+        "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000002365/56eb33b93862176250495b53d3ad8fee4f84a73a5d99da99585260b403a6ec69"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Kirby_Star_Allies"
+    },
+    {
+      "id": "galactus",
+      "name": "Galactus",
+      "franchise": "Marvel",
+      "media": [
+        "Comics",
+        "Phim"
+      ],
+      "universe": "Marvel Multiverse",
+      "kind": "Thực thể vũ trụ",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Galactus",
+      "sourceUrl": "https://www.marvel.com/characters/galactus",
+      "description": "Kẻ ăn hành tinh, tàn dư của vũ trụ trước và lực cân bằng vũ trụ.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c0/Fin_Fang_Foom.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Galactus"
+    },
+    {
+      "id": "arishem",
+      "name": "Arishem the Judge",
+      "franchise": "Marvel",
+      "media": [
+        "Comics",
+        "Phim"
+      ],
+      "universe": "Marvel Multiverse",
+      "kind": "Celestial",
+      "scale": "Supermassive",
+      "heightMeters": 610,
+      "sizeLabel": "Khoảng 610 m trong MCU",
+      "measurement": "Ước tính điện ảnh",
+      "wikiTitle": "Arishem the Judge",
+      "sourceUrl": "https://www.marvel.com/characters/arishem",
+      "description": "Celestial xét xử các nền văn minh và giám sát quá trình Emergence.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c0/Fin_Fang_Foom.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Arishem_the_Judge"
+    },
+    {
+      "id": "tiamut",
+      "name": "Tiamut the Communicator",
+      "franchise": "Marvel",
+      "media": [
+        "Comics",
+        "Phim"
+      ],
+      "universe": "Marvel Multiverse",
+      "kind": "Celestial",
+      "scale": "Supermassive",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước hàng trăm kilomet khi Emergence",
+      "measurement": "Không có số cố định",
+      "wikiTitle": "Tiamut",
+      "sourceUrl": "https://www.marvel.com/",
+      "description": "Celestial ngủ trong lõi Trái Đất và trỗi dậy trong Eternals.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c0/Fin_Fang_Foom.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Tiamut"
+    },
+    {
+      "id": "ego",
+      "name": "Ego the Living Planet",
+      "franchise": "Marvel",
+      "media": [
+        "Comics",
+        "Phim"
+      ],
+      "universe": "Marvel Multiverse",
+      "kind": "Hành tinh sống",
+      "scale": "Planetary",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước hành tinh",
+      "measurement": "Canon",
+      "wikiTitle": "Ego the Living Planet",
+      "sourceUrl": "https://www.marvel.com/characters/ego",
+      "description": "Hành tinh có ý thức, điều khiển toàn bộ vật chất trên bề mặt cơ thể.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c0/Fin_Fang_Foom.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Ego_the_Living_Planet"
+    },
+    {
+      "id": "eternity-marvel",
+      "name": "Eternity",
+      "franchise": "Marvel",
+      "media": [
+        "Comics",
+        "Phim"
+      ],
+      "universe": "Marvel Multiverse",
+      "kind": "Hiện thân vũ trụ",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Bao hàm vũ trụ",
+      "measurement": "Biểu tượng siêu hình",
+      "wikiTitle": "Eternity (Marvel Comics)",
+      "sourceUrl": "https://www.marvel.com/characters/eternity",
+      "description": "Hiện thân nhân cách hóa của thời gian và toàn bộ vũ trụ.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c0/Fin_Fang_Foom.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Eternity_(Marvel_Comics)"
+    },
+    {
+      "id": "living-tribunal",
+      "name": "Living Tribunal",
+      "franchise": "Marvel",
+      "media": [
+        "Comics"
+      ],
+      "universe": "Marvel Multiverse",
+      "kind": "Thẩm phán đa vũ trụ",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Quy mô đa vũ trụ",
+      "measurement": "Biểu tượng siêu hình",
+      "wikiTitle": "Living Tribunal",
+      "sourceUrl": "https://www.marvel.com/characters/living-tribunal",
+      "description": "Thực thể ba mặt giám sát cân bằng giữa các thực tại Marvel.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c0/Fin_Fang_Foom.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Living_Tribunal"
+    },
+    {
+      "id": "dormammu",
+      "name": "Dormammu",
+      "franchise": "Marvel",
+      "media": [
+        "Comics",
+        "Phim"
+      ],
+      "universe": "Dark Dimension",
+      "kind": "Chúa tể chiều không gian",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Dormammu",
+      "sourceUrl": "https://www.marvel.com/characters/dormammu",
+      "description": "Thực thể năng lượng thống trị Dark Dimension và vượt ngoài thời gian thông thường.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c0/Fin_Fang_Foom.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Dormammu"
+    },
+    {
+      "id": "fin-fang-foom",
+      "name": "Fin Fang Foom",
+      "franchise": "Marvel",
+      "media": [
+        "Comics"
+      ],
+      "universe": "Marvel Universe",
+      "kind": "Rồng ngoài hành tinh",
+      "scale": "Colossal",
+      "heightMeters": 80,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Fin Fang Foom",
+      "sourceUrl": "https://www.marvel.com/characters/fin-fang-foom",
+      "description": "Makluan dạng rồng có sức mạnh và khả năng biến đổi kích thước.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c0/Fin_Fang_Foom.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/c/c0/Fin_Fang_Foom.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Fin_Fang_Foom"
+    },
+    {
+      "id": "giant-man",
+      "name": "Giant-Man",
+      "franchise": "Marvel",
+      "media": [
+        "Comics",
+        "Phim"
+      ],
+      "universe": "Marvel Universe",
+      "kind": "Anh hùng biến hình",
+      "scale": "Giant",
+      "heightMeters": 30,
+      "sizeLabel": "Tối đa thường thấy khoảng 30 m",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Giant-Man",
+      "sourceUrl": "https://www.marvel.com/characters/giant-man",
+      "description": "Pym Particles cho phép cơ thể tăng kích thước và sức mạnh.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c0/Fin_Fang_Foom.jpg"
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Giant-Man"
+    },
+    {
+      "id": "anti-monitor",
+      "name": "Anti-Monitor",
+      "franchise": "DC",
+      "media": [
+        "Comics",
+        "Hoạt hình"
+      ],
+      "universe": "DC Multiverse",
+      "kind": "Thực thể phản vật chất",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Anti-Monitor",
+      "sourceUrl": "https://www.dc.com/characters/anti-monitor",
+      "description": "Kẻ hủy diệt vũ trụ gây ra Crisis on Infinite Earths.",
+      "images": [
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg ",
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg "
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Anti-Monitor"
+    },
+    {
+      "id": "perpetua",
+      "name": "Perpetua",
+      "franchise": "DC",
+      "media": [
+        "Comics"
+      ],
+      "universe": "DC Multiverse",
+      "kind": "Super Celestial",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Quy mô đa vũ trụ",
+      "measurement": "Biểu tượng siêu hình",
+      "wikiTitle": "Perpetua (character)",
+      "sourceUrl": "https://www.dc.com/",
+      "description": "Mẹ của Monitor, Anti-Monitor và World Forger, kiến tạo Multiverse đầu tiên.",
+      "images": [
+        "https://static.dc.com/2024-07/dc_logo_4x3_2024.png",
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg "
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Perpetua_(character)"
+    },
+    {
+      "id": "trigon",
+      "name": "Trigon",
+      "franchise": "DC",
+      "media": [
+        "Comics",
+        "Hoạt hình"
+      ],
+      "universe": "DC Multiverse",
+      "kind": "Ác thần liên chiều",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Trigon (comics)",
+      "sourceUrl": "https://www.dc.com/characters/trigon",
+      "description": "Ác thần cha của Raven chinh phục nhiều chiều không gian.",
+      "images": [
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg ",
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg "
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Trigon_(comics)"
+    },
+    {
+      "id": "spectre",
+      "name": "The Spectre",
+      "franchise": "DC",
+      "media": [
+        "Comics"
+      ],
+      "universe": "DC Multiverse",
+      "kind": "Hiện thân thần phạt",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước vũ trụ",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Spectre (DC Comics character)",
+      "sourceUrl": "https://www.dc.com/characters/spectre",
+      "description": "Cơn thịnh nộ của Thượng Đế có thể mở rộng đến quy mô hành tinh và vũ trụ.",
+      "images": [
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg "
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Spectre_(DC_Comics_character)"
+    },
+    {
+      "id": "mogo",
+      "name": "Mogo",
+      "franchise": "DC",
+      "media": [
+        "Comics",
+        "Hoạt hình"
+      ],
+      "universe": "DC Universe",
+      "kind": "Green Lantern hành tinh",
+      "scale": "Planetary",
+      "heightMeters": null,
+      "sizeLabel": "Kích thước hành tinh",
+      "measurement": "Canon",
+      "wikiTitle": "Mogo",
+      "sourceUrl": "https://www.dc.com/characters/mogo",
+      "description": "Hành tinh sống là thành viên Green Lantern Corps và nơi dẫn đường cho nhẫn.",
+      "images": [
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg "
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Mogo"
+    },
+    {
+      "id": "starro",
+      "name": "Starro the Conqueror",
+      "franchise": "DC",
+      "media": [
+        "Comics",
+        "Phim",
+        "Hoạt hình"
+      ],
+      "universe": "DC Universe",
+      "kind": "Sinh vật ngoài hành tinh",
+      "scale": "Colossal",
+      "heightMeters": 50,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Starro",
+      "sourceUrl": "https://www.dc.com/characters/starro",
+      "description": "Sao biển ngoài hành tinh tạo các bản sao ký sinh để điều khiển tâm trí.",
+      "images": [
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg ",
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg "
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Starro"
+    },
+    {
+      "id": "giganta",
+      "name": "Giganta",
+      "franchise": "DC",
+      "media": [
+        "Comics",
+        "Hoạt hình"
+      ],
+      "universe": "DC Universe",
+      "kind": "Nữ khổng lồ",
+      "scale": "Colossal",
+      "heightMeters": 30,
+      "sizeLabel": "Kích thước biến đổi",
+      "measurement": "Canon biến đổi",
+      "wikiTitle": "Giganta",
+      "sourceUrl": "https://www.dc.com/characters/giganta",
+      "description": "Kẻ thù của Wonder Woman có thể tăng kích thước lên nhiều tầng nhà.",
+      "images": [
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg ",
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg "
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Giganta"
+    },
+    {
+      "id": "darkseid-true-form",
+      "name": "Darkseid True Form",
+      "franchise": "DC",
+      "media": [
+        "Comics"
+      ],
+      "universe": "DC Multiverse",
+      "kind": "New God",
+      "scale": "Cosmic",
+      "heightMeters": null,
+      "sizeLabel": "Vượt không-thời gian vật lý",
+      "measurement": "Khái niệm siêu hình",
+      "wikiTitle": "Darkseid",
+      "sourceUrl": "https://www.dc.com/characters/darkseid",
+      "description": "Bản thể thật tồn tại ngoài Multiverse và chỉ chiếu avatar vào các thực tại.",
+      "images": [
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg ",
+        "https://static.dc.com/2022-06/dc-logo-600x600.jpg "
+      ],
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Darkseid"
+    }
+  ]
+}

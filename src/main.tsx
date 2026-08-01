@@ -1,7 +1,7 @@
 import { StrictMode, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import LolPage from "./LolPage";
+import GiantsPage from "./GiantsPage";
 import PokemonGroupsPage from "./PokemonGroupsPage";
 import "./index.css";
 
@@ -12,7 +12,7 @@ function Root() {
     window.addEventListener("hashchange", sync);
     return () => window.removeEventListener("hashchange", sync);
   }, []);
-  if (route.startsWith("#/lol")) return <LolPage />;
+  if (route.startsWith("#/giants") || route.startsWith("#/lol")) return <GiantsPage />;
   if (route.startsWith("#/pokemon-groups")) return <PokemonGroupsPage />;
   return <App />;
 }
