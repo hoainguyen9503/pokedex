@@ -12,7 +12,7 @@ function Root() {
     window.addEventListener("hashchange", sync);
     return () => window.removeEventListener("hashchange", sync);
   }, []);
-  if (route.startsWith("#/giants") || route.startsWith("#/lol")) return <GiantsPage />;
+  if (route.startsWith("#/giant") || route.startsWith("#/lol")) return <GiantsPage />;
   if (route.startsWith("#/pokemon-groups")) return <PokemonGroupsPage />;
   return <App />;
 }

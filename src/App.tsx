@@ -307,7 +307,7 @@ export default function Home() {
         <nav>
           <a className="active" href="#collection">Bộ sưu tập</a>
           <a href="#/pokemon-groups">Group Pokémon</a>
-          <a href="#/giants">Giant Archive</a>
+          <a href="#/giants">Titan Archive</a>
           <button onClick={() => setPanel("compare")}>So sánh <b>{compare.length || ""}</b></button>
           <button onClick={() => setPanel("team")}>Đội hình <b>{team.length || ""}</b></button>
           <button onClick={() => setPanel("quiz")}>Đoán Pokémon</button>
