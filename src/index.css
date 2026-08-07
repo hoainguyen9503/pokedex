@@ -9,39 +9,6 @@
   --font-body: "Be Vietnam Pro", Arial, sans-serif;
   --font-display: "Playfair Display", Georgia, serif;
 }
-
-/* Giant Character Archive */
-.giant-page { --giant-bg:#070910; --giant-panel:#0d111d; --giant-line:#252c3e; --giant-text:#f5f6fb; --giant-muted:#8e98ad; --giant-cyan:#66e3ff; --giant-violet:#9e7bff; min-height:100vh; color:var(--giant-text); background:radial-gradient(circle at 80% 4%,#462d851f 0,transparent 34%),radial-gradient(circle at 15% 28%,#0c718e17 0,transparent 32%),var(--giant-bg); font-family:"Be Vietnam Pro",sans-serif; }
-.giant-page button,.giant-page input,.giant-page select { font-family:inherit; }
-.giant-topbar { height:78px; padding:0 max(4vw,calc((100vw - 1400px)/2)); display:flex; align-items:center; justify-content:space-between; gap:24px; position:sticky; top:0; z-index:30; background:#070910e8; backdrop-filter:blur(18px); border-bottom:1px solid var(--giant-line); }
-.giant-brand { display:flex; align-items:center; gap:11px; color:#fff; text-decoration:none; font-size:12px; font-weight:800; letter-spacing:.15em; }
-.giant-mark { width:34px; height:34px; display:grid; place-items:center; border:1px solid #7e5bff; background:linear-gradient(145deg,#6a43e7,#1b253b); box-shadow:0 0 26px #815eff55; font:800 17px var(--font-display); }
-.giant-topbar nav { display:flex; align-items:center; gap:28px; }.giant-topbar nav a { color:var(--giant-muted); text-decoration:none; font-size:11px; font-weight:700; }.giant-topbar nav a:hover,.giant-topbar nav a.active { color:#fff; }
-.giant-topbar>button { border:1px solid var(--giant-line); color:#fff; background:#131827; padding:10px 14px; cursor:pointer; font-size:10px; font-weight:700; }
-.giant-kicker { color:var(--giant-cyan); font-size:10px; font-weight:800; letter-spacing:.19em; text-transform:uppercase; }
-.giant-hero { min-height:720px; max-width:1440px; margin:auto; padding:80px 6vw; display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:7vw; overflow:hidden; }
-.giant-hero h1 { margin:24px 0 28px; font:600 clamp(58px,6.8vw,105px)/.91 var(--font-display); letter-spacing:-.055em; }.giant-hero h1 em { color:var(--giant-violet); font-weight:500; }
-.giant-hero>div:first-child>p:not(.giant-kicker) { max-width:650px; color:#a7afc0; font-size:15px; line-height:1.85; }
-.giant-hero-stats { display:grid; grid-template-columns:repeat(4,1fr); margin-top:42px; border-top:1px solid var(--giant-line); }.giant-hero-stats span { min-width:0; padding:22px 14px 0 0; color:var(--giant-muted); font-size:9px; line-height:1.45; text-transform:uppercase; letter-spacing:.11em; }.giant-hero-stats b { display:block; color:#fff; font:700 25px var(--font-display); letter-spacing:0; }
-.giant-hero-art { height:560px; position:relative; isolation:isolate; }.giant-hero-art::before { content:""; position:absolute; inset:7% 0 0; z-index:-2; background:radial-gradient(circle,#6246c755,#0e1624 55%,transparent 72%); }.giant-hero-art::after { content:""; position:absolute; inset:12% 6%; z-index:-1; border:1px solid #6f63a93a; border-radius:50%; transform:rotate(-19deg); }.giant-hero-art img,.giant-hero-art>.giant-visual-fallback { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 35px 40px #000b); }.giant-hero-art>span { position:absolute; right:0; bottom:7%; color:var(--giant-cyan); font:600 14px var(--font-display); letter-spacing:.18em; }
-.giant-catalog { padding:95px max(4vw,calc((100vw - 1400px)/2)); background:#090c14e8; border-top:1px solid var(--giant-line); }.giant-catalog-head { display:flex; justify-content:space-between; align-items:end; gap:30px; }.giant-catalog-head h2,.giant-related h2 { margin:13px 0 0; font:600 clamp(42px,5vw,70px)/1 var(--font-display); letter-spacing:-.045em; }.giant-catalog-head>p { color:var(--giant-muted); font-size:11px; }.giant-catalog-head>p b { color:#fff; font-size:25px; }
-.giant-method { display:flex; flex-wrap:wrap; gap:8px; margin:34px 0 18px; }.giant-method span { padding:8px 11px; color:#aeb6c8; background:#101522; border:1px solid var(--giant-line); font-size:9px; font-weight:600; letter-spacing:.04em; }.giant-method span::before { content:"✓"; margin-right:7px; color:var(--giant-cyan); }
-.giant-toolbar { display:grid; grid-template-columns:minmax(250px,1.5fr) repeat(3,minmax(165px,.6fr)); gap:9px; }.giant-toolbar input,.giant-toolbar select { width:100%; height:52px; border:1px solid var(--giant-line); outline:0; background:var(--giant-panel); color:#fff; padding:0 14px; font-size:11px; }.giant-toolbar input:focus,.giant-toolbar select:focus { border-color:#775ee0; box-shadow:0 0 0 2px #7459df25; }.giant-toolbar select option { background:#101522; }
-.giant-media-filters { display:flex; flex-wrap:wrap; gap:7px; margin:14px 0 35px; }.giant-media-filters button { border:1px solid var(--giant-line); background:transparent; color:var(--giant-muted); padding:8px 12px; cursor:pointer; font-size:10px; }.giant-media-filters button:hover,.giant-media-filters button.active { color:#fff; background:#603ed0; border-color:#7658e4; }.giant-media-filters button.favorite.active { background:#9f2f65; border-color:#bd4e83; }
-.giant-page .pagination { margin:30px 0; color:var(--giant-muted); }.giant-page .pagination button { border-color:var(--giant-line); background:var(--giant-panel); color:#b5bdd0; }.giant-page .pagination button.active,.giant-page .pagination button:hover { background:#6847d5; color:#fff; border-color:#8065ec; }
-.giant-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }.giant-card { height:400px; position:relative; overflow:hidden; background:var(--giant-panel); border:1px solid var(--giant-line); transition:transform .25s,border-color .25s,box-shadow .25s; }.giant-card:hover { transform:translateY(-5px); border-color:#62557f; box-shadow:0 22px 55px #0008; }.giant-card-main { width:100%; height:100%; padding:0; border:0; background:transparent; text-align:left; cursor:pointer; }.giant-card-main>img,.giant-card-main>.giant-visual-fallback { width:100%; height:100%; object-fit:cover; object-position:center top; transition:transform .45s; }.giant-card:hover .giant-card-main>img { transform:scale(1.045); }.giant-card-shade { position:absolute; inset:0; background:linear-gradient(180deg,#05071008 30%,#070910f2 88%); }
-.giant-scale-badge { position:absolute; top:11px; left:11px; padding:6px 8px; color:#fff; background:#090c14c9; border:1px solid #ffffff24; backdrop-filter:blur(8px); font-size:8px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }.scale-giant .giant-scale-badge { border-color:#58d8bc88; }.scale-colossal .giant-scale-badge { border-color:#66e3ff88; }.scale-titanic .giant-scale-badge { border-color:#7a8dff99; }.scale-supermassive .giant-scale-badge { border-color:#ad71ff99; }.scale-planetary .giant-scale-badge { border-color:#ffad66aa; }.scale-cosmic .giant-scale-badge { border-color:#ff6fc3aa; }
-.giant-card-copy { position:absolute; left:16px; right:16px; bottom:17px; display:flex; flex-direction:column; color:#fff; }.giant-card-copy small { color:var(--giant-cyan); font-size:8px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }.giant-card-copy strong { margin:6px 0 2px; font:600 22px/1.05 var(--font-display); }.giant-card-copy i { color:#c7b5ff; font-size:11px; font-style:normal; font-weight:700; }.giant-card-copy em { margin-top:6px; color:#929cad; font-size:8px; font-style:normal; line-height:1.4; text-transform:uppercase; }
-.giant-heart { width:33px; height:33px; position:absolute; top:10px; right:10px; border:1px solid #ffffff26; border-radius:50%; background:#090c14c9; color:#738096; cursor:pointer; backdrop-filter:blur(8px); }.giant-heart:hover,.giant-heart.active { color:#ff79bd; border-color:#ff79bd88; }
-.giant-visual-fallback { display:grid; place-content:center; gap:8px; text-align:center; background:radial-gradient(circle at 50% 35%,#4d3b814d,#111726 48%,#080b13 75%); }.giant-visual-fallback b { color:#ffffffd9; font:600 70px var(--font-display); text-transform:uppercase; }.giant-visual-fallback i { color:var(--giant-muted); font-size:9px; font-style:normal; letter-spacing:.2em; text-transform:uppercase; }
-.giant-empty { min-height:380px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:15px; color:var(--giant-muted); }.giant-empty strong { color:#fff; font:600 26px var(--font-display); }.giant-empty a,.giant-empty button { color:var(--giant-cyan); background:transparent; border:0; cursor:pointer; text-decoration:none; }
-.giant-detail-nav { max-width:1440px; height:65px; margin:auto; padding:0 5vw; display:flex; align-items:center; justify-content:space-between; }.giant-detail-nav a { color:#b9c1d2; text-decoration:none; font-size:11px; }.giant-detail-nav button { border:0; background:transparent; color:#768197; cursor:pointer; }.giant-detail-nav button.active { color:#ff79bd; }
-.giant-splash { height:min(76vh,820px); min-height:560px; position:relative; overflow:hidden; background:#0d111d; }.giant-splash>img,.giant-splash>.giant-visual-fallback { width:100%; height:100%; object-fit:cover; object-position:center 20%; }.giant-splash-shade { position:absolute; inset:0; background:linear-gradient(90deg,#050710e8 0,#05071040 52%,transparent),linear-gradient(0deg,#070910d6,transparent 55%); }.giant-splash-copy { max-width:850px; position:absolute; left:max(5vw,calc((100vw - 1300px)/2)); bottom:9%; }.giant-splash-copy p { color:var(--giant-cyan); font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }.giant-splash-copy h1 { margin:10px 0 20px; font:600 clamp(58px,8vw,120px)/.86 var(--font-display); letter-spacing:-.055em; }.giant-splash-copy div { display:flex; flex-wrap:wrap; gap:7px; }.giant-splash-copy span { padding:7px 10px; background:#0b0f19b8; border:1px solid #ffffff26; font-size:9px; text-transform:uppercase; }
-.giant-profile { max-width:1300px; margin:auto; padding:95px 5vw; display:grid; grid-template-columns:1.1fr .9fr; gap:9vw; }.giant-profile h2 { margin:15px 0 25px; font:600 clamp(42px,5vw,68px)/1 var(--font-display); letter-spacing:-.04em; }.giant-profile>div>p:not(.giant-kicker) { color:#aab2c3; font-size:16px; line-height:1.9; }.giant-facts { border-left:1px solid var(--giant-line); padding-left:5vw; }.giant-facts h2 { color:#c5b7ff; }.giant-facts dl { margin:30px 0; }.giant-facts dl div { padding:14px 0; display:flex; justify-content:space-between; gap:25px; border-bottom:1px solid var(--giant-line); }.giant-facts dt { color:var(--giant-muted); }.giant-facts dd { margin:0; text-align:right; color:#fff; font-weight:700; }.giant-source-links { display:flex; flex-wrap:wrap; gap:9px; }.giant-source-links a { padding:10px 13px; border:1px solid #5c4c8a; color:#c8bcf0; text-decoration:none; font-size:10px; }
-.giant-related { padding:80px max(4vw,calc((100vw - 1400px)/2)); border-top:1px solid var(--giant-line); }.giant-related h2 { margin-bottom:32px; }.giant-related>div { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }.giant-related button { height:300px; position:relative; overflow:hidden; padding:0; border:1px solid var(--giant-line); background:var(--giant-panel); cursor:pointer; }.giant-related button img,.giant-related button .giant-visual-fallback { width:100%; height:100%; object-fit:cover; }.giant-related button strong { position:absolute; inset:auto 0 0; padding:18px 12px; color:#fff; background:linear-gradient(transparent,#080b13); font:600 17px var(--font-display); }
-.giant-footer { padding:55px max(4vw,calc((100vw - 1400px)/2)); display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:30px; color:#778197; border-top:1px solid var(--giant-line); font-size:9px; }
-@media(max-width:1100px){.giant-topbar nav{display:none}.giant-hero{grid-template-columns:1fr 1fr;padding-inline:4vw}.giant-grid{grid-template-columns:repeat(4,1fr)}.giant-toolbar{grid-template-columns:1fr 1fr}}
-@media(max-width:760px){.giant-topbar{height:68px;padding:0 14px}.giant-topbar>button{font-size:0}.giant-topbar>button::after{content:"✦";font-size:14px}.giant-hero{min-height:auto;display:flex;flex-direction:column;padding:50px 18px 70px;gap:20px}.giant-hero-art{width:100%;height:360px;order:-1}.giant-hero h1{font-size:54px}.giant-hero-stats{grid-template-columns:1fr 1fr}.giant-catalog{padding:65px 12px}.giant-catalog-head{align-items:flex-start;flex-direction:column}.giant-catalog-head h2{font-size:42px}.giant-method{display:grid}.giant-toolbar{grid-template-columns:1fr}.giant-grid{grid-template-columns:repeat(2,1fr);gap:7px}.giant-card{height:300px}.giant-card-copy{left:11px;right:11px;bottom:12px}.giant-card-copy strong{font-size:17px}.giant-card-copy em{display:none}.giant-detail-nav{padding:0 14px}.giant-splash{min-height:540px}.giant-splash-copy{left:18px;right:18px;bottom:45px}.giant-splash-copy h1{font-size:53px}.giant-profile{grid-template-columns:1fr;padding:65px 18px;gap:50px}.giant-facts{padding:0;border:0}.giant-related{padding:65px 12px}.giant-related>div{display:flex;overflow-x:auto}.giant-related button{min-width:230px}.giant-footer{grid-template-columns:1fr;align-items:start}}
 .image-fallback {
   width: 100%;
   height: 100%;
@@ -349,107 +316,6 @@ footer .brandball i { background: #080a0c; }
 .back-to-top { background: var(--yellow); color: #111417; }
 .toast { background: #ece7dd; color: #121518; }
 
-/* League of Legends skin archive */
-.lol-page { min-height: 100vh; background: #071015; color: #edf3f3; }
-.lol-topbar { height: 82px; max-width: 1500px; margin: auto; padding: 0 4vw; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #23343b; background: #071015e8; }
-.lol-brand { display: flex; align-items: center; gap: 12px; color: #e8d7aa; text-decoration: none; font-weight: 800; letter-spacing: .12em; font-size: 13px; }
-.lol-mark { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid #b8954d; transform: rotate(45deg); font: 700 20px var(--font-display); color: #d6b86c; }
-.lol-mark::first-letter { transform: rotate(-45deg); }
-.lol-topbar nav { display: flex; gap: 35px; }
-.lol-topbar nav a { color: #82949b; text-decoration: none; font-size: 11px; font-weight: 700; }
-.lol-topbar nav a.active { color: #d6b86c; }
-.lol-topbar > button { border: 1px solid #8e733d; background: transparent; color: #d8c38c; padding: 10px 16px; cursor: pointer; font-size: 10px; font-weight: 700; }
-.lol-kicker { color: #b79855; font-size: 9px; font-weight: 800; letter-spacing: .2em; }
-.lol-hero { max-width: 1500px; min-height: 650px; margin: auto; padding: 70px 6vw; display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 5vw; overflow: hidden; }
-.lol-hero h1 { font: 600 clamp(65px, 7vw, 108px)/.88 var(--font-display); letter-spacing: -.055em; margin: 24px 0 30px; }
-.lol-hero h1 em { color: #c7a75a; font-weight: 500; }
-.lol-hero > div:first-child > p:not(.lol-kicker) { max-width: 520px; color: #8fa0a6; line-height: 1.8; font-size: 13px; }
-.lol-hero-stats { display: flex; gap: 48px; margin-top: 40px; padding-top: 25px; border-top: 1px solid #26363d; }
-.lol-hero-stats span { display: flex; flex-direction: column; color: #71858c; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
-.lol-hero-stats b { color: #e5eced; font: 600 25px var(--font-display); letter-spacing: 0; }
-.lol-hero-art { position: relative; height: 500px; overflow: hidden; clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%); box-shadow: 0 40px 90px #0009; }
-.lol-hero-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #071015 0, transparent 30%), linear-gradient(0deg, #07101580, transparent 45%); }
-.lol-hero-art img { width: 100%; height: 100%; object-fit: cover; }
-.lol-catalog { padding: 90px max(4vw, calc((100vw - 1400px)/2)); background: #0b151a; }
-.lol-catalog-head { display: flex; justify-content: space-between; align-items: end; }
-.lol-catalog-head h2, .lol-profile h2, .lol-related h2 { font: 600 clamp(42px, 5vw, 70px) var(--font-display); letter-spacing: -.04em; margin: 12px 0 0; }
-.lol-catalog-head > p { color: #75878d; font-size: 11px; }.lol-catalog-head > p b { color: #d5b765; font-size: 22px; }
-.lol-toolbar { display: grid; grid-template-columns: 1fr 260px 220px; gap: 10px; margin-top: 38px; }
-.lol-toolbar input, .lol-toolbar select { height: 52px; border: 1px solid #2b3d44; background: #101e24; color: #dbe3e5; padding: 0 15px; outline: 0; font-size: 11px; }
-.lol-toolbar input::placeholder { color: #687b82; }
-.lol-roles { display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0 38px; }
-.lol-roles button { border: 1px solid #2b3d44; background: #101e24; color: #8fa0a6; padding: 8px 12px; cursor: pointer; font-size: 9px; }
-.lol-roles button:hover, .lol-roles button.active { border-color: #b7954e; color: #e7d7ab; background: #2c2518; }
-.lol-roles button.favorite.active { border-color: #b74858; background: #351a20; color: #f0a7b2; }
-.lol-view-switch { display: flex; gap: 8px; margin-top: 38px; }
-.lol-view-switch button { border: 1px solid #30434a; background: #101e24; color: #8fa0a6; padding: 11px 15px; cursor: pointer; font-size: 10px; font-weight: 700; }
-.lol-view-switch button.active { border-color: #b7954e; background: #2c2518; color: #e7d7ab; }
-.lol-view-switch + .lol-toolbar { margin-top: 14px; }
-.lol-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.lol-card { position: relative; height: 365px; overflow: hidden; background: #101e24; border: 1px solid #22353d; transition: transform .25s, border-color .25s, box-shadow .25s; }
-.lol-card:hover { transform: translateY(-5px); border-color: #8d733e; box-shadow: 0 20px 50px #0007; }
-.lol-card-main { width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: pointer; color: white; text-align: left; }
-.lol-card-main > img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; pointer-events: auto; user-select: auto; -webkit-user-drag: auto; }
-.lol-card-main > .image-fallback { position: absolute; inset: 0; }
-.lol-card:hover .lol-card-main > img { transform: scale(1.04); }
-.lol-card-shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, #050a0ee8 0, #07101582 34%, transparent 68%); }
-.lol-card-copy { position: absolute; z-index: 2; left: 20px; right: 20px; bottom: 18px; display: flex; flex-direction: column; pointer-events: none; }
-.lol-card-copy small { color: #c4a85f; font-size: 8px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
-.lol-card-copy strong { font: 600 23px/1.05 var(--font-display); margin-top: 6px; }
-.lol-card-copy i { color: #84959b; font-size: 8px; font-style: normal; margin-top: 8px; }
-.lol-heart { position: absolute; z-index: 3; right: 12px; top: 12px; width: 34px; height: 34px; border: 1px solid #ffffff3b; border-radius: 50%; background: #071015aa; color: #a4afb2; cursor: pointer; backdrop-filter: blur(6px); }
-.lol-heart.active { background: #a83246; color: white; border-color: #e06b7d; }
-.lol-empty { min-height: 50vh; display: grid; place-content: center; gap: 18px; text-align: center; color: #84969c; }
-.lol-empty strong { color: white; font: 600 30px var(--font-display); }
-.lol-empty a, .lol-empty button { color: #d2b66a; background: none; border: 0; cursor: pointer; text-decoration: underline; }
-.group-audit { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 30px; }
-.group-audit span { border: 1px solid #31504b; background: #10231f; color: #75b9a8; padding: 8px 11px; font-size: 9px; }
-.lol-group-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.lol-group { border: 1px solid #293b42; background: #0e1a20; overflow: hidden; }
-.lol-group > header { min-height: 78px; padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #293b42; background: linear-gradient(100deg, #15252b, #0e1a20); }
-.lol-group > header small { color: #8f7540; font-size: 7px; font-weight: 800; letter-spacing: .17em; }
-.lol-group > header h3 { color: #e8d8ad; font: 600 21px var(--font-display); margin: 3px 0 0; }
-.lol-group > header > b { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #806936; border-radius: 50%; color: #c9ad66; font-size: 9px; }
-.lol-group > div { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
-.lol-group > div > button { position: relative; height: 235px; padding: 0; border: 0; border-right: 1px solid #22343b; background: #091217; color: white; cursor: pointer; overflow: hidden; }
-.lol-group > div > button:last-of-type { border-right: 0; }
-.lol-group > div > button img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .3s; }
-.lol-group > div > button > .image-fallback { position: absolute; inset: 0; }
-.lol-group > div > button:hover img { transform: scale(1.045); }
-.lol-group > div > button > span { position: absolute; left: 0; right: 0; bottom: 0; min-height: 82px; padding: 30px 8px 9px; display: flex; flex-direction: column; justify-content: flex-end; text-align: left; background: linear-gradient(0deg, #030709f5 15%, transparent); pointer-events: none; }
-.lol-group > div > button small { color: #b69a58; font-size: 6px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.lol-group > div > button strong { font: 600 12px/1.08 var(--font-display); margin-top: 4px; }
-.lol-group-empty { min-height: 235px; display: grid; place-items: center; background: repeating-linear-gradient(135deg, #0b161b, #0b161b 8px, #101e24 8px, #101e24 16px); color: #4f636a; font-size: 8px; font-style: normal; text-transform: uppercase; }
-
-.lol-detail-nav { max-width: 1400px; margin: auto; padding: 22px 4vw; display: flex; justify-content: space-between; align-items: center; }
-.lol-detail-nav a { color: #c1cacc; font-size: 10px; font-weight: 700; text-underline-offset: 5px; }
-.lol-detail-nav button { border: 1px solid #3c4b51; background: #101e24; color: #aebabc; padding: 9px 13px; cursor: pointer; }
-.lol-detail-nav button.active { background: #a83246; color: white; border-color: #da5368; }
-.lol-splash { position: relative; max-width: 1500px; height: min(72vw, 790px); min-height: 560px; margin: auto; overflow: hidden; }
-.lol-splash > img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.lol-splash-shade { position: absolute; inset: 0; background: linear-gradient(0deg, #071015 0, #071015b5 23%, transparent 68%), linear-gradient(90deg, #0710157a, transparent 40%); }
-.lol-splash-copy { position: absolute; left: 6vw; right: 6vw; bottom: 55px; }
-.lol-splash-copy > p { color: #c5aa63; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-.lol-splash-copy h1 { max-width: 1000px; font: 600 clamp(58px, 7vw, 104px)/.92 var(--font-display); letter-spacing: -.05em; margin: 10px 0 24px; }
-.lol-splash-copy > div { display: flex; gap: 7px; }.lol-splash-copy span { border: 1px solid #a18549; color: #e0cd99; padding: 7px 10px; font-size: 8px; text-transform: uppercase; }
-.lol-profile { max-width: 1400px; margin: auto; padding: 85px 6vw; display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; }
-.lol-profile > div:first-child > p:last-child { color: #90a0a5; font-size: 12px; line-height: 1.9; }
-.lol-stats { display: grid; gap: 14px; margin-top: 30px; }
-.lol-stats > div { display: grid; grid-template-columns: 100px 1fr 40px; gap: 12px; align-items: center; font-size: 9px; color: #86979d; }
-.lol-stats i { height: 7px; background: #1a2a31; overflow: hidden; }.lol-stats i b { display: block; height: 100%; background: linear-gradient(90deg, #8e7135, #d1b35e); }
-.lol-stats strong { color: #e1e8e9; text-align: right; }
-.lol-related { padding: 85px max(4vw, calc((100vw - 1400px)/2)); background: #0b151a; }
-.lol-related > div { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 35px; }
-.lol-related button { position: relative; height: 250px; padding: 0; border: 1px solid #263941; background: #101e24; color: white; cursor: pointer; overflow: hidden; }
-.lol-related img { width: 100%; height: 100%; object-fit: cover; transition: .3s; }.lol-related button:hover img { transform: scale(1.04); }
-.lol-related strong { position: absolute; left: 0; right: 0; bottom: 0; padding: 45px 15px 14px; background: linear-gradient(0deg, #050a0ef2, transparent); font: 600 18px var(--font-display); text-align: left; }
-.lol-footer { border-top: 1px solid #1f3037; }
-.lol-page .pagination { border-color: #293b42; }
-.lol-page .pagination p { color: #75878d; }
-.lol-page .pagination p strong { color: #d5b765; }
-.lol-page .pagination button { border-color: #30434a; background: #101e24; color: #9ba9ae; }
-.lol-page .pagination button:hover:not(:disabled), .lol-page .pagination button.active { border-color: #b7954e; background: #2c2518; color: #e7d7ab; }
-
 .pokemon-group-page { min-height: 100vh; background: #0d1114; color: #edece8; }
 .pokemon-group-topbar { background: #0d1114e8; border-color: #293036; }
 .pokemon-group-topbar .source-link { color: #d1ab48; border-color: #705d2a; text-decoration: none; }
@@ -517,11 +383,6 @@ footer .brandball i { background: #080a0c; }
   .detail-art { min-height: 480px; }
   .topbar nav { gap: 18px; }
   .team-grid { grid-template-columns: repeat(3, 1fr); }
-  .lol-grid { grid-template-columns: repeat(3, 1fr); }
-  .lol-hero { grid-template-columns: 1fr 1fr; padding-inline: 4vw; }
-  .lol-toolbar { grid-template-columns: 1fr 210px 190px; }
-  .lol-related > div { grid-template-columns: repeat(3, 1fr); }
-  .lol-group-grid { grid-template-columns: 1fr; }
   .pokemon-group-grid { grid-template-columns: 1fr; }
   .pokemon-group-hero { grid-template-columns: 1fr; min-height: auto; }
 }
@@ -563,7 +424,6 @@ footer .brandball i { background: #080a0c; }
   .quiz form { flex-direction: column; }
   .quiz input { width: 100%; }
   .hero-actions { justify-content: center; }
-  .lol-topbar { height: 70px; }.lol-topbar nav { display: none; }.lol-topbar > button { padding: 8px; font-size: 8px; }
   .pokemon-group-topbar nav, .pokemon-group-topbar .source-link { display: none; }
   .pokemon-group-hero { padding-block: 65px; }
   .pokemon-group-stats { grid-template-columns: 1fr; }
@@ -576,26 +436,6 @@ footer .brandball i { background: #080a0c; }
   .pokemon-concept-group > div { grid-template-columns: repeat(2, 1fr); }
   .pokemon-group-member { height: 230px; border-bottom: 1px solid #293238; }
   .pokemon-group-member:last-child { grid-column: 1 / -1; }
-  .lol-brand { font-size: 10px; }.lol-mark { width: 29px; height: 29px; }
-  .lol-hero { display: flex; flex-direction: column; padding: 55px 18px 45px; }
-  .lol-hero h1 { font-size: 59px; }
-  .lol-hero-stats { gap: 25px; }
-  .lol-hero-art { width: 100%; height: 330px; order: -1; }
-  .lol-catalog { padding: 65px 12px; }
-  .lol-catalog-head { align-items: center; }.lol-catalog-head h2 { font-size: 40px; }
-  .lol-toolbar { grid-template-columns: 1fr; }
-  .lol-grid { grid-template-columns: repeat(2, 1fr); gap: 7px; }
-  .lol-card { height: 285px; }.lol-card-copy { left: 12px; right: 12px; bottom: 12px; }
-  .lol-card-copy strong { font-size: 17px; }.lol-card-copy i { display: none; }
-  .lol-splash { height: 72vh; min-height: 520px; }
-  .lol-splash-copy { left: 18px; right: 18px; bottom: 35px; }.lol-splash-copy h1 { font-size: 52px; }
-  .lol-profile { grid-template-columns: 1fr; padding: 65px 18px; gap: 60px; }
-  .lol-related { padding: 65px 12px; }.lol-related h2 { font-size: 40px; }
-  .lol-related > div { display: flex; overflow-x: auto; }.lol-related button { min-width: 240px; }
-  .lol-view-switch { margin-top: 25px; }
-  .group-audit { display: grid; }
-  .lol-group > div { display: flex; overflow-x: auto; }
-  .lol-group > div > button, .lol-group-empty { min-width: 125px; height: 240px; }
   .pagination { flex-direction: column; align-items: stretch; }
   .pagination p { text-align: center; }
   .pagination > div { justify-content: center; flex-wrap: wrap; }

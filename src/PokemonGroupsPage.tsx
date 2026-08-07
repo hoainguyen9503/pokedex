@@ -133,7 +133,6 @@ export default function PokemonGroupsPage() {
         <nav>
           <a href="#">Bộ sưu tập</a>
           <a className="active" href="#/pokemon-groups">Group Pokémon</a>
-          <a href="#/giants">Titan Archive</a>
         </nav>
         <a className="source-link" href="#/pokemon-groups">5 Pokémon · 1 concept</a>
       </header>
